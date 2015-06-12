@@ -1,6 +1,7 @@
 angular.module('starter.services', [])
 
 .factory('Empresas', function() {
+ //Esse é o modelo do Json que precisa ser criado    
   var empresas = [{
     id: 0,
     name: 'API Systems',
@@ -44,6 +45,7 @@ angular.module('starter.services', [])
 
 
 .factory('Palestrantes', function() {
+//Esse é o modelo do Json que precisa ser criado    
   var palestrantes = [{
     id: 0,
     name: 'GDG Três Rios',
