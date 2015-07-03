@@ -53,7 +53,7 @@ public class CategoriaColaboradorAdapter extends BaseAdapter {
 
         if (convertView == null){
             holder = new ViewHolder();
-            int layout = 0;
+            int layout = R.layout.categoria_colaborador_list;
             convertView = inflater.inflate(layout, null);
             convertView.setTag(holder);
 
