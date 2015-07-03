@@ -2,15 +2,15 @@ package br.com.gdgtresrios.centrosulnegocios.model;
 
 public class CategoriaColaborador {
 
-    private int id;
+    private Long id;
     private String nome;
     private String logo;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

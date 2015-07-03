@@ -12,6 +12,10 @@ public class Evento {
     private Date duracao;
     private String local;
     private CategoriaEvento categoriaEvento;
+    private Colaborador colaborador;
+
+    public Evento() {
+    }
 
     public int getId() {
         return id;
@@ -75,5 +79,13 @@ public class Evento {
 
     public void setCategoriaEvento(CategoriaEvento categoriaEvento) {
         this.categoriaEvento = categoriaEvento;
+    }
+
+    public Colaborador getColaborador() {
+        return colaborador;
+    }
+
+    public void setColaborador(Colaborador colaborador) {
+        this.colaborador = colaborador;
     }
 }
