@@ -1,6 +1,9 @@
 package br.com.gdgtresrios.centrosulnegocios.model;
 
-public class Colaborador {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Colaborador implements Parcelable {
 
     private Long id;
     private String nome;
@@ -119,4 +122,56 @@ public class Colaborador {
     public void setCategoria(CategoriaColaborador categoria) {
         this.categoria = categoria;
     }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeValue(this.id);
+        dest.writeString(this.nome);
+        dest.writeString(this.descricao);
+        dest.writeString(this.logo);
+        dest.writeString(this.descricaoDetalhada);
+        dest.writeString(this.enderecoVirtual);
+        dest.writeString(this.email);
+        dest.writeString(this.telefone);
+        dest.writeString(this.endereco);
+        dest.writeValue(this.patrocinador);
+        dest.writeValue(this.palestrante);
+        dest.writeValue(this.expositor);
+        dest.writeParcelable(this.categoria, flags);
+    }
+
+    public Colaborador() {
+    }
+
+    private Colaborador(Parcel in) {
+        this.id = (Long) in.readValue(Long.class.getClassLoader());
+        this.nome = in.readString();
+        this.descricao = in.readString();
+        this.logo = in.readString();
+        this.descricaoDetalhada = in.readString();
+        this.enderecoVirtual = in.readString();
+        this.email = in.readString();
+        this.telefone = in.readString();
+        this.endereco = in.readString();
+        this.patrocinador = (Boolean) in.readValue(Boolean.class.getClassLoader());
+        this.palestrante = (Boolean) in.readValue(Boolean.class.getClassLoader());
+        this.expositor = (Boolean) in.readValue(Boolean.class.getClassLoader());
+        this.categoria = in.readParcelable(CategoriaColaborador.class.getClassLoader());
+    }
+
+    public static final Parcelable.Creator<Colaborador> CREATOR = new Parcelable.Creator<Colaborador>() {
+        public Colaborador createFromParcel(Parcel source) {
+            return new Colaborador(source);
+        }
+
+        public Colaborador[] newArray(int size) {
+            return new Colaborador[size];
+        }
+    };
 }
