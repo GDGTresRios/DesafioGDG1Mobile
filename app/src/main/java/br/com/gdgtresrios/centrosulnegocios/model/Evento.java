@@ -7,6 +7,8 @@ import java.util.Date;
 
 public class Evento implements Parcelable {
 
+    public static final String KEY = "evento";
+
     private Long id;
     private String nome;
     private String descricao;
