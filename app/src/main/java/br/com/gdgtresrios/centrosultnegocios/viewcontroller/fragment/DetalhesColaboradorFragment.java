@@ -10,29 +10,26 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import br.com.gdgtresrios.centrosulnegocios.R;
-import br.com.gdgtresrios.centrosulnegocios.model.Evento;
+import br.com.gdgtresrios.centrosulnegocios.model.Colaborador;
 
 /**
  * Created by Wanderlei on 03/07/2015.
  */
-public class DetalhesEventoFragment extends BaseFragment {
 
-    private Evento evento;
-    private DateFormat mFormatter = new SimpleDateFormat("dd-MM-yyyy");
+public class DetalhesColaboradorFragment extends BaseFragment {
+
+    private Colaborador colaborador;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        //return super.onCreateView(inflater, container, savedInstanceState);
 
-        View view = inflater.inflate(R.layout.fragment_detalhes_evento, null);
+        View view = inflater.inflate(R.layout.fragment_detalhes_colaborador, null);
         view.setLayoutParams(new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        return view;
 
+        return view;
     }
 
     @Override
@@ -40,34 +37,35 @@ public class DetalhesEventoFragment extends BaseFragment {
         super.onActivityCreated(savedInstanceState);
 
         Bundle args = getArguments();
-        if (args != null ){
-            evento = (Evento) args.getParcelable(Evento.KEY);
+
+        if (args != null){
+            colaborador = (Colaborador) args.getParcelable(Colaborador.KEY);
             updateView();
         }
     }
 
-    private void updateView(){
+    private void updateView() {
+
         View view = getView();
 
         TextView tNome = (TextView) view.findViewById(R.id.tNome);
         TextView tDescricao = (TextView) view.findViewById(R.id.tDescricao);
+        TextView tEndereco = (TextView) view.findViewById(R.id.tEndereco);
+        TextView tEmail = (TextView) view.findViewById(R.id.tEmail);
+        TextView tFone = (TextView) view.findViewById(R.id.tFone);
         TextView tDescDetalhada = (TextView) view.findViewById(R.id.tDescDetalhada);
-        TextView tDateEvento = (TextView) view.findViewById(R.id.tDateEvento);
         final ImageView img = (ImageView) view.findViewById(R.id.imgFoto);
 
-        tNome.setText(evento.getNome());
-        tDescricao.setText(evento.getDescricao());
-        tDescDetalhada.setText(evento.getDescricaoDetalhada());
-
-        Date data = evento.getDataHora();
-        String formatDate = mFormatter.format(data);
-        tDateEvento.setText(formatDate);
-
+        tNome.setText(colaborador.getNome());
+        tDescricao.setText(colaborador.getDescricao());
+        tEndereco.setText(colaborador.getEndereco());
+        tEmail.setText(colaborador.getEmail());
+        tFone.setText(colaborador.getTelefone());
+        tDescDetalhada.setText(colaborador.getDescricaoDetalhada());
         Bitmap bitmap = null;
         if (bitmap != null){
             img.setImageBitmap(bitmap);
         }
-
 
 
     }

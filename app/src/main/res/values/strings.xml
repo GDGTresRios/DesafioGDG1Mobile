@@ -2,4 +2,7 @@
     <string name="app_name">Centro Sul Negocios</string>
     <string name="nome">Nome</string>
     <string name="descricao">Descrição</string>
+    <string name="email">Email</string>
+    <string name="endereco">Endereço</string>
+    <string name="telefone">Telefone</string>
 </resources>

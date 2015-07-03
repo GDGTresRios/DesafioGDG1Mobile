@@ -5,6 +5,8 @@ import android.os.Parcelable;
 
 public class Colaborador implements Parcelable {
 
+    public static final String KEY = "colaborador";
+
     private Long id;
     private String nome;
     private String descricao;
