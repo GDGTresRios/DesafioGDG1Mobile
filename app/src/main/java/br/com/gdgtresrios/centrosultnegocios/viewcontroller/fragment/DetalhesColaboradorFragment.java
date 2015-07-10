@@ -3,6 +3,7 @@ package br.com.gdgtresrios.centrosultnegocios.viewcontroller.fragment;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,19 +14,13 @@ import android.widget.TextView;
 import br.com.gdgtresrios.centrosulnegocios.R;
 import br.com.gdgtresrios.centrosulnegocios.model.Colaborador;
 
-/**
- * Created by Wanderlei on 03/07/2015.
- */
-
-public class DetalhesColaboradorFragment extends BaseFragment {
+public class DetalhesColaboradorFragment extends Fragment {
 
     private Colaborador colaborador;
+    public static final String BUNDLE_KEY_COLABORADOR = "bundle_key_colaborador";
 
-    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        //return super.onCreateView(inflater, container, savedInstanceState);
-
         View view = inflater.inflate(R.layout.fragment_detalhes_colaborador, null);
         view.setLayoutParams(new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 
@@ -39,7 +34,7 @@ public class DetalhesColaboradorFragment extends BaseFragment {
         Bundle args = getArguments();
 
         if (args != null){
-            colaborador = (Colaborador) args.getParcelable(Colaborador.KEY);
+            colaborador = (Colaborador) args.getParcelable(BUNDLE_KEY_COLABORADOR);
             updateView();
         }
     }
@@ -66,7 +61,5 @@ public class DetalhesColaboradorFragment extends BaseFragment {
         if (bitmap != null){
             img.setImageBitmap(bitmap);
         }
-
-
     }
 }
