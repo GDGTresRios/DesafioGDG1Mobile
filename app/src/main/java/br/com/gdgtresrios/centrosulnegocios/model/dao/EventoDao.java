@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -56,8 +57,8 @@ public class EventoDao {
         return false;
     }
 
-    public List<Evento> listByCategoria(CategoriaEvento categoriaEvento) {
-        List<Evento> eventoList = new ArrayList<>();
+    public ArrayList<Evento> listByCategoria(CategoriaEvento categoriaEvento) {
+        ArrayList<Evento> eventoList = new ArrayList<>();
         Cursor cursor = database.query(TABLE_NAME, new String[]{COLUMN_ID, COLUMN_NOME, COLUMN_DESCRICAO,
                 COLUMN_DESCRICAO_DETALHADA, COLUMN_DATA_HORA, COLUMN_DURACAO, COLUMN_LOCAL,
                 COLUMN_FK_CATEGORIA_EVENTO, COLUMN_FK_COLABORADOR}, COLUMN_FK_CATEGORIA_EVENTO + " = ? ",
@@ -81,8 +82,8 @@ public class EventoDao {
         return eventoList;
     }
 
-    public List<Evento> listByNome(String nome) {
-        List<Evento> eventoList = new ArrayList<>();
+    public ArrayList<Evento> listByNome(String nome) {
+        ArrayList<Evento> eventoList = new ArrayList<>();
         Cursor cursor = database.query(TABLE_NAME, new String[]{COLUMN_ID, COLUMN_NOME, COLUMN_DESCRICAO,
                 COLUMN_DESCRICAO_DETALHADA, COLUMN_DATA_HORA, COLUMN_DURACAO, COLUMN_LOCAL,
                 COLUMN_FK_CATEGORIA_EVENTO, COLUMN_FK_COLABORADOR}, COLUMN_NOME + " = ? ",
@@ -106,11 +107,12 @@ public class EventoDao {
         return eventoList;
     }
 
-    public List<Evento> listNext(int number) {
-        List<Evento> eventoList = new ArrayList<>();
+    public ArrayList<Evento> listNext(int number) {
+        ArrayList<Evento> eventoList = new ArrayList<>();
         Cursor cursor = database.query(TABLE_NAME, new String[]{COLUMN_ID, COLUMN_NOME, COLUMN_DESCRICAO,
                 COLUMN_DESCRICAO_DETALHADA, COLUMN_DATA_HORA, COLUMN_DURACAO, COLUMN_LOCAL,
-                COLUMN_FK_CATEGORIA_EVENTO, COLUMN_FK_COLABORADOR}, null, null, null, null, null);
+                COLUMN_FK_CATEGORIA_EVENTO, COLUMN_FK_COLABORADOR}, COLUMN_DATA_HORA + " > ? ",
+                new String[]{String.valueOf(new Date().getTime())}, null, null, COLUMN_DATA_HORA + " ASC ");
 
         for(int i = 0; i < number; i++) {
             if(cursor.moveToNext()) {

@@ -62,8 +62,8 @@ public class ColaboradorDao {
         return colaboradorList;
     }
 
-    public List<Colaborador> listByNome(String nome) {
-        List<Colaborador> colaboradorList = new ArrayList<>();
+    public ArrayList<Colaborador> listByNome(String nome) {
+        ArrayList<Colaborador> colaboradorList = new ArrayList<>();
         Cursor cursor = database.query(TABLE_NAME, new String[]{COLUMN_ID, COLUMN_NOME, COLUMN_DESCRICAO, COLUMN_LOGO,
                         COLUMN_DESCRICAO_DETALHADA, COLUMN_ENDERECO_VIRTUAL, COLUMN_EMAIL, COLUMN_TELEFONE, COLUMN_ENDERECO,
                         COLUMN_PATROCINADOR, COLUMN_PALESTRANTE, COLUMN_EXPOSITOR, COLUMN_FK_CATEGORIA_COLABORADOR},
