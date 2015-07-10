@@ -1,8 +1,11 @@
 <resources>
-    <string name="app_name">Centro Sul Negocios</string>
+    <string name="app_name">Centro Sul Negócios 2015</string>
     <string name="nome">Nome</string>
     <string name="descricao">Descrição</string>
     <string name="email">Email</string>
     <string name="endereco">Endereço</string>
     <string name="telefone">Telefone</string>
+    <string name="fragment_proximoseventos_title">Não Perca!</string>
+    <string name="fragment_categoriaeventos_title">+ Eventos</string>
+    <string name="fragment_categoriacolaboradores_title">Colaboradores</string>
 </resources>
