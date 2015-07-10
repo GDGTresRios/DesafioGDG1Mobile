@@ -37,8 +37,8 @@ public class CategoriaEventoDao {
         return false;
     }
 
-    public ArrayList<CategoriaEvento> listAll() {
-        ArrayList<CategoriaEvento> categoriaEventoList = new ArrayList<>();
+    public List<CategoriaEvento> listAll() {
+        List<CategoriaEvento> categoriaEventoList = new ArrayList<>();
         Cursor cursor = database.query(TABLE_NAME, new String[]{COLUMN_ID, COLUMN_NOME}, null, null, null, null, null);
 
         while(cursor.moveToNext()) {

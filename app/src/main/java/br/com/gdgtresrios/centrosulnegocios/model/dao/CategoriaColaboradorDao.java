@@ -40,8 +40,8 @@ public class CategoriaColaboradorDao {
         return false;
     }
 
-    public ArrayList<CategoriaColaborador> listAll() {
-        ArrayList<CategoriaColaborador> categoriaColaboradorList = new ArrayList<>();
+    public List<CategoriaColaborador> listAll() {
+        List<CategoriaColaborador> categoriaColaboradorList = new ArrayList<>();
         Cursor cursor = database.query(TABLE_NAME, new String[]{COLUMN_ID, COLUMN_NOME}, null, null, null, null, null);
 
         while(cursor.moveToNext()) {
