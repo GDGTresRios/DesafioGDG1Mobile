@@ -1,39 +1,39 @@
-package br.com.gdgtresrios.centrosultnegocios.viewcontroller.listviewadapter;
+package br.com.gdgtresrios.centrosultnegocios.controller.listviewadapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.List;
 
 import br.com.gdgtresrios.centrosulnegocios.R;
-import br.com.gdgtresrios.centrosulnegocios.model.CategoriaEvento;
+import br.com.gdgtresrios.centrosulnegocios.model.Colaborador;
 
-public class CategoriaEventoAdapter extends BaseAdapter {
+public class ColaboradorAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;
-    private final List<CategoriaEvento> categoriaEventos;
+    private final List<Colaborador> colaboradores;
     private final Context context;
 
-    public CategoriaEventoAdapter(List<CategoriaEvento> categoriaEventos, Context context) {
+    public ColaboradorAdapter(List<Colaborador> colaboradores, Context context) {
+        this.colaboradores = colaboradores;
         this.context = context;
-        this.categoriaEventos = categoriaEventos;
         this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
     }
 
     @Override
     public int getCount() {
-        return categoriaEventos != null ? categoriaEventos.size() : 0;
+        return colaboradores != null ? colaboradores.size() : 0;
     }
 
     @Override
     public Object getItem(int position) {
-        return categoriaEventos != null ? categoriaEventos.get(position) : null;
+        return colaboradores != null ? colaboradores.get(position) : null;
     }
 
     @Override
@@ -47,23 +47,31 @@ public class CategoriaEventoAdapter extends BaseAdapter {
 
         if (convertView == null){
             holder = new ViewHolder();
-            int layout = R.layout.categoria_evento_list;
+
+            int layout = R.layout.colaborador_list;
             convertView = inflater.inflate(layout, null);
             convertView.setTag(holder);
 
             holder.tNome = (TextView) convertView.findViewById(R.id.tNome);
+            holder.imgFoto = (ImageView) convertView.findViewById(R.id.img);
+            holder.progress = (ProgressBar) convertView.findViewById(R.id.progress);
 
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        CategoriaEvento c = categoriaEventos.get(position);
+        holder.imgFoto.setImageBitmap(null);
+
+        Colaborador c = colaboradores.get(position);
         holder.tNome.setText(c.getNome());
+        //holder.imgFoto
 
         return convertView;
     }
 
     static class ViewHolder{
         TextView tNome;
+        ImageView imgFoto;
+        ProgressBar progress;
     }
 }

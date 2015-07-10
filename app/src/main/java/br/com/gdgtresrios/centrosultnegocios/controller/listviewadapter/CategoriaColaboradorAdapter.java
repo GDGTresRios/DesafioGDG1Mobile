@@ -1,6 +1,5 @@
-package br.com.gdgtresrios.centrosultnegocios.viewcontroller.listviewadapter;
+package br.com.gdgtresrios.centrosultnegocios.controller.listviewadapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;

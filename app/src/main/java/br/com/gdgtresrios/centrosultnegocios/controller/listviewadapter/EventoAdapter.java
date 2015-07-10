@@ -1,6 +1,5 @@
-package br.com.gdgtresrios.centrosultnegocios.viewcontroller.listviewadapter;
+package br.com.gdgtresrios.centrosultnegocios.controller.listviewadapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,31 +9,35 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import br.com.gdgtresrios.centrosulnegocios.R;
-import br.com.gdgtresrios.centrosulnegocios.model.Colaborador;
+import br.com.gdgtresrios.centrosulnegocios.model.Evento;
 
-public class ColaboradorAdapter extends BaseAdapter {
+public class EventoAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;
-    private final List<Colaborador> colaboradores;
+    private final List<Evento> eventos;
     private final Context context;
+    private DateFormat mFormatter = new SimpleDateFormat("dd-MM-yyyy");
 
-    public ColaboradorAdapter(List<Colaborador> colaboradores, Context context) {
-        this.colaboradores = colaboradores;
+    public EventoAdapter(List<Evento> eventos, Context context) {
+        this.eventos = eventos;
         this.context = context;
         this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
     public int getCount() {
-        return colaboradores != null ? colaboradores.size() : 0;
+        return eventos != null ? eventos.size() : 0;
     }
 
     @Override
     public Object getItem(int position) {
-        return colaboradores != null ? colaboradores.get(position) : null;
+        return eventos != null ? eventos.get(position) : null;
     }
 
     @Override
@@ -49,11 +52,13 @@ public class ColaboradorAdapter extends BaseAdapter {
         if (convertView == null){
             holder = new ViewHolder();
 
-            int layout = R.layout.colaborador_list;
+            int layout = R.layout.evento_list;
             convertView = inflater.inflate(layout, null);
             convertView.setTag(holder);
 
             holder.tNome = (TextView) convertView.findViewById(R.id.tNome);
+            holder.tDescricao = (TextView) convertView.findViewById(R.id.tDescricao);
+            holder.tDateEvento = (TextView) convertView.findViewById(R.id.tDateEvento);
             holder.imgFoto = (ImageView) convertView.findViewById(R.id.img);
             holder.progress = (ProgressBar) convertView.findViewById(R.id.progress);
 
@@ -63,8 +68,13 @@ public class ColaboradorAdapter extends BaseAdapter {
 
         holder.imgFoto.setImageBitmap(null);
 
-        Colaborador c = colaboradores.get(position);
+        Evento c = eventos.get(position);
         holder.tNome.setText(c.getNome());
+        holder.tDescricao.setText(c.getDescricao());
+
+        Date data = c.getDataHora();
+        String formatDate = mFormatter.format(data);
+        holder.tDateEvento.setText(formatDate);
         //holder.imgFoto
 
         return convertView;
@@ -72,6 +82,8 @@ public class ColaboradorAdapter extends BaseAdapter {
 
     static class ViewHolder{
         TextView tNome;
+        TextView tDescricao;
+        TextView tDateEvento;
         ImageView imgFoto;
         ProgressBar progress;
     }

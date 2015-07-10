@@ -1,4 +1,4 @@
-package br.com.gdgtresrios.centrosultnegocios.viewcontroller.fragment;
+package br.com.gdgtresrios.centrosultnegocios.controller.fragment;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
