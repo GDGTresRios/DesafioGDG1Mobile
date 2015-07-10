@@ -15,16 +15,13 @@ import java.util.List;
 import br.com.gdgtresrios.centrosulnegocios.R;
 import br.com.gdgtresrios.centrosulnegocios.model.Colaborador;
 
-/**
- * Created by Wanderlei on 02/07/2015.
- */
 public class ColaboradorAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;
     private final List<Colaborador> colaboradores;
-    private final Activity context;
+    private final Context context;
 
-    public ColaboradorAdapter(List<Colaborador> colaboradores, Activity context) {
+    public ColaboradorAdapter(List<Colaborador> colaboradores, Context context) {
         this.colaboradores = colaboradores;
         this.context = context;
         this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

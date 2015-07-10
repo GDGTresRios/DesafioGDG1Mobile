@@ -13,17 +13,13 @@ import java.util.List;
 import br.com.gdgtresrios.centrosulnegocios.R;
 import br.com.gdgtresrios.centrosulnegocios.model.CategoriaEvento;
 
-/**
- * Created by Wanderlei on 02/07/2015.
- */
-
 public class CategoriaEventoAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;
     private final List<CategoriaEvento> categoriaEventos;
-    private final Activity context;
+    private final Context context;
 
-    public CategoriaEventoAdapter(List<CategoriaEvento> categoriaEventos, Activity context) {
+    public CategoriaEventoAdapter(List<CategoriaEvento> categoriaEventos, Context context) {
         this.context = context;
         this.categoriaEventos = categoriaEventos;
         this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
