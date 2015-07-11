@@ -4,7 +4,7 @@
     <application android:allowBackup="true" android:label="@string/app_name"
         android:icon="@mipmap/ic_launcher" android:theme="@style/AppTheme">
 
-        <activity android:name="br.com.gdgtresrios.centrosultnegocios.controller.activity.HomeActivity">
+        <activity android:name="br.com.gdgtresrios.centrosultnegocios.controller.activity.EventoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
