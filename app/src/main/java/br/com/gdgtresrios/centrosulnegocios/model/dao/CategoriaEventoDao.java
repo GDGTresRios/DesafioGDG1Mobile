@@ -16,6 +16,12 @@ public class CategoriaEventoDao {
     public static final String COLUMN_ID = "id";
     public static final String COLUMN_NOME = "nome";
 
+    public static final String DROP_TABLE =   "DROP TABLE IF EXISTS " + TABLE_NAME + ";\n";
+    public static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + " (\n" +
+                                                    COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, \n" +
+                                                    COLUMN_NOME + " TEXT NOT NULL \n" +
+                                                ");\n";
+
     private SQLiteDatabase database;
 
     public CategoriaEventoDao(SQLiteDatabase database) {

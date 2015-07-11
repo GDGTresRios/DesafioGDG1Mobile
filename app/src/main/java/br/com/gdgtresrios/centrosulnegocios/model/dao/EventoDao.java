@@ -26,6 +26,23 @@ public class EventoDao {
     public static final String COLUMN_FK_CATEGORIA_EVENTO = "fkcategoriaevento";
     public static final String COLUMN_FK_COLABORADOR = "fkcolaborador";
 
+    public static final String DROP_TABLE =   "DROP TABLE IF EXISTS " + TABLE_NAME + ";\n";
+    public static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + " (\n" +
+                                                    COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, \n" +
+                                                    COLUMN_NOME + " TEXT NOT NULL, \n" +
+                                                    COLUMN_DESCRICAO + " TEXT , \n" +
+                                                    COLUMN_DESCRICAO_DETALHADA + " TEXT , \n" +
+                                                    COLUMN_DATA_HORA + " INTEGER NOT NULL, \n" +
+                                                    COLUMN_DURACAO + " INTEGER , \n" +
+                                                    COLUMN_LOCAL + " TEXT , \n" +
+                                                    COLUMN_FK_CATEGORIA_EVENTO + " INTEGER NOT NULL, \n" +
+                                                    COLUMN_FK_COLABORADOR + " INTEGER NOT NULL, \n" +
+                                                    "FOREIGN KEY(" + COLUMN_FK_CATEGORIA_EVENTO + ") REFERENCES "
+                                                    + CategoriaEventoDao.TABLE_NAME + "(" + CategoriaEventoDao.COLUMN_ID + "), \n" +
+                                                    "FOREIGN KEY(" + COLUMN_FK_COLABORADOR + ") REFERENCES "
+                                                    + ColaboradorDao.TABLE_NAME + "("+ColaboradorDao.COLUMN_ID +") \n" +
+                                                ");\n";
+
     private SQLiteDatabase database;
 
     public EventoDao(SQLiteDatabase database) {

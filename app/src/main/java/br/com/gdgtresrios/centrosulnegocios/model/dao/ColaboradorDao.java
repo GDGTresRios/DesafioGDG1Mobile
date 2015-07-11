@@ -11,7 +11,7 @@ import br.com.gdgtresrios.centrosulnegocios.model.Colaborador;
 
 public class ColaboradorDao {
 
-    public static final String TABLE_NAME = "configuracao";
+    public static final String TABLE_NAME = "colaborador";
     public static final String COLUMN_ID = "id";
     public static final String COLUMN_NOME = "nome";
     public static final String COLUMN_DESCRICAO = "descricao";
@@ -25,6 +25,25 @@ public class ColaboradorDao {
     public static final String COLUMN_PALESTRANTE = "palestrante";
     public static final String COLUMN_EXPOSITOR = "expositor";
     public static final String COLUMN_FK_CATEGORIA_COLABORADOR = "fkcategoriacolaborador";
+
+    public static final String DROP_TABLE =   "DROP TABLE IF EXISTS " + TABLE_NAME + ";\n";
+    public static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + " (\n" +
+                                                    COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, \n" +
+                                                    COLUMN_NOME + " TEXT NOT NULL, \n" +
+                                                    COLUMN_DESCRICAO + " TEXT NOT NULL, \n" +
+                                                    COLUMN_DESCRICAO_DETALHADA + " TEXT , \n" +
+                                                    COLUMN_LOGO + " TEXT , \n" +
+                                                    COLUMN_ENDERECO + " TEXT , \n" +
+                                                    COLUMN_ENDERECO_VIRTUAL + " TEXT , \n" +
+                                                    COLUMN_EMAIL + " TEXT , \n" +
+                                                    COLUMN_TELEFONE + " TEXT , \n" +
+                                                    COLUMN_PALESTRANTE + " INTEGER NOT NULL, \n" +
+                                                    COLUMN_EXPOSITOR + " INTEGER NOT NULL, \n" +
+                                                    COLUMN_PATROCINADOR + " INTEGER NOT NULL, \n" +
+                                                    COLUMN_FK_CATEGORIA_COLABORADOR + " INTEGER NOT NULL, \n" +
+                                                    "FOREIGN KEY(" + COLUMN_FK_CATEGORIA_COLABORADOR + ") REFERENCES "
+                                                    + CategoriaColaboradorDao.TABLE_NAME + "("+CategoriaColaboradorDao.COLUMN_ID +") \n" +
+                                                ");\n";
 
     private SQLiteDatabase database;
 

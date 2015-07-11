@@ -18,6 +18,19 @@ public class ConfiguracaoDao {
     public static final String COLUMN_TELEFONE = "telefone";
     public static final String COLUMN_VERSAO = "versao";
 
+    public static final String DROP_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME + ";\n";
+    public static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + " (\n" +
+                                                    COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, \n" +
+                                                    COLUMN_NOME + " TEXT NOT NULL, \n" +
+                                                    COLUMN_DESCRICAO + " TEXT , \n" +
+                                                    COLUMN_LOGO + " TEXT , \n" +
+                                                    COLUMN_ENDERECO + " TEXT , \n" +
+                                                    COLUMN_MAPA + " TEXT , \n" +
+                                                    COLUMN_TELEFONE + " TEXT , \n" +
+                                                    COLUMN_VERSAO + " TEXT  \n" +
+                                                ");\n";
+
+
     private SQLiteDatabase database;
 
 
