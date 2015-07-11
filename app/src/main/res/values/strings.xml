@@ -12,4 +12,8 @@
     <string name="drawer_itemtitle_evento">Eventos</string>
     <string name="drawer_itemtitle_colaborador">Colaboradores</string>
     <string name="buscaeventoactivity_substitle_todos">Todos</string>
+    <string name="fragment_patrocinadores_title">Patrocinadores</string>
+    <string name="fragment_expositores_title">Expositores</string>
+    <string name="fragment_palestrantes_title">Palestrantes</string>
+    <string name="fragment_categoriacolaborador_title">Outros</string>
 </resources>
