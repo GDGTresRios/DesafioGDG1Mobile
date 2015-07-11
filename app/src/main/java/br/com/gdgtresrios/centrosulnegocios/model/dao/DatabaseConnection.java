@@ -19,6 +19,23 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 CategoriaColaboradorDao.COLUMN_NOME + " TEXT NOT NULL, \n" +
                 CategoriaColaboradorDao.COLUMN_LOGO + " TEXT \n" +
             ");\n" +
+            "CREATE TABLE " + ColaboradorDao.TABLE_NAME + " (\n" +
+                ColaboradorDao.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, \n" +
+                ColaboradorDao.COLUMN_NOME + " TEXT NOT NULL, \n" +
+                ColaboradorDao.COLUMN_DESCRICAO + " TEXT NOT NULL, \n" +
+                ColaboradorDao.COLUMN_DESCRICAO_DETALHADA + " TEXT , \n" +
+                ColaboradorDao.COLUMN_LOGO + " TEXT , \n" +
+                ColaboradorDao.COLUMN_ENDERECO + " TEXT , \n" +
+                ColaboradorDao.COLUMN_ENDERECO_VIRTUAL + " TEXT , \n" +
+                ColaboradorDao.COLUMN_EMAIL + " TEXT , \n" +
+                ColaboradorDao.COLUMN_TELEFONE + " TEXT , \n" +
+                ColaboradorDao.COLUMN_PALESTRANTE + " INTEGER NOT NULL, \n" +
+                ColaboradorDao.COLUMN_EXPOSITOR + " INTEGER NOT NULL, \n" +
+                ColaboradorDao.COLUMN_PATROCINADOR + " INTEGER NOT NULL, \n" +
+                ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR + " INTEGER NOT NULL, \n" +
+                "FOREIGN KEY(" + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR + ") REFERENCES "
+                    + CategoriaColaboradorDao.TABLE_NAME + "("+CategoriaColaboradorDao.COLUMN_ID +") \n" +
+            ");\n" +
             "CREATE TABLE " + EventoDao.TABLE_NAME + " (\n" +
                 EventoDao.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, \n" +
                 EventoDao.COLUMN_NOME + " TEXT NOT NULL, \n" +
@@ -28,7 +45,11 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 EventoDao.COLUMN_DURACAO + " INTEGER , \n" +
                 EventoDao.COLUMN_LOCAL + " TEXT , \n" +
                 EventoDao.COLUMN_FK_CATEGORIA_EVENTO + " INTEGER NOT NULL, \n" +
-                EventoDao.COLUMN_FK_COLABORADOR + " INTEGER NOT NULL \n" +
+                EventoDao.COLUMN_FK_COLABORADOR + " INTEGER NOT NULL, \n" +
+                "FOREIGN KEY(" + EventoDao.COLUMN_FK_CATEGORIA_EVENTO + ") REFERENCES "
+                    + CategoriaEventoDao.TABLE_NAME + "("+CategoriaEventoDao.COLUMN_ID +"), \n" +
+                "FOREIGN KEY(" + EventoDao.COLUMN_FK_COLABORADOR + ") REFERENCES "
+                    + ColaboradorDao.TABLE_NAME + "("+ColaboradorDao.COLUMN_ID +") \n" +
             ");\n" +
             "CREATE TABLE " + ConfiguracaoDao.TABLE_NAME + " (\n" +
                 ConfiguracaoDao.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, \n" +
@@ -43,7 +64,10 @@ public class DatabaseConnection extends SQLiteOpenHelper {
 
     private final String dropTables =
             "DROP TABLE " + CategoriaEventoDao.TABLE_NAME + ";\n" +
-            "DROP TABLE " + CategoriaEventoDao.TABLE_NAME + ";\n";
+            "DROP TABLE " + EventoDao.TABLE_NAME + ";\n" +
+            "DROP TABLE " + ColaboradorDao.TABLE_NAME + ";\n" +
+            "DROP TABLE " + ConfiguracaoDao.TABLE_NAME + ";\n" +
+            "DROP TABLE " + CategoriaColaboradorDao.TABLE_NAME + ";\n";
 
     public DatabaseConnection(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
