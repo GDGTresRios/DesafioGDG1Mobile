@@ -1,12 +1,16 @@
 package br.com.gdgtresrios.centrosultnegocios.controller.activity;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
 import br.com.gdgtresrios.centrosulnegocios.R;
+import br.com.gdgtresrios.centrosulnegocios.model.dao.DatabaseConnection;
+import br.com.gdgtresrios.centrosultnegocios.controller.fragment.CategoriaColaboradorFragment;
 import br.com.gdgtresrios.centrosultnegocios.controller.fragment.CategoriaEventoFragment;
 import br.com.gdgtresrios.centrosultnegocios.controller.fragment.ProximosEventosFragment;
 
@@ -19,6 +23,9 @@ public class HomeActivity extends AppCompatActivity {
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setAdapter(new PagerAdapter());
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
     }
 
     private class PagerAdapter extends FragmentPagerAdapter {
@@ -36,7 +43,7 @@ public class HomeActivity extends AppCompatActivity {
                 case 1:
                     return new CategoriaEventoFragment();
                 case 2:
-                    return null;
+                    return new CategoriaColaboradorFragment();
             }
         }
 
