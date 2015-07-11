@@ -46,23 +46,22 @@ public class CategoriaEventoAdapter extends BaseAdapter {
 
         if (convertView == null){
             holder = new ViewHolder();
-            int layout = R.layout.categoria_evento_list;
-            convertView = inflater.inflate(layout, null);
+            convertView = inflater.inflate(R.layout.categoria_evento_list, null);
             convertView.setTag(holder);
 
-            holder.tNome = (TextView) convertView.findViewById(R.id.tNome);
+            holder.textViewNome = (TextView) convertView.findViewById(R.id.textview_nome);
 
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
         CategoriaEvento c = categoriaEventos.get(position);
-        holder.tNome.setText(c.getNome());
+        holder.textViewNome.setText(c.getNome());
 
         return convertView;
     }
 
     static class ViewHolder{
-        TextView tNome;
+        TextView textViewNome;
     }
 }

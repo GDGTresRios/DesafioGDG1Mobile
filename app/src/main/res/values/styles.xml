@@ -3,7 +3,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="colorPrimary">@color/indigo500</item>
         <item name="colorPrimaryDark">@color/indigo700</item>
-        <item name="colorAccent">@color/amber500</item>
+        <item name="colorAccent">@color/orangeA200</item>
     </style>
 
 </resources>

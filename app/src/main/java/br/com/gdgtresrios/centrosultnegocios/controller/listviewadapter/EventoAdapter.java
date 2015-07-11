@@ -56,7 +56,7 @@ public class EventoAdapter extends BaseAdapter {
             convertView = inflater.inflate(layout, null);
             convertView.setTag(holder);
 
-            holder.tNome = (TextView) convertView.findViewById(R.id.tNome);
+            holder.tNome = (TextView) convertView.findViewById(R.id.textview_nome);
             holder.tDescricao = (TextView) convertView.findViewById(R.id.tDescricao);
             holder.tDateEvento = (TextView) convertView.findViewById(R.id.tDateEvento);
             holder.imgFoto = (ImageView) convertView.findViewById(R.id.img);

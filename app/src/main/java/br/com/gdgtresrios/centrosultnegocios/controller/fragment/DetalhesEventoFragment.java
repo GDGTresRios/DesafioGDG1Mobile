@@ -43,7 +43,7 @@ public class DetalhesEventoFragment extends Fragment {
     private void updateView(){
         View view = getView();
 
-        TextView tNome = (TextView) view.findViewById(R.id.tNome);
+        TextView tNome = (TextView) view.findViewById(R.id.textview_nome);
         TextView tDescricao = (TextView) view.findViewById(R.id.tDescricao);
         TextView tDescDetalhada = (TextView) view.findViewById(R.id.tDescDetalhada);
         TextView tDateEvento = (TextView) view.findViewById(R.id.tDateEvento);

@@ -13,7 +13,7 @@
         android:src="@mipmap/ic_launcher"/>
 
     <TextView
-        android:id="@+id/tNome"
+        android:id="@+id/textview_nome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@id/tNome"
+        android:layout_below="@id/textview_nome"
         android:alpha="0.87"
         android:padding="4dp"
         android:textSize="14sp"
