@@ -52,6 +52,8 @@ public class CategoriaColaboradorDao {
             categoriaColaboradorList.add(categoriaColaborador);
         }
 
+        cursor.close();
+
         return categoriaColaboradorList;
     }
 
@@ -64,8 +66,12 @@ public class CategoriaColaboradorDao {
             categoriaColaborador.setId(cursor.getLong(0));
             categoriaColaborador.setNome(cursor.getString(1));
 
+            cursor.close();
+
             return categoriaColaborador;
         }
+
+        cursor.close();
 
         return null;
     }

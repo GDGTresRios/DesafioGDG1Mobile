@@ -28,7 +28,6 @@ public class EventoDao {
 
     private SQLiteDatabase database;
 
-
     public EventoDao(SQLiteDatabase database) {
         this.database = database;
     }
@@ -78,6 +77,8 @@ public class EventoDao {
             eventoList.add(evento);
         }
 
+        cursor.close();
+
         return eventoList;
     }
 
@@ -102,6 +103,8 @@ public class EventoDao {
 
             eventoList.add(evento);
         }
+
+        cursor.close();
 
         return eventoList;
     }
@@ -129,8 +132,12 @@ public class EventoDao {
                 eventoList.add(evento);
             }
 
+            cursor.close();
+
             return eventoList;
         }
+
+        cursor.close();
 
         return eventoList;
     }

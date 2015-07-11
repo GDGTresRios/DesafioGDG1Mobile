@@ -49,6 +49,8 @@ public class CategoriaEventoDao {
             categoriaEventoList.add(categoriaEvento);
         }
 
+        cursor.close();
+
         return categoriaEventoList;
     }
 
@@ -61,8 +63,12 @@ public class CategoriaEventoDao {
             categoriaEvento.setId(cursor.getLong(0));
             categoriaEvento.setNome(cursor.getString(1));
 
+            cursor.close();
+
             return categoriaEvento;
         }
+
+        cursor.close();
 
         return null;
     }

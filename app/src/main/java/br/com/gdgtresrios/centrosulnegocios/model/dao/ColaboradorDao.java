@@ -59,6 +59,8 @@ public class ColaboradorDao {
             colaboradorList.add(colaborador);
         }
 
+        cursor.close();
+
         return colaboradorList;
     }
 
@@ -88,6 +90,8 @@ public class ColaboradorDao {
             colaboradorList.add(colaborador);
         }
 
+        cursor.close();
+
         return colaboradorList;
     }
 
@@ -116,6 +120,8 @@ public class ColaboradorDao {
 
             return colaborador;
         }
+        
+        cursor.close();
 
         return null;
     }
