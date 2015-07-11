@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import java.util.Arrays;
@@ -15,6 +16,7 @@ import br.com.gdgtresrios.centrosulnegocios.R;
 import br.com.gdgtresrios.centrosulnegocios.model.CategoriaEvento;
 import br.com.gdgtresrios.centrosulnegocios.model.dao.CategoriaEventoDao;
 import br.com.gdgtresrios.centrosulnegocios.model.dao.DatabaseConnection;
+import br.com.gdgtresrios.centrosultnegocios.controller.activity.BuscaEventoActivity;
 import br.com.gdgtresrios.centrosultnegocios.controller.listviewadapter.CategoriaEventoAdapter;
 
 public class CategoriaEventoFragment extends Fragment {
@@ -42,7 +44,13 @@ public class CategoriaEventoFragment extends Fragment {
 
         gridViewCategoriaEvento = (GridView) view.findViewById(R.id.gridview_categoriaevento);
         gridViewCategoriaEvento.setAdapter(new CategoriaEventoAdapter(categoriaEventoList, getActivity()));
-
+        gridViewCategoriaEvento.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                CategoriaEvento categoriaEvento = (CategoriaEvento) parent.getAdapter().getItem(position);
+                startActivity(BuscaEventoActivity.newIntent(getActivity(), categoriaEvento));
+            }
+        });
         return view;
     }
 
