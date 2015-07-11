@@ -50,9 +50,11 @@ public class CategoriaColaboradorFragment extends Fragment {
     private List<CategoriaColaborador> getAllCategoriaColaboradorFromDatabase() {
         SQLiteDatabase databaseConnection = new DatabaseConnection(getActivity()).getWritableDatabase();
         CategoriaColaboradorDao categoriaColaboradorDao = new CategoriaColaboradorDao(databaseConnection);
+        List<CategoriaColaborador> categoriaColaboradorList = categoriaColaboradorDao.listAll();
         databaseConnection.close();
 
-        return categoriaColaboradorDao.listAll();
+        return categoriaColaboradorList;
+
     }
 
     @Override

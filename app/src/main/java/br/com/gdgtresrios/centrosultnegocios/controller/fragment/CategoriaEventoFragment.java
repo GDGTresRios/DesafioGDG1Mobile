@@ -49,9 +49,10 @@ public class CategoriaEventoFragment extends Fragment {
     private List<CategoriaEvento> getAllCategoriaEventoFromDatabase() {
         SQLiteDatabase databaseConnection = new DatabaseConnection(getActivity()).getWritableDatabase();
         CategoriaEventoDao categoriaEventoDao = new CategoriaEventoDao(databaseConnection);
+        List<CategoriaEvento> categoriaEventoList = categoriaEventoDao.listAll();
         databaseConnection.close();
 
-        return categoriaEventoDao.listAll();
+        return categoriaEventoList;
     }
 
     @Override

@@ -49,9 +49,10 @@ public class ProximosEventosFragment extends Fragment {
     private List<Evento> getNextEventosFromDatabase() {
         SQLiteDatabase databaseConnection = new DatabaseConnection(getActivity()).getWritableDatabase();
         EventoDao eventoDao = new EventoDao(databaseConnection);
+        List<Evento> eventoList = eventoDao.listNext(20);
         databaseConnection.close();
 
-        return eventoDao.listNext(20);
+        return eventoList;
     }
 
     @Override
