@@ -1,13 +1,17 @@
 package br.com.gdgtresrios.centrosultnegocios.controller.activity;
 
+import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NavUtils;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
@@ -39,21 +43,21 @@ public class BuscaEventoActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         categoriaEvento = getIntent().getParcelableExtra(INTENT_KEY_CATEGORIAEVENTO);
-        if(categoriaEvento == null) {
+        if (categoriaEvento == null) {
             getSupportActionBar().setSubtitle(getString(R.string.buscaeventoactivity_substitle_todos));
         } else {
             getSupportActionBar().setSubtitle(categoriaEvento.getNome());
         }
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        if(savedInstanceState == null) {
-            eventoList = listEventosFromDatabase(categoriaEvento);
+        if (savedInstanceState == null) {
+            eventoList = categoriaEvento == null ? listEventosFromDatabase() : listEventosFromDatabase(categoriaEvento);
         } else {
             Evento[] categoriaColaboradorArray = (Evento[]) savedInstanceState.getParcelableArray(BUNDLE_KEY_EVENTO);
-            if(categoriaColaboradorArray != null) {
+            if (categoriaColaboradorArray != null) {
                 eventoList = Arrays.asList(categoriaColaboradorArray);
             } else {
-                eventoList = listEventosFromDatabase(categoriaEvento);
+                eventoList = categoriaEvento == null ? listEventosFromDatabase() : listEventosFromDatabase(categoriaEvento);
             }
         }
 
@@ -61,15 +65,29 @@ public class BuscaEventoActivity extends AppCompatActivity {
         listViewEvento.setAdapter(new EventoAdapter(eventoList, this));
     }
 
-    private List<Evento> listEventosFromDatabase(@Nullable CategoriaEvento categoriaEvento) {
+    private List<Evento> listEventosFromDatabase(CategoriaEvento categoriaEvento) {
         SQLiteDatabase databaseConnection = new DatabaseConnection(this).getWritableDatabase();
         EventoDao eventoDao = new EventoDao(databaseConnection);
         List<Evento> eventoList;
-        if(categoriaEvento == null) {
-            eventoList = eventoDao.listByCategoria(categoriaEvento);
-        } else {
-            eventoList = eventoDao.listAll();
-        }
+        eventoList = eventoDao.listByCategoria(categoriaEvento);
+        databaseConnection.close();
+
+        return eventoList;
+    }
+
+    private List<Evento> listEventosFromDatabase(String nome) {
+        SQLiteDatabase databaseConnection = new DatabaseConnection(this).getWritableDatabase();
+        EventoDao eventoDao = new EventoDao(databaseConnection);
+        List<Evento> eventoList = eventoDao.listByNome(nome);
+        databaseConnection.close();
+
+        return eventoList;
+    }
+
+    private List<Evento> listEventosFromDatabase() {
+        SQLiteDatabase databaseConnection = new DatabaseConnection(this).getWritableDatabase();
+        EventoDao eventoDao = new EventoDao(databaseConnection);
+        List<Evento> eventoList = eventoDao.listAll();
         databaseConnection.close();
 
         return eventoList;
@@ -84,10 +102,39 @@ public class BuscaEventoActivity extends AppCompatActivity {
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        if(eventoList != null) {
+        if (eventoList != null) {
             outState.putParcelableArray(BUNDLE_KEY_EVENTO, eventoList.toArray(new Evento[eventoList.size()]));
         }
         super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_buscaevento, menu);
+
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        MenuItem searchMenuItem = menu.findItem(R.id.action_search);
+        SearchView searchViewAction = (SearchView) MenuItemCompat.getActionView(searchMenuItem);
+        searchViewAction.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchViewAction.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                List<Evento> eventoList = listEventosFromDatabase(query);
+                listViewEvento.setAdapter(new EventoAdapter(eventoList, BuscaEventoActivity.this));
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                if(newText.equals("")) {
+                    List<Evento> eventoList = listEventosFromDatabase();
+                    listViewEvento.setAdapter(new EventoAdapter(eventoList, BuscaEventoActivity.this));
+                }
+                return false;
+            }
+        });
+
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override

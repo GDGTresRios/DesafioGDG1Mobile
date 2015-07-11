@@ -16,4 +16,5 @@
     <string name="fragment_expositores_title">Expositores</string>
     <string name="fragment_palestrantes_title">Palestrantes</string>
     <string name="fragment_categoriacolaborador_title">Outros</string>
+    <string name="buscarevento_busca">Buscar Evento</string>
 </resources>
