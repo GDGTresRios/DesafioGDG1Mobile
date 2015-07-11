@@ -10,6 +10,12 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name="br.com.gdgtresrios.centrosultnegocios.controller.activity.BuscaEventoActivity"
+            android:label="@string/eventoactivity_title">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="br.com.gdgtresrios.centrosultnegocios.controller.activity.EventoActivity" />
+        </activity>
 
     </application>
 
