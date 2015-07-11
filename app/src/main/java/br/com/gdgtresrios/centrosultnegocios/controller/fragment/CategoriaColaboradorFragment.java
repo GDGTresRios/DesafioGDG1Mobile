@@ -6,21 +6,20 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
+import android.widget.GridView;
 
 import java.util.Arrays;
 import java.util.List;
 
 import br.com.gdgtresrios.centrosulnegocios.R;
 import br.com.gdgtresrios.centrosulnegocios.model.CategoriaColaborador;
-import br.com.gdgtresrios.centrosulnegocios.model.CategoriaEvento;
 import br.com.gdgtresrios.centrosulnegocios.model.dao.CategoriaColaboradorDao;
 import br.com.gdgtresrios.centrosulnegocios.model.dao.DatabaseConnection;
 import br.com.gdgtresrios.centrosultnegocios.controller.listviewadapter.CategoriaColaboradorAdapter;
 
 public class CategoriaColaboradorFragment extends Fragment {
 
-    private ListView listViewCategoriaColaborador;
+    private GridView gridViewCategoriaColaborador;
     private List<CategoriaColaborador> categoriaColaboradorList;
 
     private static final String CATEGORIACOLABORADORLIST_KEY = "categoriacolaboradorlist_key";
@@ -41,8 +40,8 @@ public class CategoriaColaboradorFragment extends Fragment {
             categoriaColaboradorList = getAllCategoriaColaboradorFromDatabase();
         }
 
-        listViewCategoriaColaborador = (ListView) view.findViewById(R.id.listview_categoriacolaborador);
-        listViewCategoriaColaborador.setAdapter(new CategoriaColaboradorAdapter(categoriaColaboradorList, getActivity()));
+        gridViewCategoriaColaborador = (GridView) view.findViewById(R.id.gridview_categoriacolaborador);
+        gridViewCategoriaColaborador.setAdapter(new CategoriaColaboradorAdapter(categoriaColaboradorList, getActivity()));
 
         return view;
     }

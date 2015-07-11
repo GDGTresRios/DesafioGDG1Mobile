@@ -43,7 +43,7 @@ public class DetalhesColaboradorFragment extends Fragment {
 
         View view = getView();
 
-        TextView tNome = (TextView) view.findViewById(R.id.tNome);
+        TextView tNome = (TextView) view.findViewById(R.id.textview_nome);
         TextView tDescricao = (TextView) view.findViewById(R.id.tDescricao);
         TextView tEndereco = (TextView) view.findViewById(R.id.tEndereco);
         TextView tEmail = (TextView) view.findViewById(R.id.tEmail);

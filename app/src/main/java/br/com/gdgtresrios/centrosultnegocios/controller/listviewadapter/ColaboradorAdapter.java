@@ -52,7 +52,7 @@ public class ColaboradorAdapter extends BaseAdapter {
             convertView = inflater.inflate(layout, null);
             convertView.setTag(holder);
 
-            holder.tNome = (TextView) convertView.findViewById(R.id.tNome);
+            holder.tNome = (TextView) convertView.findViewById(R.id.textview_nome);
             holder.imgFoto = (ImageView) convertView.findViewById(R.id.img);
             holder.progress = (ProgressBar) convertView.findViewById(R.id.progress);
 
