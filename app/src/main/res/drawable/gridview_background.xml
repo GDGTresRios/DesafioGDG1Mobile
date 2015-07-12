@@ -7,5 +7,5 @@
     <!-- pressed -->
     <item android:state_pressed="true" android:drawable="@color/amber50" />
     <!-- default -->
-    <item android:drawable="@android:color/transparent" />
+    <item android:drawable="@color/orangeA200" />
 </selector>
