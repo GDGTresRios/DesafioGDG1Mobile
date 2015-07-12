@@ -88,7 +88,7 @@ public class ColaboradorDao {
         Cursor cursor = database.query(TABLE_NAME, new String[]{COLUMN_ID, COLUMN_NOME, COLUMN_DESCRICAO, COLUMN_LOGO,
                         COLUMN_DESCRICAO_DETALHADA, COLUMN_ENDERECO_VIRTUAL, COLUMN_EMAIL, COLUMN_TELEFONE, COLUMN_ENDERECO,
                         COLUMN_PATROCINADOR, COLUMN_PALESTRANTE, COLUMN_EXPOSITOR, COLUMN_FK_CATEGORIA_COLABORADOR},
-                        COLUMN_NOME + " = ? ", new String[]{nome}, null, null, null);
+                        COLUMN_NOME + " LIKE ? ", new String[]{"%"+nome+"%"}, null, null, null);
 
         while (cursor.moveToNext()) {
             Colaborador colaborador = new Colaborador();
