@@ -25,7 +25,7 @@
         android:text="@string/nome"/>
 
     <TextView
-        android:id="@+id/tDescricao"
+        android:id="@+id/textview_descricao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
