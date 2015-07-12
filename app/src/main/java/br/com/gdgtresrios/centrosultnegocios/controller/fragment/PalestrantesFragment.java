@@ -27,7 +27,7 @@ public class PalestrantesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view  = inflater.inflate(R.layout.fragment_expositores, container, false);
+        View view  = inflater.inflate(R.layout.fragment_palestrantes, container, false);
 
         if (savedInstanceState != null) {
             Colaborador[] categoriaColaboradorArray = (Colaborador[]) savedInstanceState.getParcelableArray(COLABORADORLIST_KEY);
