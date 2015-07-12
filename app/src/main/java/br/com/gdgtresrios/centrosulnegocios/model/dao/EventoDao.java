@@ -156,8 +156,8 @@ public class EventoDao {
         List<Evento> eventoList = new ArrayList<>();
         Cursor cursor = database.query(TABLE_NAME, new String[]{COLUMN_ID, COLUMN_NOME, COLUMN_DESCRICAO,
                 COLUMN_DESCRICAO_DETALHADA, COLUMN_DATA_HORA, COLUMN_DURACAO, COLUMN_LOCAL,
-                COLUMN_FK_CATEGORIA_EVENTO, COLUMN_FK_COLABORADOR}, COLUMN_DATA_HORA + " > ? ", null,
-                null, null, COLUMN_DATA_HORA + " ASC ");
+                COLUMN_FK_CATEGORIA_EVENTO, COLUMN_FK_COLABORADOR}, COLUMN_DATA_HORA + " > ? ",
+                new String[]{String.valueOf(new Date().getTime())}, null, null, COLUMN_DATA_HORA + " ASC ");
 
         for(int i = 0; i < number; i++) {
             if(cursor.moveToNext()) {
