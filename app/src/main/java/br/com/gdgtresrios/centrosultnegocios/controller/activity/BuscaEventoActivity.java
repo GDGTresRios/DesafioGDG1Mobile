@@ -28,6 +28,7 @@ import br.com.gdgtresrios.centrosultnegocios.controller.listviewadapter.EventoAd
 public class BuscaEventoActivity extends AppCompatActivity {
 
     private static final String INTENT_KEY_CATEGORIAEVENTO = "intent_key_categoriaevento";
+    private static final String INTENT_KEY_NOME = "intent_key_nome";
     private final String BUNDLE_KEY_EVENTO = "bundle_key_evento";
 
     private ListView listViewEvento;
@@ -43,6 +44,7 @@ public class BuscaEventoActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         categoriaEvento = getIntent().getParcelableExtra(INTENT_KEY_CATEGORIAEVENTO);
+        String nome = getIntent().getStringExtra(INTENT_KEY_NOME);
         if (categoriaEvento == null) {
             getSupportActionBar().setSubtitle(getString(R.string.buscaeventoactivity_substitle_todos));
         } else {
@@ -51,13 +53,13 @@ public class BuscaEventoActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         if (savedInstanceState == null) {
-            eventoList = categoriaEvento == null ? listEventosFromDatabase() : listEventosFromDatabase(categoriaEvento);
+            eventoList = listEventosFromDatabase(categoriaEvento, nome);
         } else {
             Evento[] categoriaColaboradorArray = (Evento[]) savedInstanceState.getParcelableArray(BUNDLE_KEY_EVENTO);
             if (categoriaColaboradorArray != null) {
                 eventoList = Arrays.asList(categoriaColaboradorArray);
             } else {
-                eventoList = categoriaEvento == null ? listEventosFromDatabase() : listEventosFromDatabase(categoriaEvento);
+                eventoList = listEventosFromDatabase(categoriaEvento, nome);
             }
         }
 
@@ -65,37 +67,32 @@ public class BuscaEventoActivity extends AppCompatActivity {
         listViewEvento.setAdapter(new EventoAdapter(eventoList, this));
     }
 
-    private List<Evento> listEventosFromDatabase(CategoriaEvento categoriaEvento) {
+    private List<Evento> listEventosFromDatabase(@Nullable CategoriaEvento categoriaEvento, @Nullable String nome) {
         SQLiteDatabase databaseConnection = new DatabaseConnection(this).getWritableDatabase();
         EventoDao eventoDao = new EventoDao(databaseConnection);
         List<Evento> eventoList;
-        eventoList = eventoDao.listByCategoria(categoriaEvento);
+        if(categoriaEvento == null) {
+            if(nome == null) {
+                eventoList = eventoDao.listAll();
+            } else {
+                eventoList = eventoDao.listByNome(nome);
+            }
+        } else {
+            if(nome == null) {
+                eventoList = eventoDao.listByCategoria(categoriaEvento);
+            } else {
+                eventoList = eventoDao.listByNomeCategoria(categoriaEvento, nome);
+            }
+        }
         databaseConnection.close();
 
         return eventoList;
     }
 
-    private List<Evento> listEventosFromDatabase(String nome) {
-        SQLiteDatabase databaseConnection = new DatabaseConnection(this).getWritableDatabase();
-        EventoDao eventoDao = new EventoDao(databaseConnection);
-        List<Evento> eventoList = eventoDao.listByNome(nome);
-        databaseConnection.close();
-
-        return eventoList;
-    }
-
-    private List<Evento> listEventosFromDatabase() {
-        SQLiteDatabase databaseConnection = new DatabaseConnection(this).getWritableDatabase();
-        EventoDao eventoDao = new EventoDao(databaseConnection);
-        List<Evento> eventoList = eventoDao.listAll();
-        databaseConnection.close();
-
-        return eventoList;
-    }
-
-    public static Intent newIntent(Context context, CategoriaEvento categoriaEvento) {
+    public static Intent newIntent(Context context, @Nullable CategoriaEvento categoriaEvento, @Nullable String nome) {
         Intent intent = new Intent(context, BuscaEventoActivity.class);
         intent.putExtra(INTENT_KEY_CATEGORIAEVENTO, categoriaEvento);
+        intent.putExtra(INTENT_KEY_NOME, nome);
 
         return intent;
     }
@@ -119,7 +116,7 @@ public class BuscaEventoActivity extends AppCompatActivity {
         searchViewAction.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                List<Evento> eventoList = listEventosFromDatabase(query);
+                List<Evento> eventoList = listEventosFromDatabase(categoriaEvento, query);
                 listViewEvento.setAdapter(new EventoAdapter(eventoList, BuscaEventoActivity.this));
                 return false;
             }
@@ -127,7 +124,7 @@ public class BuscaEventoActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextChange(String newText) {
                 if(newText.equals("")) {
-                    List<Evento> eventoList = listEventosFromDatabase();
+                    List<Evento> eventoList = listEventosFromDatabase(categoriaEvento, null);
                     listViewEvento.setAdapter(new EventoAdapter(eventoList, BuscaEventoActivity.this));
                 }
                 return false;

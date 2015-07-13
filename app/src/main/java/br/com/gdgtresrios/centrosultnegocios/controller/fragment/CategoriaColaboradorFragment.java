@@ -48,7 +48,7 @@ public class CategoriaColaboradorFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 CategoriaColaborador categoriaColaborador = (CategoriaColaborador) parent.getAdapter().getItem(position);
-                startActivity(BuscaColaboradorActivity.newIntent(getActivity(), categoriaColaborador));
+                startActivity(BuscaColaboradorActivity.newIntent(getActivity(), categoriaColaborador, null));
             }
         });
         return view;
