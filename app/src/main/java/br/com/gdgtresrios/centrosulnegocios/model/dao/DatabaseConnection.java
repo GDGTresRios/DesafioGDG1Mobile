@@ -102,7 +102,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
                 + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
-                +") VALUES('GUTO ABRANCHES'," +
+                +") VALUES('Guto Abranches'," +
                 "'Âncora do programa Conta Corrente 2ª edição, apresentado pela GloboNews...', " +
                 "'Âncora do programa Conta Corrente 2ª edição, apresentado pela GloboNews, passou pelas emissoras CNT e Cultura, além do jornal Folha de São Paulo e a revista Veja.'," +
                 " 1, 0, 0, 5)"); // 1
@@ -111,7 +111,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
                 + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
-                +") VALUES('RODRIGO PIMENTEL'," +
+                +") VALUES('Rodrigo Pimentel'," +
                 "'Ex-Capitão do BOPE que serviu de inspiração para o Capitão Nascimento...', " +
                 "'Ex-Capitão do BOPE, Rodrigo Pimentel, é um dos oficiais que serviu de inspiração para o Capitão Nascimento, interpretado pelo ator Wagner Moura.'," +
                 " 1, 0, 0, 5)"); //2
@@ -120,7 +120,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
                 + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
-                +") VALUES('BEL PESCE'," +
+                +") VALUES('Bel Pesce'," +
                 "'Empreendedora, fundadora da FazINOVA  e autora de três livros...', " +
                 "'Empreendedora, fundadora da FazINOVA  e autora de três livros: A Menina do Vale, Procuram-se Super Herois e A Menina do Vale 2. Foi considerada uma das “100 pessoas mais influentes do Brasil”, pela Revista Época.'," +
                 " 1, 0, 0, 5)"); // 3
@@ -129,7 +129,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
                 + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
-                +") VALUES('DR. ROBERT REY'," +
+                +") VALUES('Dr. Robert Rey'," +
                 "'Conhecido como Dr. Rey é um cirurgião plástico e apresentador brasileiro...', " +
                 "'Conhecido como Dr. Rey é um cirurgião plástico e apresentador brasileiro e um dos protagonistas do Dr. 90210 (um reality show exibido nos Estados Unidos pelos canais E! Entertainment e People and Arts.'," +
                 " 1, 0, 0, 5)"); // 4

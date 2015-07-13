@@ -13,6 +13,8 @@ import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.Arrays;
@@ -65,6 +67,13 @@ public class BuscaEventoActivity extends AppCompatActivity {
 
         listViewEvento = (ListView) findViewById(R.id.listview_evento);
         listViewEvento.setAdapter(new EventoAdapter(eventoList, this));
+        listViewEvento.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Evento evento = (Evento) parent.getAdapter().getItem(position);
+                startActivity(VisualizarEvento.newIntent(BuscaEventoActivity.this, evento));
+            }
+        });
     }
 
     private List<Evento> listEventosFromDatabase(@Nullable CategoriaEvento categoriaEvento, @Nullable String nome) {

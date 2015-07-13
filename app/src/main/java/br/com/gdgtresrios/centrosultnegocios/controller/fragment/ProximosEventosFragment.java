@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.Arrays;
@@ -15,6 +16,7 @@ import br.com.gdgtresrios.centrosulnegocios.R;
 import br.com.gdgtresrios.centrosulnegocios.model.Evento;
 import br.com.gdgtresrios.centrosulnegocios.model.dao.DatabaseConnection;
 import br.com.gdgtresrios.centrosulnegocios.model.dao.EventoDao;
+import br.com.gdgtresrios.centrosultnegocios.controller.activity.VisualizarEvento;
 import br.com.gdgtresrios.centrosultnegocios.controller.listviewadapter.EventoAdapter;
 
 public class ProximosEventosFragment extends Fragment {
@@ -42,6 +44,13 @@ public class ProximosEventosFragment extends Fragment {
 
         listViewProximosEventos = (ListView) view.findViewById(R.id.listview_proximos_eventos);
         listViewProximosEventos.setAdapter(new EventoAdapter(eventoList, getActivity()));
+        listViewProximosEventos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Evento evento = (Evento) parent.getAdapter().getItem(position);
+                startActivity(VisualizarEvento.newIntent(getActivity(), evento));
+            }
+        });
 
         return view;
     }

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Centro Sul Negócios 2015</string>
     <string name="nome">Nome</string>
-    <string name="descricao">Descrição</string>
+    <string name="activityvisualizarevento_textview_descricaodetalhada">Sobre o Evento</string>
     <string name="email">Email</string>
     <string name="endereco">Endereço</string>
     <string name="telefone">Telefone</string>
@@ -21,4 +21,9 @@
     <string name="buscarcolaborador">Buscar Colaborador</string>
     <string name="colaboradoractivity_title">Colaboradores</string>
     <string name="referencia_desenvolvidopor">Desenvolvido por GDG Três Rios</string>
+    <string name="activityvisualizarevento_textview_data">Quando</string>
+    <string name="activityvisualizarevento_textview_local">Onde</string>
+    <string name="activityvisualizaevento_indefinido">Indefinido</string>
+    <string name="activityvisualizarevento_textview_categoria">Tipo</string>
+    <string name="activityvisualizarevento_textview_descricaocolaborador">Sobre</string>
 </resources>
