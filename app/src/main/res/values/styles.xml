@@ -4,6 +4,7 @@
         <item name="colorPrimary">@color/indigo500</item>
         <item name="colorPrimaryDark">@color/indigo700</item>
         <item name="colorAccent">@color/orangeA200</item>
+        <item name="colorControlHighlight">@color/indigo50</item>
     </style>
 
 </resources>
