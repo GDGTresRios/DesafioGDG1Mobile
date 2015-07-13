@@ -35,6 +35,32 @@ public class DatabaseConnection extends SQLiteOpenHelper {
     private Date dateEventoRey;
     private String sdateEventoMisturaFina  = "15/07/2015";
     private Date dateEventoMisturaFina;
+    private String sdateEventoThiagoPierre  = "16/07/2015";
+    private Date dateEventoThiagoPierre;
+    private String sdateEventoLeonardoFabiano  = "16/07/2015";
+    private Date dateEventoLeonardoFabiano;
+    private String sdateEventoLarissaJulien  = "17/07/2015";
+    private Date dateEventoLarissaJulien;
+    private String sdateEventoRafaelSantos  = "17/07/2015";
+    private Date dateEventoRafaelSantos;
+    private String sdateEventoAcustico  = "18/07/2015";
+    private Date dateEventoAcustico;
+    private String sdateEventoReplay  = "18/07/2015";
+    private Date dateEventoReplay;
+    private String sdateEventoSebraeRodadaCredito  = "16/07/2015";
+    private Date dateEventoSebraeRodadaCredito;
+    private String sdateEventoSebraeMei  = "16/07/2015";
+    private Date dateEventoSebraeMei;
+    private String sdateEventoSebraeDinheiroInovacao  = "16/07/2015";
+    private Date dateEventoSebraeDinheiroInovacao;
+    private String sdateEventoSebraeEmpreendedorismo  = "17/07/2015";
+    private Date dateEventoSebraeEmpreendedorismo;
+    private String sdateEventoSebraeNegociacaoEmpresarial  = "17/07/2015";
+    private Date dateEventoSebraeNegociacaoEmpresarial;
+    private String sdateEventoSebraeConstruindoIdentidade  = "17/07/2015";
+    private Date dateEventoSebraeConstruindoIdentidade;
+    private String sdateEventoSebraeRedesSociais  = "18/07/2015";
+    private Date dateEventoSebraeRedesSociais;
 
 
 
@@ -50,16 +76,17 @@ public class DatabaseConnection extends SQLiteOpenHelper {
         db.execSQL(EventoDao.CREATE_TABLE);
         db.execSQL(ConfiguracaoDao.CREATE_TABLE);
 
-        db.execSQL("INSERT INTO " + CategoriaEventoDao.TABLE_NAME + "(" + CategoriaEventoDao.COLUMN_NOME + ") VALUES('Palestras')");
-        db.execSQL("INSERT INTO " + CategoriaEventoDao.TABLE_NAME + "(" + CategoriaEventoDao.COLUMN_NOME + ") VALUES('Shows')");
-        db.execSQL("INSERT INTO " + CategoriaEventoDao.TABLE_NAME + "(" + CategoriaEventoDao.COLUMN_NOME + ") VALUES('Workshops')");
-        db.execSQL("INSERT INTO " + CategoriaEventoDao.TABLE_NAME + "(" + CategoriaEventoDao.COLUMN_NOME + ") VALUES('Estandes')");
+        db.execSQL("INSERT INTO " + CategoriaEventoDao.TABLE_NAME + "(" + CategoriaEventoDao.COLUMN_NOME + ") VALUES('Palestras')");  //1
+        db.execSQL("INSERT INTO " + CategoriaEventoDao.TABLE_NAME + "(" + CategoriaEventoDao.COLUMN_NOME + ") VALUES('Shows')");      //2
+        db.execSQL("INSERT INTO " + CategoriaEventoDao.TABLE_NAME + "(" + CategoriaEventoDao.COLUMN_NOME + ") VALUES('Workshops')");  //3
+        db.execSQL("INSERT INTO " + CategoriaEventoDao.TABLE_NAME + "(" + CategoriaEventoDao.COLUMN_NOME + ") VALUES('Estandes')");   //4
 
-        db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Informática')");
-        db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Bandas')");
-        db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Comércio')");
-        db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Turismo')");
-        db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Palestrante')");
+        db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Informática')");  //1
+        db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Bandas')");       //2
+        db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Comércio')");     //3
+        db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Turismo')");      //4
+        db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Palestrante')");  //5
+        db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Empreendedorismo')");  //6
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
@@ -105,6 +132,78 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 "'MPB...', " +
                 "' '," +
                 " 0, 0, 0, 2)"); // 5
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Thiago Alves & Pierre'," +
+                "'MPB...', " +
+                "' '," +
+                " 0, 0, 0, 2)"); // 6
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Leonardo de Freitas e Fabiano'," +
+                "'Sertanejo Universitário...', " +
+                "' '," +
+                " 0, 0, 0, 2)"); // 7
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Larissa Viana e Julien'," +
+                "'Bossa Nova e MPB...', " +
+                "' '," +
+                " 0, 0, 0, 2)"); // 8
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Rafael Santos'," +
+                "'Sertanejo Universitário...', " +
+                "' '," +
+                " 0, 0, 0, 2)"); // 9
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Acústico A3'," +
+                "'MPB, Reggae, Pop Rock...', " +
+                "' '," +
+                " 0, 0, 0, 2)"); // 10
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Banda Replay'," +
+                "'Flashback...', " +
+                "' '," +
+                " 0, 0, 0, 2)"); // 11
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Sebrae'," +
+                "'  ', " +
+                "'  '," +
+                " 1, 0, 1, 6)"); // 12
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Sicomércio'," +
+                "'  ', " +
+                "'  '," +
+                " 1, 1, 1, 3)"); // 12
 
 
         try {
@@ -160,7 +259,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
                     + EventoDao.COLUMN_LOCAL + ") VALUES('Obtendo Sucesso, Cuidando da Saúde, Bem Estar e Beleza'," +
-                    "'A palestra tem como foco: motivação, autoestima, beleza, estética, comportamento...', " +
+                    "'A palestra tem como foco: motivação, autoestima, beleza, estética...', " +
                     "'A palestra tem como foco: motivação, autoestima, beleza, estética, comportamento, nutrição, estilo de vida e cirurgia - A importância de homens e mulheres em estar bem com o corpo e mente, como forma  de obtenção de sucesso na vida pessoal e profissional.'," +
                     dateEventoRey.getTime() + ", 1, 4, 30, 'Salão Principal')");
         } catch (ParseException e){
@@ -177,6 +276,188 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     "'MPB', " +
                     "'    '," +
                     dateEventoMisturaFina.getTime() + ", 2, 5, 60, 'Palco MPB')");
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
+
+        try {
+            dateEventoThiagoPierre = mFormatter.parse(sdateEventoThiagoPierre);
+            db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
+                    + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
+                    + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
+                    + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Thiago Alves & Pierre'," +
+                    "'MPB', " +
+                    "'    '," +
+                    dateEventoThiagoPierre.getTime() + ", 2, 6, 60, 'Palco MPB')");
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
+
+        try {
+            dateEventoLeonardoFabiano = mFormatter.parse(sdateEventoLeonardoFabiano);
+            db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
+                    + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
+                    + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
+                    + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Leonardo de Freitas e Fabiano'," +
+                    "'Sertanejo Universitário', " +
+                    "'    '," +
+                    dateEventoLeonardoFabiano.getTime() + ", 2, 7, 60, 'Salão Principal')");
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
+
+        try {
+            dateEventoLarissaJulien = mFormatter.parse(sdateEventoLarissaJulien);
+            db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
+                    + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
+                    + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
+                    + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Larissa Viana e Julien'," +
+                    "'Bossa Nova e MPB', " +
+                    "'    '," +
+                    dateEventoLarissaJulien.getTime() + ", 2, 8, 60, 'Palco MPB')");
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
+
+        try {
+            dateEventoRafaelSantos = mFormatter.parse(sdateEventoRafaelSantos);
+            db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
+                    + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
+                    + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
+                    + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Rafael Santos'," +
+                    "'Sertanejo Universitário', " +
+                    "'    '," +
+                    dateEventoRafaelSantos.getTime() + ", 2, 9, 60, 'Salão Principal')");
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
+
+        try {
+            dateEventoAcustico = mFormatter.parse(sdateEventoAcustico);
+            db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
+                    + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
+                    + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
+                    + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Acústico A3'," +
+                    "'MPB, Reggae, Pop Rock', " +
+                    "'    '," +
+                    dateEventoAcustico.getTime() + ", 2, 10, 60, 'Palco MPB')");
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
+
+        try {
+            dateEventoReplay = mFormatter.parse(sdateEventoReplay);
+            db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
+                    + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
+                    + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
+                    + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Banda Replay'," +
+                    "'Flashback', " +
+                    "'    '," +
+                    dateEventoReplay.getTime() + ", 2, 11, 60, 'Salão Principal')");
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
+
+        try {
+            dateEventoSebraeRodadaCredito = mFormatter.parse(sdateEventoSebraeRodadaCredito);
+            db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
+                    + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
+                    + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
+                    + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Sessão de Negócios e Rodada de Crédito'," +
+                    "'    ', " +
+                    "'    '," +
+                    dateEventoSebraeRodadaCredito.getTime() + ", 1, 12, 60, 'Salão Principal')");
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
+
+        try {
+            dateEventoSebraeMei = mFormatter.parse(sdateEventoSebraeMei);
+            db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
+                    + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
+                    + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
+                    + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Finanças Pessoais MEI, Empreendedores e Empresários'," +
+                    "'    ', " +
+                    "'    '," +
+                    dateEventoSebraeMei.getTime() + ", 1, 12, 60, 'Salão Principal')");
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
+
+        try {
+            dateEventoSebraeDinheiroInovacao = mFormatter.parse(sdateEventoSebraeDinheiroInovacao);
+            db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
+                    + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
+                    + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
+                    + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Finanças Pessoais MEI, Empreendedores e Empresários'," +
+                    "'Sebrae/Sicomércio', " +
+                    "'    '," +
+                    dateEventoSebraeDinheiroInovacao.getTime() + ", 3, 12, 60, 'Auditório do Salão Nobre')");
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
+
+        try {
+            dateEventoSebraeEmpreendedorismo = mFormatter.parse(sdateEventoSebraeEmpreendedorismo);
+            db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
+                    + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
+                    + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
+                    + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Empreendedorismo e as oportunidades do mercado'," +
+                    "'    ', " +
+                    "'    '," +
+                    dateEventoSebraeEmpreendedorismo.getTime() + ", 1, 12, 60, 'Salão Principal')");
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
+
+        try {
+            dateEventoSebraeNegociacaoEmpresarial = mFormatter.parse(sdateEventoSebraeNegociacaoEmpresarial);
+            db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
+                    + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
+                    + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
+                    + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Negociação Empresarial - formando alianças e parcerias'," +
+                    "'Sebrae/Sicomércio', " +
+                    "'    '," +
+                    dateEventoSebraeNegociacaoEmpresarial.getTime() + ", 3, 12, 60, 'Auditório do Salão Nobre')");
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
+
+        try {
+            dateEventoSebraeConstruindoIdentidade = mFormatter.parse(sdateEventoSebraeConstruindoIdentidade);
+            db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
+                    + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
+                    + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
+                    + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Posicionamento, Marcas e Conceitos - Construindo a identidade da sua empresa'," +
+                    "'Sebrae/Sicomércio', " +
+                    "'    '," +
+                    dateEventoSebraeConstruindoIdentidade.getTime() + ", 3, 12, 60, 'Auditório do Salão Nobre')");
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
+
+        try {
+            dateEventoSebraeRedesSociais = mFormatter.parse(sdateEventoSebraeRedesSociais);
+            db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
+                    + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
+                    + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
+                    + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Utilizando as Redes Sociais (Facebook) para aumentar seus clientes'," +
+                    "'Sebrae/Sicomércio', " +
+                    "'    '," +
+                    dateEventoSebraeRedesSociais.getTime() + ", 3, 12, 60, 'Auditório do Salão Nobre')");
         } catch (ParseException e){
             e.printStackTrace();
         }
