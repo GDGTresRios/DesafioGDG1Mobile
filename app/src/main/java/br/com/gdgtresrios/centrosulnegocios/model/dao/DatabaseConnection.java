@@ -265,7 +265,11 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
                 +") VALUES('IFRJ - Campus Eng. Paulo de Frontin'," +
                 "'Curso Superior de Tecnologia em Jogos Digitais...', " +
-                "'  '," +
+                "'O Campus Engenheiro Paulo de Frontin é um dos atuais 11 campi do IFRJ, localizado na região centro-sul fluminense, no município de Engenheiro Paulo de Frontin, mais precisamente no distrito de Sacra Família do Tinguá.  O Campus encontra-se entre as cidades de São Paulo (SP) e Macaé (RJ), a 27 km do Arco metropolitano do Rio de Janeiro, a 34,4 km da Rodovia Presidente Dutra (BR 116) e a 104 km da capital.  Está situado na região Centro Sul do Estado do Rio de Janeiro – Serra do Mar.\n" +
+                "\n" +
+                "A inauguração do campus se deu em Brasília no dia 1 de fevereiro de 2010 e contou com a presença do então reitor do IFRJ Prof. Dr. Luiz Edmundo Vargas de Aguiar, a atual Presidenta da República Dilma Rousseff, o então presidente da república Luiz Inácio Lula da Silva, o primeiro diretor Prof. Dr. Rodney Cezar de Albuquerque e o então prefeito do município de Eng. Paulo de Frontin, Eduardo Ramos da Paixão.\n" +
+                "\n" +
+                "No início de 2011 iniciou-se a oferta do primeiro curso técnico do campus, Informática para Internet, funcionando na modalidade concomitante e subseqüente no turno vespertino. O objetivo principal deste curso é o de tornar o aluno capaz de aprender a desenvolver programas de computador voltados para a internet e outras redes de computadores, seguindo as especificações e paradigmas da lógica de programação e das linguagens mais avançadas do mercado. Além disso, são apresentadas ao aluno diversas metodologias, lógica de programação e ferramentas de desenvolvimento de sistemas, para construir soluções que auxiliem no processo de criação de interfaces e aplicativos empregados no comércio e marketing eletrônicos.'," +
                 " 0, 0, 0, 5)"); // 16
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
@@ -584,7 +588,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
                     + EventoDao.COLUMN_LOCAL + ") VALUES('Mostra de Jogos Digitais'," +
                     "'Curso Superior de Tecnologia em Jogos Digitais - IFRJ - Campus Eng. Paulo de Frontin', " +
-                    "'    '," +
+                    "'O design curricular do curso de Jogos Digitais do IFRJ em Eng. Paulo de Frontin foi minuciosamente planejado mediante realização de audiências públicas, visitas a universidades que disponibilizam o curso e intenso diálogo com os segmentos produtivos. Cada um dos seis períodos letivos será centrado em uma temática: Jogos em 2D, Jogos em 3D, Jogos em Rede, Jogos para Consoles, Jogos para Dispositivos Móveis e Jogos para TV Digital. Ao final do curso o estudante será diplomado Tecnólogo em Jogos Digitais, estando apto a prosseguir seus estudos em nível de pós-graduação e a ingressar no mercado de trabalho em diferentes segmentos da economia, atuando principalmente como Programador de Jogos Digitais, Game Designer, Artista Gráfico ou, ainda, Músico Digital.'," +
                     dateEventoMostraJogos.getTime() + ", 3, 16, 60, 'Salão Principal')");
         } catch (ParseException e){
             e.printStackTrace();
