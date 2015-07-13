@@ -32,6 +32,7 @@ public class VisualizarColaborador extends AppCompatActivity {
         Colaborador colaborador = getIntent().getParcelableExtra(INTENT_KEY_COLABORADOR);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("");
         TextView textViewNome = (TextView) findViewById(R.id.textview_nome);
         TextView textViewDescricaoDetalhada = (TextView) findViewById(R.id.textview_descricaodetalhada);
 
