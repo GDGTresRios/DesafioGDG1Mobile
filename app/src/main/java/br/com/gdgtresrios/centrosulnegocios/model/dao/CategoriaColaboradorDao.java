@@ -18,6 +18,13 @@ public class CategoriaColaboradorDao {
     public static final String COLUMN_NOME = "nome";
     public static final String COLUMN_LOGO = "logo";
 
+    public static final String DROP_TABLE =    "DROP TABLE IF EXISTS " + TABLE_NAME + ";\n";
+    public static final String CREATE_TABLE =  "CREATE TABLE " + TABLE_NAME + " (\n" +
+                                                    COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, \n" +
+                                                    COLUMN_NOME + " TEXT NOT NULL, \n" +
+                                                    COLUMN_LOGO + " TEXT \n" +
+                                                ");\n";
+
     private SQLiteDatabase database;
 
     public CategoriaColaboradorDao(SQLiteDatabase database) {
@@ -52,6 +59,8 @@ public class CategoriaColaboradorDao {
             categoriaColaboradorList.add(categoriaColaborador);
         }
 
+        cursor.close();
+
         return categoriaColaboradorList;
     }
 
@@ -64,8 +73,12 @@ public class CategoriaColaboradorDao {
             categoriaColaborador.setId(cursor.getLong(0));
             categoriaColaborador.setNome(cursor.getString(1));
 
+            cursor.close();
+
             return categoriaColaborador;
         }
+
+        cursor.close();
 
         return null;
     }

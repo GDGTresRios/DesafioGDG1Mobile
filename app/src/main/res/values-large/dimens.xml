@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="listviewitem_smallsize">200dp</dimen>
+    <dimen name="listviewitem_size">290dp</dimen>
+    <dimen name="listviewitem_image_size">100dp</dimen>
+</resources>

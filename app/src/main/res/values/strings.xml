@@ -1,11 +1,29 @@
 <resources>
     <string name="app_name">Centro Sul Negócios 2015</string>
     <string name="nome">Nome</string>
-    <string name="descricao">Descrição</string>
+    <string name="activityvisualizarevento_textview_descricaodetalhada">Sobre o Evento</string>
     <string name="email">Email</string>
     <string name="endereco">Endereço</string>
     <string name="telefone">Telefone</string>
     <string name="fragment_proximoseventos_title">Não Perca!</string>
     <string name="fragment_categoriaeventos_title">+ Eventos</string>
     <string name="fragment_categoriacolaboradores_title">Colaboradores</string>
+    <string name="eventoactivity_title">Eventos</string>
+    <string name="drawer_itemtitle_evento">Eventos</string>
+    <string name="drawer_itemtitle_colaborador">Colaboradores</string>
+    <string name="buscaeventoactivity_substitle_todos">Todos</string>
+    <string name="fragment_patrocinadores_title">Patrocinadores</string>
+    <string name="fragment_expositores_title">Expositores</string>
+    <string name="fragment_palestrantes_title">Palestrantes</string>
+    <string name="fragment_categoriacolaborador_title">Outros</string>
+    <string name="buscarevento">Buscar Evento</string>
+    <string name="buscaorganizacaoactivity_substitle_todos">Todos</string>
+    <string name="buscarcolaborador">Buscar Colaborador</string>
+    <string name="colaboradoractivity_title">Colaboradores</string>
+    <string name="referencia_desenvolvidopor">Desenvolvido por GDG Três Rios</string>
+    <string name="activityvisualizarevento_textview_data">Quando</string>
+    <string name="activityvisualizarevento_textview_local">Onde</string>
+    <string name="activityvisualizaevento_indefinido">Indefinido</string>
+    <string name="activityvisualizarevento_textview_categoria">Tipo</string>
+    <string name="activityvisualizarevento_textview_descricaocolaborador">Sobre</string>
 </resources>

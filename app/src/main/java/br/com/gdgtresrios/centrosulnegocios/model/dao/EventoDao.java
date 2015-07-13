@@ -26,8 +26,24 @@ public class EventoDao {
     public static final String COLUMN_FK_CATEGORIA_EVENTO = "fkcategoriaevento";
     public static final String COLUMN_FK_COLABORADOR = "fkcolaborador";
 
-    private SQLiteDatabase database;
+    public static final String DROP_TABLE =   "DROP TABLE IF EXISTS " + TABLE_NAME + ";\n";
+    public static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + " (\n" +
+                                                    COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, \n" +
+                                                    COLUMN_NOME + " TEXT NOT NULL, \n" +
+                                                    COLUMN_DESCRICAO + " TEXT , \n" +
+                                                    COLUMN_DESCRICAO_DETALHADA + " TEXT , \n" +
+                                                    COLUMN_DATA_HORA + " INTEGER NOT NULL, \n" +
+                                                    COLUMN_DURACAO + " INTEGER , \n" +
+                                                    COLUMN_LOCAL + " TEXT , \n" +
+                                                    COLUMN_FK_CATEGORIA_EVENTO + " INTEGER NOT NULL, \n" +
+                                                    COLUMN_FK_COLABORADOR + " INTEGER NOT NULL, \n" +
+                                                    "FOREIGN KEY(" + COLUMN_FK_CATEGORIA_EVENTO + ") REFERENCES "
+                                                    + CategoriaEventoDao.TABLE_NAME + "(" + CategoriaEventoDao.COLUMN_ID + "), \n" +
+                                                    "FOREIGN KEY(" + COLUMN_FK_COLABORADOR + ") REFERENCES "
+                                                    + ColaboradorDao.TABLE_NAME + "("+ColaboradorDao.COLUMN_ID +") \n" +
+                                                ");\n";
 
+    private SQLiteDatabase database;
 
     public EventoDao(SQLiteDatabase database) {
         this.database = database;
@@ -59,8 +75,8 @@ public class EventoDao {
     public List<Evento> listByCategoria(CategoriaEvento categoriaEvento) {
         List<Evento> eventoList = new ArrayList<>();
         Cursor cursor = database.query(TABLE_NAME, new String[]{COLUMN_ID, COLUMN_NOME, COLUMN_DESCRICAO,
-                COLUMN_DESCRICAO_DETALHADA, COLUMN_DATA_HORA, COLUMN_DURACAO, COLUMN_LOCAL,
-                COLUMN_FK_CATEGORIA_EVENTO, COLUMN_FK_COLABORADOR}, COLUMN_FK_CATEGORIA_EVENTO + " = ? ",
+                        COLUMN_DESCRICAO_DETALHADA, COLUMN_DATA_HORA, COLUMN_DURACAO, COLUMN_LOCAL,
+                        COLUMN_FK_CATEGORIA_EVENTO, COLUMN_FK_COLABORADOR}, COLUMN_FK_CATEGORIA_EVENTO + " = ? ",
                 new String[]{String.valueOf(categoriaEvento.getId())}, null, null, null);
 
         while(cursor.moveToNext()) {
@@ -78,15 +94,16 @@ public class EventoDao {
             eventoList.add(evento);
         }
 
+        cursor.close();
+
         return eventoList;
     }
 
-    public List<Evento> listByNome(String nome) {
+    public List<Evento> listAll() {
         List<Evento> eventoList = new ArrayList<>();
         Cursor cursor = database.query(TABLE_NAME, new String[]{COLUMN_ID, COLUMN_NOME, COLUMN_DESCRICAO,
-                COLUMN_DESCRICAO_DETALHADA, COLUMN_DATA_HORA, COLUMN_DURACAO, COLUMN_LOCAL,
-                COLUMN_FK_CATEGORIA_EVENTO, COLUMN_FK_COLABORADOR}, COLUMN_NOME + " = ? ",
-                new String[]{nome}, null, null, null);
+                        COLUMN_DESCRICAO_DETALHADA, COLUMN_DATA_HORA, COLUMN_DURACAO, COLUMN_LOCAL,
+                        COLUMN_FK_CATEGORIA_EVENTO, COLUMN_FK_COLABORADOR}, null, null, null, null, null);
 
         while(cursor.moveToNext()) {
             Evento evento = new Evento();
@@ -103,6 +120,62 @@ public class EventoDao {
             eventoList.add(evento);
         }
 
+        cursor.close();
+
+        return eventoList;
+    }
+
+    public List<Evento> listByNome(String nome) {
+        List<Evento> eventoList = new ArrayList<>();
+        Cursor cursor = database.query(TABLE_NAME, new String[]{COLUMN_ID, COLUMN_NOME, COLUMN_DESCRICAO,
+                COLUMN_DESCRICAO_DETALHADA, COLUMN_DATA_HORA, COLUMN_DURACAO, COLUMN_LOCAL,
+                COLUMN_FK_CATEGORIA_EVENTO, COLUMN_FK_COLABORADOR}, COLUMN_NOME + " LIKE ? ",
+                new String[]{"%"+nome+"%"}, null, null, null);
+
+        while(cursor.moveToNext()) {
+            Evento evento = new Evento();
+            evento.setId(cursor.getLong(0));
+            evento.setNome(cursor.getString(1));
+            evento.setDescricao(cursor.getString(2));
+            evento.setDescricaoDetalhada(cursor.getString(3));
+            evento.setDataHora(new Date(cursor.getLong(4)));
+            evento.setDuracao(new Date(cursor.getLong(5)));
+            evento.setLocal(cursor.getString(6));
+            evento.setCategoriaEvento(new CategoriaEventoDao(database).findById(cursor.getLong(7)));
+            evento.setColaborador(new ColaboradorDao(database).findById(cursor.getLong(8)));
+
+            eventoList.add(evento);
+        }
+
+        cursor.close();
+
+        return eventoList;
+    }
+
+    public List<Evento> listByNomeCategoria(CategoriaEvento categoriaEvento, String nome) {
+        List<Evento> eventoList = new ArrayList<>();
+        Cursor cursor = database.query(TABLE_NAME, new String[]{COLUMN_ID, COLUMN_NOME, COLUMN_DESCRICAO,
+                        COLUMN_DESCRICAO_DETALHADA, COLUMN_DATA_HORA, COLUMN_DURACAO, COLUMN_LOCAL,
+                        COLUMN_FK_CATEGORIA_EVENTO, COLUMN_FK_COLABORADOR}, COLUMN_NOME + " LIKE ? AND " + COLUMN_FK_CATEGORIA_EVENTO + " = ? ",
+                new String[]{"%"+nome+"%", String.valueOf(categoriaEvento.getId())}, null, null, null);
+
+        while(cursor.moveToNext()) {
+            Evento evento = new Evento();
+            evento.setId(cursor.getLong(0));
+            evento.setNome(cursor.getString(1));
+            evento.setDescricao(cursor.getString(2));
+            evento.setDescricaoDetalhada(cursor.getString(3));
+            evento.setDataHora(new Date(cursor.getLong(4)));
+            evento.setDuracao(new Date(cursor.getLong(5)));
+            evento.setLocal(cursor.getString(6));
+            evento.setCategoriaEvento(new CategoriaEventoDao(database).findById(cursor.getLong(7)));
+            evento.setColaborador(new ColaboradorDao(database).findById(cursor.getLong(8)));
+
+            eventoList.add(evento);
+        }
+
+        cursor.close();
+
         return eventoList;
     }
 
@@ -110,8 +183,8 @@ public class EventoDao {
         List<Evento> eventoList = new ArrayList<>();
         Cursor cursor = database.query(TABLE_NAME, new String[]{COLUMN_ID, COLUMN_NOME, COLUMN_DESCRICAO,
                 COLUMN_DESCRICAO_DETALHADA, COLUMN_DATA_HORA, COLUMN_DURACAO, COLUMN_LOCAL,
-                COLUMN_FK_CATEGORIA_EVENTO, COLUMN_FK_COLABORADOR}, COLUMN_DATA_HORA + " > ? ", null,
-                null, null, COLUMN_DATA_HORA + " ASC ");
+                COLUMN_FK_CATEGORIA_EVENTO, COLUMN_FK_COLABORADOR}, COLUMN_DATA_HORA + " > ? ",
+                new String[]{String.valueOf(new Date().getTime())}, null, null, COLUMN_DATA_HORA + " ASC ");
 
         for(int i = 0; i < number; i++) {
             if(cursor.moveToNext()) {
@@ -127,10 +200,13 @@ public class EventoDao {
                 evento.setColaborador(new ColaboradorDao(database).findById(cursor.getLong(8)));
 
                 eventoList.add(evento);
+            } else {
+                cursor.close();
+                return eventoList;
             }
-
-            return eventoList;
         }
+
+        cursor.close();
 
         return eventoList;
     }

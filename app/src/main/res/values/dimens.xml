@@ -1,0 +1,6 @@
+<resources>
+    <dimen name="listviewitem_smallsize">170dp</dimen>
+    <dimen name="listviewitem_size">185dp</dimen>
+    <dimen name="listviewitem_image_size">64dp</dimen>
+    <dimen name="listviewitem_smallimage_size">20dp</dimen>
+</resources>

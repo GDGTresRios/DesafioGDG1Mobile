@@ -6,7 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
+import android.widget.AdapterView;
+import android.widget.GridView;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,11 +16,12 @@ import br.com.gdgtresrios.centrosulnegocios.R;
 import br.com.gdgtresrios.centrosulnegocios.model.CategoriaEvento;
 import br.com.gdgtresrios.centrosulnegocios.model.dao.CategoriaEventoDao;
 import br.com.gdgtresrios.centrosulnegocios.model.dao.DatabaseConnection;
+import br.com.gdgtresrios.centrosultnegocios.controller.activity.BuscaEventoActivity;
 import br.com.gdgtresrios.centrosultnegocios.controller.listviewadapter.CategoriaEventoAdapter;
 
 public class CategoriaEventoFragment extends Fragment {
 
-    private ListView listViewCategoriaEvento;
+    private GridView gridViewCategoriaEvento;
     private List<CategoriaEvento> categoriaEventoList;
 
     private static final String CATEGORIAEVENTOLIST_KEY = "categoriaeventolist_key";
@@ -40,18 +42,25 @@ public class CategoriaEventoFragment extends Fragment {
             categoriaEventoList = getAllCategoriaEventoFromDatabase();
         }
 
-        listViewCategoriaEvento = (ListView) view.findViewById(R.id.listview_categoriaevento);
-        listViewCategoriaEvento.setAdapter(new CategoriaEventoAdapter(categoriaEventoList, getActivity()));
-
+        gridViewCategoriaEvento = (GridView) view.findViewById(R.id.gridview_categoriaevento);
+        gridViewCategoriaEvento.setAdapter(new CategoriaEventoAdapter(categoriaEventoList, getActivity()));
+        gridViewCategoriaEvento.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                CategoriaEvento categoriaEvento = (CategoriaEvento) parent.getAdapter().getItem(position);
+                startActivity(BuscaEventoActivity.newIntent(getActivity(), categoriaEvento, null));
+            }
+        });
         return view;
     }
 
     private List<CategoriaEvento> getAllCategoriaEventoFromDatabase() {
         SQLiteDatabase databaseConnection = new DatabaseConnection(getActivity()).getWritableDatabase();
         CategoriaEventoDao categoriaEventoDao = new CategoriaEventoDao(databaseConnection);
+        List<CategoriaEvento> categoriaEventoList = categoriaEventoDao.listAll();
         databaseConnection.close();
 
-        return categoriaEventoDao.listAll();
+        return categoriaEventoList;
     }
 
     @Override

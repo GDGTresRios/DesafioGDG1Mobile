@@ -5,8 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.List;
@@ -52,26 +50,23 @@ public class ColaboradorAdapter extends BaseAdapter {
             convertView = inflater.inflate(layout, null);
             convertView.setTag(holder);
 
-            holder.tNome = (TextView) convertView.findViewById(R.id.tNome);
-            holder.imgFoto = (ImageView) convertView.findViewById(R.id.img);
-            holder.progress = (ProgressBar) convertView.findViewById(R.id.progress);
+            holder.textViewNome = (TextView) convertView.findViewById(R.id.textview_nome);
+            holder.textViewDescricao = (TextView) convertView.findViewById(R.id.textview_descricao);
 
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        holder.imgFoto.setImageBitmap(null);
+        Colaborador colaborador = colaboradores.get(position);
+        holder.textViewNome.setText(colaborador.getNome());
+        holder.textViewDescricao.setText(colaborador.getDescricao());
 
-        Colaborador c = colaboradores.get(position);
-        holder.tNome.setText(c.getNome());
-        //holder.imgFoto
 
         return convertView;
     }
 
     static class ViewHolder{
-        TextView tNome;
-        ImageView imgFoto;
-        ProgressBar progress;
+        TextView textViewNome;
+        TextView textViewDescricao;
     }
 }

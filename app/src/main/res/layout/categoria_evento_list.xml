@@ -1,34 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="left|center_vertical">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gridview_background">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:paddingTop="2dp"
-        android:paddingBottom="2dp"
-        android:minHeight="40dp"
-        android:layout_marginRight="12dp">
+    <TextView
+        android:id="@+id/textview_nome"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/listviewitem_smallsize"
+        android:background="@color/orangeA200"
+        android:textColor="@color/white"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_margin="5dp"/>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
-            android:orientation="vertical"
-            android:layout_marginLeft="6dp">
-
-            <TextView
-                android:id="@+id/tNome"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/preto"
-                android:text="@string/nome"/>
-        </LinearLayout>
-
-    </LinearLayout>
-</FrameLayout>
+</LinearLayout>

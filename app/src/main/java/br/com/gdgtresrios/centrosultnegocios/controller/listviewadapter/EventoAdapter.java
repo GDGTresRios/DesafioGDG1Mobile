@@ -5,8 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.text.DateFormat;
@@ -22,7 +20,6 @@ public class EventoAdapter extends BaseAdapter {
     private LayoutInflater inflater;
     private final List<Evento> eventos;
     private final Context context;
-    private DateFormat mFormatter = new SimpleDateFormat("dd-MM-yyyy");
 
     public EventoAdapter(List<Evento> eventos, Context context) {
         this.eventos = eventos;
@@ -47,44 +44,38 @@ public class EventoAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder = null;
+        ViewHolder viewHolder = null;
 
         if (convertView == null){
-            holder = new ViewHolder();
+            viewHolder = new ViewHolder();
 
             int layout = R.layout.evento_list;
             convertView = inflater.inflate(layout, null);
-            convertView.setTag(holder);
+            convertView.setTag(viewHolder);
 
-            holder.tNome = (TextView) convertView.findViewById(R.id.tNome);
-            holder.tDescricao = (TextView) convertView.findViewById(R.id.tDescricao);
-            holder.tDateEvento = (TextView) convertView.findViewById(R.id.tDateEvento);
-            holder.imgFoto = (ImageView) convertView.findViewById(R.id.img);
-            holder.progress = (ProgressBar) convertView.findViewById(R.id.progress);
+            viewHolder.textViewNome = (TextView) convertView.findViewById(R.id.textview_nome);
+            viewHolder.textViewDescricao = (TextView) convertView.findViewById(R.id.textview_descricao);
+            viewHolder.textViewDateEvento = (TextView) convertView.findViewById(R.id.textview_date);
 
         } else {
-            holder = (ViewHolder) convertView.getTag();
+            viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        holder.imgFoto.setImageBitmap(null);
-
         Evento c = eventos.get(position);
-        holder.tNome.setText(c.getNome());
-        holder.tDescricao.setText(c.getDescricao());
+        viewHolder.textViewNome.setText(c.getNome());
+        viewHolder.textViewDescricao.setText(c.getDescricao());
 
+        DateFormat dateFormat = new SimpleDateFormat("dd");
         Date data = c.getDataHora();
-        String formatDate = mFormatter.format(data);
-        holder.tDateEvento.setText(formatDate);
-        //holder.imgFoto
+        String formatDate = dateFormat.format(data);
+        viewHolder.textViewDateEvento.setText(formatDate);
 
         return convertView;
     }
 
     static class ViewHolder{
-        TextView tNome;
-        TextView tDescricao;
-        TextView tDateEvento;
-        ImageView imgFoto;
-        ProgressBar progress;
+        TextView textViewNome;
+        TextView textViewDescricao;
+        TextView textViewDateEvento;
     }
 }
