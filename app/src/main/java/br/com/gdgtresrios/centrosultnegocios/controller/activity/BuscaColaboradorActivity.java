@@ -27,9 +27,9 @@ import br.com.gdgtresrios.centrosultnegocios.controller.listviewadapter.Colabora
 
 public class BuscaColaboradorActivity extends AppCompatActivity {
 
-    private static final String INTENT_KEY_CATEGORIACOLABORADOR = "intent_key_categoriaorganizacao";
-    private static final String INTENT_KEY_NOME = "intent_key_categoriaorganizacao";
-    private final String BUNDLE_KEY_COLABORADOR = "bundle_key_organizacao";
+    private static final String INTENT_KEY_CATEGORIACOLABORADOR = "intent_key_categoriacolaborador";
+    private static final String INTENT_KEY_NOME = "intent_key_nome";
+    private final String BUNDLE_KEY_COLABORADOR = "bundle_key_colaborador";
 
     private ListView listViewColaborador;
     private List<Colaborador> colaboradorList;
