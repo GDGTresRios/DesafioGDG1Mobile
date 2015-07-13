@@ -63,6 +63,14 @@ public class DatabaseConnection extends SQLiteOpenHelper {
     private Date dateEventoSebraeRedesSociais;
     private String sdateEventoSebraeStarupRJ  = "18/07/2015";
     private Date dateEventoSebraeStarupRJ;
+    private String sdateEventoMostraProjetosTecnologicos  = "18/07/2015";
+    private Date dateEventoMostraProjetosTecnologicos;
+    private String sdateEventoEngenheiroComputacao  = "18/07/2015";
+    private Date dateEventoEngenheiroComputacao;
+    private String sdateEventoMostraJogos  = "18/07/2015";
+    private Date dateEventoMostraJogos;
+    private String sdateEvento50dicas  = "18/07/2015";
+    private Date dateEvento50dicas;
 
 
 
@@ -216,6 +224,32 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 "'  '," +
                 " 0, 0, 0, 1)"); // 14
 
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Bruno Lemos'," +
+                "'Professor USS...', " +
+                "'  '," +
+                " 0, 0, 0, 5)"); // 15
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('IFRJ - Campus Eng. Paulo de Frontin'," +
+                "'Curso Superior de Tecnologia em Jogos Digitais...', " +
+                "'  '," +
+                " 0, 0, 0, 5)"); // 16
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Gustavo Guanabara'," +
+                "'Professor...', " +
+                "'  '," +
+                " 0, 0, 0, 5)"); // 17
 
         try {
             dateEventoGuto = mFormatter.parse(sdateEventoGuto);
@@ -489,7 +523,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
 
 
         try {
-            dateEventoSebraeRedesSociais = mFormatter.parse(sdateEventoSebraeRedesSociais);
+            dateEventoMostraProjetosTecnologicos = mFormatter.parse(sdateEventoMostraProjetosTecnologicos);
             db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
                     + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
                     + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
@@ -497,12 +531,52 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + EventoDao.COLUMN_LOCAL + ") VALUES('Mostra de Projetos Tecnológicos'," +
                     "'CVT Três Rios', " +
                     "'    '," +
-                    dateEventoSebraeRedesSociais.getTime() + ", 3, 14, 60, 'Salão Principal')");
+                    dateEventoMostraProjetosTecnologicos.getTime() + ", 3, 14, 60, 'Salão Principal')");
         } catch (ParseException e){
             e.printStackTrace();
         }
 
+        try {
+            dateEventoEngenheiroComputacao = mFormatter.parse(sdateEventoEngenheiroComputacao);
+            db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
+                    + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
+                    + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
+                    + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('O Engenheiro de Computação e o cenário profissional do Centro-Sul Fluminense'," +
+                    "'Prof. Bruno Lemos - USS', " +
+                    "'    '," +
+                    dateEventoEngenheiroComputacao.getTime() + ", 1, 15, 60, 'Salão Principal')");
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
 
+        try {
+            dateEventoMostraJogos = mFormatter.parse(sdateEventoMostraJogos);
+            db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
+                    + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
+                    + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
+                    + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Mostra de Jogos Digitais'," +
+                    "'Curso Superior de Tecnologia em Jogos Digitais - IFRJ - Campus Eng. Paulo de Frontin', " +
+                    "'    '," +
+                    dateEventoMostraJogos.getTime() + ", 3, 16, 60, 'Salão Principal')");
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
+
+        try {
+            dateEvento50dicas = mFormatter.parse(sdateEvento50dicas);
+            db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
+                    + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
+                    + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
+                    + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('50 dicas para destruir sua carreira usando Redes Sociais'," +
+                    "'Com Prof. Gustavo Guanabara', " +
+                    "'    '," +
+                    dateEvento50dicas.getTime() + ", 1, 17, 60, 'Salão Principal')");
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
 
 
     }
