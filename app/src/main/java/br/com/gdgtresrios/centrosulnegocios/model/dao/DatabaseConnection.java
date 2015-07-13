@@ -61,6 +61,8 @@ public class DatabaseConnection extends SQLiteOpenHelper {
     private Date dateEventoSebraeConstruindoIdentidade;
     private String sdateEventoSebraeRedesSociais  = "18/07/2015";
     private Date dateEventoSebraeRedesSociais;
+    private String sdateEventoSebraeStarupRJ  = "18/07/2015";
+    private Date dateEventoSebraeStarupRJ;
 
 
 
@@ -203,7 +205,16 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 +") VALUES('Sicomércio'," +
                 "'O Sicomércio Três Rios - Sindicato do Comércio Varejista de Três Rios, Paraíba do Sul, Areal, Comendador Levy Gasparian é uma entidade patronal nascida...', " +
                 "'  '," +
-                " 1, 1, 1, 3)"); // 12
+                " 1, 1, 1, 3)"); // 13
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('CVT Três Rios'," +
+                "'Centro Vocacional Tecnológico...', " +
+                "'  '," +
+                " 0, 0, 0, 1)"); // 14
 
 
         try {
@@ -461,6 +472,38 @@ public class DatabaseConnection extends SQLiteOpenHelper {
         } catch (ParseException e){
             e.printStackTrace();
         }
+
+        try {
+            dateEventoSebraeStarupRJ = mFormatter.parse(sdateEventoSebraeStarupRJ);
+            db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
+                    + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
+                    + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
+                    + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Programa Sebrae StartupRJ - Conhecendo as oportunidades e apoiando ideias inovadoras'," +
+                    "'Sebrae', " +
+                    "'    '," +
+                    dateEventoSebraeStarupRJ.getTime() + ", 1, 12, 60, 'Salão Principal')");
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
+
+
+        try {
+            dateEventoSebraeRedesSociais = mFormatter.parse(sdateEventoSebraeRedesSociais);
+            db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
+                    + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
+                    + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
+                    + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Mostra de Projetos Tecnológicos'," +
+                    "'CVT Três Rios', " +
+                    "'    '," +
+                    dateEventoSebraeRedesSociais.getTime() + ", 3, 14, 60, 'Salão Principal')");
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
+
+
+
 
     }
 
