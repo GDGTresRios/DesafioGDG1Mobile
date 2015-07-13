@@ -19,57 +19,57 @@ public class DatabaseConnection extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "centrosulnegocios";
     private static final Integer DATABASE_VERSION = 1;
-    private DateFormat mFormatter = new SimpleDateFormat("dd/MM/yyyy");
+    private DateFormat mFormatter = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 
     private final List<String> createTableList = new ArrayList<>();
 
     private final List<String> dropTables = new ArrayList<>();
 
-    private String sdateEventoGuto = "15/07/2015";
+    private String sdateEventoGuto = "15/07/2015 20:00";
     private Date dateEventoGuto;
-    private String sdateEventoRodrigo  = "16/07/2015";
+    private String sdateEventoRodrigo  = "16/07/2015 20:00";
     private Date dateEventoRodrigo;
-    private String sdateEventoBel  = "17/07/2015";
+    private String sdateEventoBel  = "17/07/2015 20:00";
     private Date dateEventoBel;
-    private String sdateEventoRey  = "18/07/2015";
+    private String sdateEventoRey  = "18/07/2015 20:00";
     private Date dateEventoRey;
-    private String sdateEventoMisturaFina  = "15/07/2015";
+    private String sdateEventoMisturaFina  = "15/07/2015 21:30";
     private Date dateEventoMisturaFina;
-    private String sdateEventoThiagoPierre  = "16/07/2015";
+    private String sdateEventoThiagoPierre  = "16/07/2015 21:30";
     private Date dateEventoThiagoPierre;
-    private String sdateEventoLeonardoFabiano  = "16/07/2015";
+    private String sdateEventoLeonardoFabiano  = "16/07/2015 22:30";
     private Date dateEventoLeonardoFabiano;
-    private String sdateEventoLarissaJulien  = "17/07/2015";
+    private String sdateEventoLarissaJulien  = "17/07/2015 21:30";
     private Date dateEventoLarissaJulien;
-    private String sdateEventoRafaelSantos  = "17/07/2015";
+    private String sdateEventoRafaelSantos  = "17/07/2015 23:30";
     private Date dateEventoRafaelSantos;
-    private String sdateEventoAcustico  = "18/07/2015";
+    private String sdateEventoAcustico  = "18/07/2015 21:30";
     private Date dateEventoAcustico;
-    private String sdateEventoReplay  = "18/07/2015";
+    private String sdateEventoReplay  = "18/07/2015 23:30";
     private Date dateEventoReplay;
-    private String sdateEventoSebraeRodadaCredito  = "16/07/2015";
+    private String sdateEventoSebraeRodadaCredito  = "16/07/2015 14:00";
     private Date dateEventoSebraeRodadaCredito;
-    private String sdateEventoSebraeMei  = "16/07/2015";
+    private String sdateEventoSebraeMei  = "16/07/2015 18:00";
     private Date dateEventoSebraeMei;
-    private String sdateEventoSebraeDinheiroInovacao  = "16/07/2015";
+    private String sdateEventoSebraeDinheiroInovacao  = "16/07/2015 19:00";
     private Date dateEventoSebraeDinheiroInovacao;
-    private String sdateEventoSebraeEmpreendedorismo  = "17/07/2015";
+    private String sdateEventoSebraeEmpreendedorismo  = "17/07/2015 18:00";
     private Date dateEventoSebraeEmpreendedorismo;
-    private String sdateEventoSebraeNegociacaoEmpresarial  = "17/07/2015";
+    private String sdateEventoSebraeNegociacaoEmpresarial  = "17/07/2015 18:00";
     private Date dateEventoSebraeNegociacaoEmpresarial;
-    private String sdateEventoSebraeConstruindoIdentidade  = "17/07/2015";
+    private String sdateEventoSebraeConstruindoIdentidade  = "17/07/2015 19:00";
     private Date dateEventoSebraeConstruindoIdentidade;
-    private String sdateEventoSebraeRedesSociais  = "18/07/2015";
+    private String sdateEventoSebraeRedesSociais  = "18/07/2015 19:00";
     private Date dateEventoSebraeRedesSociais;
-    private String sdateEventoSebraeStarupRJ  = "18/07/2015";
+    private String sdateEventoSebraeStarupRJ  = "18/07/2015 14:40";
     private Date dateEventoSebraeStarupRJ;
-    private String sdateEventoMostraProjetosTecnologicos  = "18/07/2015";
+    private String sdateEventoMostraProjetosTecnologicos  = "18/07/2015 15:30";
     private Date dateEventoMostraProjetosTecnologicos;
-    private String sdateEventoEngenheiroComputacao  = "18/07/2015";
+    private String sdateEventoEngenheiroComputacao  = "18/07/2015 16:00";
     private Date dateEventoEngenheiroComputacao;
-    private String sdateEventoMostraJogos  = "18/07/2015";
+    private String sdateEventoMostraJogos  = "18/07/2015 16:40";
     private Date dateEventoMostraJogos;
-    private String sdateEvento50dicas  = "18/07/2015";
+    private String sdateEvento50dicas  = "18/07/2015 17:30";
     private Date dateEvento50dicas;
 
 
@@ -185,7 +185,10 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
                 +") VALUES('Acústico A3'," +
                 "'MPB, Reggae, Pop Rock...', " +
-                "' '," +
+                "'A Banda AC 3 surgiu no fim de 2008, na cidade de Três Rios /RJ, com os músicos Gustavo Cunha, (Voz e Violão), Tiago Cunha (Bateria) e Juninho Hiote (Baixo). Desde então, a banda mescla estilos como MPB, pop/rock, reggae nacional, sertanejo universitário, entre outros; contudo, busca sempre inovações musicais a fim de atender a todos os gostos e a todos que acompanham suas apresentações em sua curta carreira musical. \n" +
+                "Sucesso por onde tocam, vêm deixando sempre sua marca nos bares e festas da região com suas duas principais músicas, frutos do primeiro CD da banda: Fico a Imaginar e Anjo Sol, ambas compostas por eles mesmos e que definem exatamente o espírito do show: alegria e espontaneidade. As duas canções concorreram ao Festival Antense da Canção, no qual a banda ficou em segundo lugar com a música Fico a Imaginar, que posteriormente passou a ser reproduzida na FM 107,3, tal qual Anjo Sol. \n" +
+                "Apesar de jovens, os integrantes são músicos experientes e já participaram de diversos grupos musicais de estilos bem variados, e usam em seus shows o conhecimento adquirido em suas carreiras para divertir e conquistar o público de diferentes idades e gosto musical. \n" +
+                "A banda já abriu shows de artistas como Michel Teló, Os Travessos, Gustavo Lins, entre outros. E se apresentou em diversas festas e exposições das cidades da região, como Três Rios, Paraíba do Sul, Sapucaia, Areal, Levy Gasparian, Juiz de Fora e Cabo Frio, sempre com o lema: ”Se divertir para divertir”. '," +
                 " 0, 0, 0, 2)"); // 10
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
