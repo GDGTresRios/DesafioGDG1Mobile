@@ -12,6 +12,8 @@
     <ListView
         android:id="@+id/listview_evento"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:divider="@color/gray300"
+        android:dividerHeight="1dp"/>
 
 </LinearLayout>
