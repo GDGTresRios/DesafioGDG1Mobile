@@ -48,7 +48,7 @@ public class CategoriaEventoFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 CategoriaEvento categoriaEvento = (CategoriaEvento) parent.getAdapter().getItem(position);
-                startActivity(BuscaEventoActivity.newIntent(getActivity(), categoriaEvento));
+                startActivity(BuscaEventoActivity.newIntent(getActivity(), categoriaEvento, null));
             }
         });
         return view;

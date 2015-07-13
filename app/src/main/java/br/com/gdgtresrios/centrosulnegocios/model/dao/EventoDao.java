@@ -152,6 +152,33 @@ public class EventoDao {
         return eventoList;
     }
 
+    public List<Evento> listByNomeCategoria(CategoriaEvento categoriaEvento, String nome) {
+        List<Evento> eventoList = new ArrayList<>();
+        Cursor cursor = database.query(TABLE_NAME, new String[]{COLUMN_ID, COLUMN_NOME, COLUMN_DESCRICAO,
+                        COLUMN_DESCRICAO_DETALHADA, COLUMN_DATA_HORA, COLUMN_DURACAO, COLUMN_LOCAL,
+                        COLUMN_FK_CATEGORIA_EVENTO, COLUMN_FK_COLABORADOR}, COLUMN_NOME + " LIKE ? AND " + COLUMN_FK_CATEGORIA_EVENTO + " = ? ",
+                new String[]{"%"+nome+"%", String.valueOf(categoriaEvento.getId())}, null, null, null);
+
+        while(cursor.moveToNext()) {
+            Evento evento = new Evento();
+            evento.setId(cursor.getLong(0));
+            evento.setNome(cursor.getString(1));
+            evento.setDescricao(cursor.getString(2));
+            evento.setDescricaoDetalhada(cursor.getString(3));
+            evento.setDataHora(new Date(cursor.getLong(4)));
+            evento.setDuracao(new Date(cursor.getLong(5)));
+            evento.setLocal(cursor.getString(6));
+            evento.setCategoriaEvento(new CategoriaEventoDao(database).findById(cursor.getLong(7)));
+            evento.setColaborador(new ColaboradorDao(database).findById(cursor.getLong(8)));
+
+            eventoList.add(evento);
+        }
+
+        cursor.close();
+
+        return eventoList;
+    }
+
     public List<Evento> listNext(int number) {
         List<Evento> eventoList = new ArrayList<>();
         Cursor cursor = database.query(TABLE_NAME, new String[]{COLUMN_ID, COLUMN_NOME, COLUMN_DESCRICAO,
@@ -173,11 +200,10 @@ public class EventoDao {
                 evento.setColaborador(new ColaboradorDao(database).findById(cursor.getLong(8)));
 
                 eventoList.add(evento);
+            } else {
+                cursor.close();
+                return eventoList;
             }
-
-            cursor.close();
-
-            return eventoList;
         }
 
         cursor.close();
