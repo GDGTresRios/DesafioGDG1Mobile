@@ -192,7 +192,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
                 + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
                 +") VALUES('Sebrae'," +
-                "'  ', " +
+                "'O Serviço Brasileiro de Apoio às Micro e Pequenas Empresas (Sebrae) é uma entidade privada que promove a competitividade.....', " +
                 "'  '," +
                 " 1, 0, 1, 6)"); // 12
 
@@ -201,7 +201,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
                 + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
                 +") VALUES('Sicomércio'," +
-                "'  ', " +
+                "'O Sicomércio Três Rios - Sindicato do Comércio Varejista de Três Rios, Paraíba do Sul, Areal, Comendador Levy Gasparian é uma entidade patronal nascida...', " +
                 "'  '," +
                 " 1, 1, 1, 3)"); // 12
 
@@ -371,7 +371,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
                     + EventoDao.COLUMN_LOCAL + ") VALUES('Sessão de Negócios e Rodada de Crédito'," +
-                    "'    ', " +
+                    "'Sebrae', " +
                     "'    '," +
                     dateEventoSebraeRodadaCredito.getTime() + ", 1, 12, 60, 'Salão Principal')");
         } catch (ParseException e){
@@ -385,7 +385,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
                     + EventoDao.COLUMN_LOCAL + ") VALUES('Finanças Pessoais MEI, Empreendedores e Empresários'," +
-                    "'    ', " +
+                    "'Sebrae', " +
                     "'    '," +
                     dateEventoSebraeMei.getTime() + ", 1, 12, 60, 'Salão Principal')");
         } catch (ParseException e){
@@ -413,7 +413,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
                     + EventoDao.COLUMN_LOCAL + ") VALUES('Empreendedorismo e as oportunidades do mercado'," +
-                    "'    ', " +
+                    "'Sebrae', " +
                     "'    '," +
                     dateEventoSebraeEmpreendedorismo.getTime() + ", 1, 12, 60, 'Salão Principal')");
         } catch (ParseException e){
