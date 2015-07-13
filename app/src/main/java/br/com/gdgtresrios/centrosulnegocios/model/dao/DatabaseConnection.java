@@ -221,7 +221,13 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
                 +") VALUES('Sebrae'," +
                 "'O Serviço Brasileiro de Apoio às Micro e Pequenas Empresas (Sebrae) é uma entidade privada que promove a competitividade.....', " +
-                "'  '," +
+                "'O Serviço Brasileiro de Apoio às Micro e Pequenas Empresas (Sebrae) é uma entidade privada que promove a competitividade e o desenvolvimento sustentável dos empreendimentos de micro e pequeno porte – aqueles com faturamento bruto anual de até R$ 3,6 milhões.\n" +
+                "\n" +
+                "Há mais de 40 anos, atua com foco no fortalecimento do empreendedorismo e na aceleração do processo de formalização da economia por meio de parcerias com os setores público e privado, programas de capacitação, acesso ao crédito e à inovação, estímulo ao associativismo, feiras e rodadas de negócios.\n" +
+                "\n" +
+                "As soluções desenvolvidas pelo Sebrae atendem desde o empreendedor que pretende abrir seu primeiro negócio até pequenas empresas que já estão consolidadas e buscam um novo posicionamento no mercado.\n" +
+                "\n" +
+                "Para garantir o atendimento aos pequenos negócios, o Sebrae atua em todo o território nacional. Onde tem Brasil, tem Sebrae. Além da sede nacional, em Brasília, a instituição conta com pontos de atendimento nas 27 Unidades da Federação, onde são oferecidos cursos, seminários, consultorias e assistência técnica para pequenos negócios de todos os setores.'," +
                 " 1, 0, 1, 6)"); // 12
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
@@ -230,7 +236,9 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
                 +") VALUES('Sicomércio'," +
                 "'O Sicomércio Três Rios - Sindicato do Comércio Varejista de Três Rios, Paraíba do Sul, Areal, Comendador Levy Gasparian é uma entidade patronal nascida...', " +
-                "'  '," +
+                "'O Sicomércio Três Rios - Sindicato do Comércio Varejista de Três Rios, Paraíba do Sul, Areal, Comendador Levy Gasparian é uma entidade patronal nascida em 14/03/1985, do desejo de um grupo de empresários, que via na UNIÃO, uma forma de organizar seus negócios e poder ter voz ativa, perante os diversos órgãos. \n" +
+                "\n" +
+                "Ao longo desses anos o Sicomércio Três Rios, cresceu e para atender aos anseios e necessidades do segmento que representa, o Sicomércio atua de forma impactante no aprimoramento dos negócios, pois acredita na atitude positiva que irá transformar a relação de produção e consumo na região. A proposta é dar voz aos associados frente à sociedade, construindo um setor respeitado e influente nas decisões políticas e econômicas ao gerar bons serviços, equilíbrio nas vendas e interação com a comunidade e o poder público.'," +
                 " 1, 1, 1, 3)"); // 13
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
