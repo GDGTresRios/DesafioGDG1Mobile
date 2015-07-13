@@ -140,7 +140,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
                 +") VALUES('Mistura Fina'," +
                 "'MPB...', " +
-                "' '," +
+                "'A história da banda começa com os integrantes se conhecendo na banda Primeiro de Maio e decidindo formar um trio para tocar músicas de cantores famosos que não são executadas há muito tempo. A banda, mais tarde nomeada de Mistura Fina, é composta por Alex Souza (voz e cajón), Pablo Martins (violão e voz) e Wander Leal (Sopros) e tem tocado músicas que geralmente não são ouvidas com frequência, com novos arranjos e colocando sua personalidade. O seu repertório tem tudo a ver com os seus integrantes já que, foram criados ouvindo essas músicas, o que inclui Djavan, Ivan Lins, Luis Melodia, Tom Jobim, Zeca Pagodinho, entre outros. '," +
                 " 0, 0, 0, 2)"); // 5
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
@@ -158,7 +158,15 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
                 +") VALUES('Leonardo de Freitas e Fabiano'," +
                 "'Sertanejo Universitário...', " +
-                "' '," +
+                "'A dupla Leonardo de Freitas e Fabiano, iniciou sua trajetória em meados de 2005 na cidade de Juiz de Fora (MG). Em pouco tempo cativaram um publico em seus shows, tornando-se referencia na região. Rapidamente foram convidados para dividir o palco com grandes nomes da musica sertaneja, como Daniel, Jorge e Matheus, João Bosco e Vinicius, Bruno e Marrone, Michel Teló, Guilherme e Santiago e outros. Com isso ganharam notoriedade no cenário musical.\n" +
+                " \n" +
+                "Os números mostram. Em 9 anos de carreira, são 2 CDs e 1 DVD gravados, 190 shows no ano, mais de 1 milhão de visualizações na internet. Recentemente gravaram o CLIP da musica “Coração pede socorro” no Castelo de Itaipava (RJ) tornando sucesso imediato. Participaram do quadro “Jogo de Panela” no programa da Ana Maria Braga (TV Globo), além de se apresentarem em eventos no Copacabana Palace, conquistando fãs cariocas.\n" +
+                " \n" +
+                "Um novo CD e DVD com grandes participações em um repertorio baseado no clássico do sertanejo, são algumas das novidades da dupla para o ano de 2014.\n" +
+                " \n" +
+                "Leonardo de Freitas: cantor, compositor, arranjador e musico multi-instrumentista (teclado, baixo, guitarra, violão, bateria, viola e acordeon). Dono de um talento admirável.\n" +
+                " \n" +
+                "Fabiano: cantor, musico (Violão e Guitarra). Extremamente focado na carreira, o sucesso é seu objetivo. '," +
                 " 0, 0, 0, 2)"); // 7
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
@@ -200,7 +208,11 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
                 +") VALUES('Banda Replay'," +
                 "'Flashback...', " +
-                "' '," +
+                "'Criada em março de 2008, a Banda Replay trouxe   um toque diferente que tem encantado e esquentado as noites do Rio. Com shows e repertório que fogem dos tradicionais apresentados por outras bandas de flashback, a banda toca músicas dos anos 70, 80 e 90 que você adorava e há muito tempo não ouvia, além daquelas que você escuta sempre e quer ouvir de novo.\n" +
+                " \n" +
+                "Misturando artistas como Erasure e Michael Jackson, Pet Shop Boys e Leo Jaime, Gloria Estefan e Lulu Santos, Metro e Legião Urbana a Replay faz performances com muita energia e carisma, fazendo ferver qualquer pista de dança. Esta diversidade, associada à parceria com a empresa GIG Audio, responsável pela infraestrutura técnica impecável de som e iluminação que acompanha a banda, cria um espetáculo que vai tornar sua festa inesquecível. \n" +
+                "  \n" +
+                "A Replay é tudo que você espera para seu evento e muito mais, confira!'," +
                 " 0, 0, 0, 2)"); // 11
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
@@ -325,7 +337,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
                     + EventoDao.COLUMN_LOCAL + ") VALUES('Show com Mistura Fina'," +
                     "'MPB', " +
-                    "'    '," +
+                    "'A banda Mistura Fina pretende fazer um show temático trazendo à tona a história das músicas que estão tocando.'," +
                     dateEventoMisturaFina.getTime() + ", 2, 5, 60, 'Palco MPB')");
         } catch (ParseException e){
             e.printStackTrace();
@@ -395,7 +407,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
                     + EventoDao.COLUMN_LOCAL + ") VALUES('Show com Acústico A3'," +
                     "'MPB, Reggae, Pop Rock', " +
-                    "'    '," +
+                    "'O Acústico A3 promete mostrar toda sua versatilidade musical em um show empolgante e diferente no próximo sábado. A banda que já é conhecida na região por se apresentar de forma irreverente misturando vários estilos musicais, trará para o público um show eclético recheado de músicas atuais com outras que marcaram época com versões criadas pelos próprios músicos. É um show para todas as gerações curtirem e relembrarem grandes sucessos da música nacional e internacional.'," +
                     dateEventoAcustico.getTime() + ", 2, 10, 60, 'Palco MPB')");
         } catch (ParseException e){
             e.printStackTrace();
