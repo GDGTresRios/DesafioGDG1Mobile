@@ -186,9 +186,12 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 +") VALUES('Acústico A3'," +
                 "'MPB, Reggae, Pop Rock...', " +
                 "'A Banda AC 3 surgiu no fim de 2008, na cidade de Três Rios /RJ, com os músicos Gustavo Cunha, (Voz e Violão), Tiago Cunha (Bateria) e Juninho Hiote (Baixo). Desde então, a banda mescla estilos como MPB, pop/rock, reggae nacional, sertanejo universitário, entre outros; contudo, busca sempre inovações musicais a fim de atender a todos os gostos e a todos que acompanham suas apresentações em sua curta carreira musical. \n" +
+                "\n" +
                 "Sucesso por onde tocam, vêm deixando sempre sua marca nos bares e festas da região com suas duas principais músicas, frutos do primeiro CD da banda: Fico a Imaginar e Anjo Sol, ambas compostas por eles mesmos e que definem exatamente o espírito do show: alegria e espontaneidade. As duas canções concorreram ao Festival Antense da Canção, no qual a banda ficou em segundo lugar com a música Fico a Imaginar, que posteriormente passou a ser reproduzida na FM 107,3, tal qual Anjo Sol. \n" +
+                "\n" +
                 "Apesar de jovens, os integrantes são músicos experientes e já participaram de diversos grupos musicais de estilos bem variados, e usam em seus shows o conhecimento adquirido em suas carreiras para divertir e conquistar o público de diferentes idades e gosto musical. \n" +
-                "A banda já abriu shows de artistas como Michel Teló, Os Travessos, Gustavo Lins, entre outros. E se apresentou em diversas festas e exposições das cidades da região, como Três Rios, Paraíba do Sul, Sapucaia, Areal, Levy Gasparian, Juiz de Fora e Cabo Frio, sempre com o lema: ”Se divertir para divertir”. '," +
+                "\n" +
+                "A banda já abriu shows de artistas como Michel Teló, Os Travessos, Gustavo Lins, entre outros. E se apresentou em diversas festas e exposições das cidades da região, como Três Rios, Paraíba do Sul, Sapucaia, Areal, Levy Gasparian, Juiz de Fora e Cabo Frio, sempre com o lema: ”Se divertir para divertir”.'," +
                 " 0, 0, 0, 2)"); // 10
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
@@ -320,7 +323,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
                     + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
-                    + EventoDao.COLUMN_LOCAL + ") VALUES('Mistura Fina'," +
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Show com Mistura Fina'," +
                     "'MPB', " +
                     "'    '," +
                     dateEventoMisturaFina.getTime() + ", 2, 5, 60, 'Palco MPB')");
@@ -334,7 +337,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
                     + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
-                    + EventoDao.COLUMN_LOCAL + ") VALUES('Thiago Alves & Pierre'," +
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Show com Thiago Alves & Pierre'," +
                     "'MPB', " +
                     "'    '," +
                     dateEventoThiagoPierre.getTime() + ", 2, 6, 60, 'Palco MPB')");
@@ -348,7 +351,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
                     + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
-                    + EventoDao.COLUMN_LOCAL + ") VALUES('Leonardo de Freitas e Fabiano'," +
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Show com Leonardo de Freitas e Fabiano'," +
                     "'Sertanejo Universitário', " +
                     "'    '," +
                     dateEventoLeonardoFabiano.getTime() + ", 2, 7, 60, 'Salão Principal')");
@@ -362,7 +365,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
                     + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
-                    + EventoDao.COLUMN_LOCAL + ") VALUES('Larissa Viana e Julien'," +
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Show com Larissa Viana e Julien'," +
                     "'Bossa Nova e MPB', " +
                     "'    '," +
                     dateEventoLarissaJulien.getTime() + ", 2, 8, 60, 'Palco MPB')");
@@ -376,7 +379,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
                     + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
-                    + EventoDao.COLUMN_LOCAL + ") VALUES('Rafael Santos'," +
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Show com Rafael Santos'," +
                     "'Sertanejo Universitário', " +
                     "'    '," +
                     dateEventoRafaelSantos.getTime() + ", 2, 9, 60, 'Salão Principal')");
@@ -390,7 +393,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
                     + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
-                    + EventoDao.COLUMN_LOCAL + ") VALUES('Acústico A3'," +
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Show com Acústico A3'," +
                     "'MPB, Reggae, Pop Rock', " +
                     "'    '," +
                     dateEventoAcustico.getTime() + ", 2, 10, 60, 'Palco MPB')");
@@ -404,7 +407,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
                     + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
-                    + EventoDao.COLUMN_LOCAL + ") VALUES('Banda Replay'," +
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Show com Banda Replay'," +
                     "'Flashback', " +
                     "'    '," +
                     dateEventoReplay.getTime() + ", 2, 11, 60, 'Salão Principal')");
