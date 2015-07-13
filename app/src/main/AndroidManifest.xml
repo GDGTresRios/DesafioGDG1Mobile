@@ -41,6 +41,12 @@
                 android:value="br.com.gdgtresrios.centrosultnegocios.controller.activity.EventoActivity" />
         </activity>
 
+        <activity android:name="br.com.gdgtresrios.centrosultnegocios.controller.activity.VisualizarColaborador">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="br.com.gdgtresrios.centrosultnegocios.controller.activity.ColaboradorActivity" />
+        </activity>
+
     </application>
 
 </manifest>

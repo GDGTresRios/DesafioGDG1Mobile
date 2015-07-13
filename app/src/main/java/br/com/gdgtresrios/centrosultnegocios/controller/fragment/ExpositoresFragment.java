@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.Arrays;
@@ -15,6 +16,7 @@ import br.com.gdgtresrios.centrosulnegocios.R;
 import br.com.gdgtresrios.centrosulnegocios.model.Colaborador;
 import br.com.gdgtresrios.centrosulnegocios.model.dao.ColaboradorDao;
 import br.com.gdgtresrios.centrosulnegocios.model.dao.DatabaseConnection;
+import br.com.gdgtresrios.centrosultnegocios.controller.activity.VisualizarColaborador;
 import br.com.gdgtresrios.centrosultnegocios.controller.listviewadapter.ColaboradorAdapter;
 
 public class ExpositoresFragment extends Fragment {
@@ -42,6 +44,13 @@ public class ExpositoresFragment extends Fragment {
 
         listViewColaborador = (ListView) view.findViewById(R.id.listview_colaborador);
         listViewColaborador.setAdapter(new ColaboradorAdapter(colaboradorList, getActivity()));
+        listViewColaborador.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Colaborador colaborador = (Colaborador) parent.getAdapter().getItem(position);
+                startActivity(VisualizarColaborador.newIntent(getActivity(), colaborador));
+            }
+        });
 
         return view;
     }

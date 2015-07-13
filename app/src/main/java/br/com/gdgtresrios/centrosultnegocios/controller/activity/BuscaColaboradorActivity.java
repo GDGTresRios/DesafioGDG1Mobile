@@ -13,6 +13,8 @@ import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.Arrays;
@@ -65,6 +67,13 @@ public class BuscaColaboradorActivity extends AppCompatActivity {
 
         listViewColaborador = (ListView) findViewById(R.id.listview_colaborador);
         listViewColaborador.setAdapter(new ColaboradorAdapter(colaboradorList, this));
+        listViewColaborador.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Colaborador colaborador = (Colaborador) parent.getAdapter().getItem(position);
+                startActivity(VisualizarColaborador.newIntent(BuscaColaboradorActivity.this, colaborador));
+            }
+        });
     }
 
     private List<Colaborador> listColaboradorFromDatabase(@Nullable CategoriaColaborador categoriaColaborador, @Nullable String nome) {
