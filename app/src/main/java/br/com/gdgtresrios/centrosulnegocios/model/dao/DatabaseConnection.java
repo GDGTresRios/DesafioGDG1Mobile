@@ -499,7 +499,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
                     + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
-                    + EventoDao.COLUMN_LOCAL + ") VALUES('Utilizando as Redes Sociais (Facebook) para aumentar seus clientes'," +
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Utilizando as Redes Sociais para aumentar seus clientes'," +
                     "'Sebrae/Sicomércio', " +
                     "'    '," +
                     dateEventoSebraeRedesSociais.getTime() + ", 3, 12, 60, 'Auditório do Salão Nobre')");
