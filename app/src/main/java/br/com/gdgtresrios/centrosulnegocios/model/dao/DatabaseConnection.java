@@ -485,7 +485,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
                     + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
-                    + EventoDao.COLUMN_LOCAL + ") VALUES('Posicionamento, Marcas e Conceitos - Construindo a identidade da sua empresa'," +
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Construindo a identidade da sua empresa'," +
                     "'Sebrae/Sicomércio', " +
                     "'    '," +
                     dateEventoSebraeConstruindoIdentidade.getTime() + ", 3, 12, 60, 'Auditório do Salão Nobre')");
@@ -513,7 +513,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
                     + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
-                    + EventoDao.COLUMN_LOCAL + ") VALUES('Programa Sebrae StartupRJ - Conhecendo as oportunidades e apoiando ideias inovadoras'," +
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Programa Sebrae StartupRJ - Conhecendo as oportunidades'," +
                     "'Sebrae', " +
                     "'    '," +
                     dateEventoSebraeStarupRJ.getTime() + ", 1, 12, 60, 'Salão Principal')");
@@ -542,7 +542,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
                     + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
-                    + EventoDao.COLUMN_LOCAL + ") VALUES('O Engenheiro de Computação e o cenário profissional do Centro-Sul Fluminense'," +
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('O Engenheiro de Computação e o cenário profissional'," +
                     "'Prof. Bruno Lemos - USS', " +
                     "'    '," +
                     dateEventoEngenheiroComputacao.getTime() + ", 1, 15, 60, 'Salão Principal')");
