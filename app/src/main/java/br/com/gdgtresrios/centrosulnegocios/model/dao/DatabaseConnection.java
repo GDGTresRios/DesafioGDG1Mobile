@@ -277,8 +277,8 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
                 + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
                 +") VALUES('Gustavo Guanabara'," +
-                "'Professor...', " +
-                "'  '," +
+                "'Gustavo Guanabara é professor carioca desde 1994 e já atuou em todo tipo de segmento...', " +
+                "'Gustavo Guanabara é professor carioca desde 1994 e já atuou em todo tipo de segmento. Atuou desde ensino infantil, passando por cursos técnicos, universidades e já coordenou o setor de tutoria para ensino à distância de uma universidade pública. Atualmente, viaja pelo Brasil dando palestras em eventos nacionais e internacionais, como Campus Party, FISL, Latinoware, etc. Para maiores informações sobre seu trabalho, acesse: about.me/guanabara'," +
                 " 0, 0, 0, 5)"); // 17
 
         try {
@@ -602,7 +602,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
                     + EventoDao.COLUMN_LOCAL + ") VALUES('50 dicas para destruir sua carreira usando Redes Sociais'," +
                     "'Com Prof. Gustavo Guanabara', " +
-                    "'    '," +
+                    "'Todos nós sabemos exatamente como não agir nas redes sociais digitais, certo? Errado! Uma boa parte dos usuários insiste em ter atitudes totalmente fora dos padrões aceitos em qualquer meio de convivência, prejudicando sua vida, seu emprego e até mesmo seu próprio negócio. Essa palestra mostra situações reais que foram coletadas durante anos de pesquisa e apresenta de forma bem-humorada que muitas pessoas e empresas ainda precisam aprender e muito. Venha preparado(a) para dar boas risadas e refletir bastante. Fonte: http://socialmediaweek.org/'," +
                     dateEvento50dicas.getTime() + ", 1, 17, 60, 'Salão Principal')");
         } catch (ParseException e){
             e.printStackTrace();
