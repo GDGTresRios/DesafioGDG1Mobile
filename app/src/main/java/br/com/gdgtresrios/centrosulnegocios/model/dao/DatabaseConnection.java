@@ -89,14 +89,20 @@ public class DatabaseConnection extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO " + CategoriaEventoDao.TABLE_NAME + "(" + CategoriaEventoDao.COLUMN_NOME + ") VALUES('Palestras')");  //1
         db.execSQL("INSERT INTO " + CategoriaEventoDao.TABLE_NAME + "(" + CategoriaEventoDao.COLUMN_NOME + ") VALUES('Shows')");      //2
         db.execSQL("INSERT INTO " + CategoriaEventoDao.TABLE_NAME + "(" + CategoriaEventoDao.COLUMN_NOME + ") VALUES('Workshops')");  //3
-        db.execSQL("INSERT INTO " + CategoriaEventoDao.TABLE_NAME + "(" + CategoriaEventoDao.COLUMN_NOME + ") VALUES('Estandes')");   //4
+       // db.execSQL("INSERT INTO " + CategoriaEventoDao.TABLE_NAME + "(" + CategoriaEventoDao.COLUMN_NOME + ") VALUES('Estandes')");   //4
 
-        db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Informática')");  //1
+        db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Tecnologia')");   //1
         db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Bandas')");       //2
         db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Comércio')");     //3
-        db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Turismo')");      //4
-        db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Palestrante')");  //5
-        db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Empreendedorismo')");  //6
+        db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Educação')");     //4
+        db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Alimentação')");  //5
+        db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Serviços')");     //6
+        db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Construção')");   //7
+        db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Moda')");         //8
+        db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Automotivo')");   //9
+        db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Saúde/Beleza')"); //10
+        db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Prefeituras')");  //11
+        db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('+Outros')");      //12
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
@@ -105,7 +111,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 +") VALUES('Guto Abranches'," +
                 "'Âncora do programa Conta Corrente 2ª edição, apresentado pela GloboNews...', " +
                 "'Âncora do programa Conta Corrente 2ª edição, apresentado pela GloboNews, passou pelas emissoras CNT e Cultura, além do jornal Folha de São Paulo e a revista Veja.'," +
-                " 1, 0, 0, 5)"); // 1
+                " 1, 0, 0, 12)"); // 1
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
@@ -114,7 +120,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 +") VALUES('Rodrigo Pimentel'," +
                 "'Ex-Capitão do BOPE que serviu de inspiração para o Capitão Nascimento...', " +
                 "'Ex-Capitão do BOPE, Rodrigo Pimentel, é um dos oficiais que serviu de inspiração para o Capitão Nascimento, interpretado pelo ator Wagner Moura.'," +
-                " 1, 0, 0, 5)"); //2
+                " 1, 0, 0, 12)"); //2
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
@@ -123,7 +129,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 +") VALUES('Bel Pesce'," +
                 "'Empreendedora, fundadora da FazINOVA  e autora de três livros...', " +
                 "'Empreendedora, fundadora da FazINOVA  e autora de três livros: A Menina do Vale, Procuram-se Super Herois e A Menina do Vale 2. Foi considerada uma das “100 pessoas mais influentes do Brasil”, pela Revista Época.'," +
-                " 1, 0, 0, 5)"); // 3
+                " 1, 0, 0, 12)"); // 3
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
@@ -132,7 +138,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 +") VALUES('Dr. Robert Rey'," +
                 "'Conhecido como Dr. Rey é um cirurgião plástico e apresentador brasileiro...', " +
                 "'Conhecido como Dr. Rey é um cirurgião plástico e apresentador brasileiro e um dos protagonistas do Dr. 90210 (um reality show exibido nos Estados Unidos pelos canais E! Entertainment e People and Arts.'," +
-                " 1, 0, 0, 5)"); // 4
+                " 1, 0, 0, 10)"); // 4
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
@@ -248,7 +254,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 +") VALUES('CVT Três Rios'," +
                 "'Centro Vocacional Tecnológico...', " +
                 "'  '," +
-                " 0, 0, 0, 1)"); // 14
+                " 0, 1, 0, 4)"); // 14
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
@@ -257,7 +263,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 +") VALUES('Bruno Lemos'," +
                 "'Professor USS...', " +
                 "'  '," +
-                " 0, 0, 0, 5)"); // 15
+                " 1, 0, 0, 12)"); // 15
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
@@ -270,7 +276,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 "A inauguração do campus se deu em Brasília no dia 1 de fevereiro de 2010 e contou com a presença do então reitor do IFRJ Prof. Dr. Luiz Edmundo Vargas de Aguiar, a atual Presidenta da República Dilma Rousseff, o então presidente da república Luiz Inácio Lula da Silva, o primeiro diretor Prof. Dr. Rodney Cezar de Albuquerque e o então prefeito do município de Eng. Paulo de Frontin, Eduardo Ramos da Paixão.\n" +
                 "\n" +
                 "No início de 2011 iniciou-se a oferta do primeiro curso técnico do campus, Informática para Internet, funcionando na modalidade concomitante e subseqüente no turno vespertino. O objetivo principal deste curso é o de tornar o aluno capaz de aprender a desenvolver programas de computador voltados para a internet e outras redes de computadores, seguindo as especificações e paradigmas da lógica de programação e das linguagens mais avançadas do mercado. Além disso, são apresentadas ao aluno diversas metodologias, lógica de programação e ferramentas de desenvolvimento de sistemas, para construir soluções que auxiliem no processo de criação de interfaces e aplicativos empregados no comércio e marketing eletrônicos.'," +
-                " 0, 0, 0, 5)"); // 16
+                " 1, 0, 0, 12)"); // 16
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
@@ -279,7 +285,420 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 +") VALUES('Gustavo Guanabara'," +
                 "'Gustavo Guanabara é professor carioca desde 1994 e já atuou em todo tipo de segmento...', " +
                 "'Gustavo Guanabara é professor carioca desde 1994 e já atuou em todo tipo de segmento. Atuou desde ensino infantil, passando por cursos técnicos, universidades e já coordenou o setor de tutoria para ensino à distância de uma universidade pública. Atualmente, viaja pelo Brasil dando palestras em eventos nacionais e internacionais, como Campus Party, FISL, Latinoware, etc. Para maiores informações sobre seu trabalho, acesse: about.me/guanabara'," +
-                " 0, 0, 0, 5)"); // 17
+                " 1, 0, 0, 12)"); // 17
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Vo pitita'," +
+                "'', " +
+                "''," +
+                " 0, 1, 0, 5)"); //18
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Pedras Lara'," +
+                "'', " +
+                "''," +
+                " 0, 1, 0, 7)"); //19
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('GDG Três Rios'," +
+                "'Google Developers Group - Três Rios: Desenvolvendo e integrando!', " +
+                "'O Google Developers Group Três Rios é um grupo criado para aproximar todos os desenvolvedores que desejam compartilhar e aprender ainda mais.\n" +
+                "Venha fazer parte deste time, e nos ajude e apresentar um conteúdo de qualidade!\n" +
+                "\n" +
+                "GDG Três Rios é um grupo independente, nossas atividades e as opiniões aqui expressas não deve, de forma alguma, ser ligado ao Google, a corporação.'," +
+                " 1, 1, 0, 1)"); //20
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Brasinc'," +
+                "'', " +
+                "''," +
+                " 0, 1, 0, 1)"); //21
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Eco'," +
+                "'', " +
+                "''," +
+                " 0, 1, 0, 1)"); //22
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Rian Design'," +
+                "'Inovadores. Somos web designers, designers gráficos, desenhistas, publicitários, músicos, poetas....', " +
+                "'Parceiros desde a infância, nossa meta é ir além do que todos possam imaginar. Surpreender até os mais rigorosos olhos.\n" +
+                "\n" +
+                "Transformar cada traço em um objetivo, cada cor em um novo sentimento, cada site em uma nova pintura para o monitor, mesclando nossas raízes artísticas com o poder de venda do Design. Fazer perfeito.\n" +
+                "\n" +
+                "Somos simples e completos, rápidos e detalhistas e acreditamos que a simplicidade e o toque artístico em nossos trabalhos nos destacam.\n" +
+                "\n" +
+                "Mais do que isso, a dedicação e a felicidade de trabalhar com o que trabalhamos. Não uma mera escolha de profissão. Uma escolha de vida. Somos design. É isto.\n" +
+                "\n" +
+                "\"A simplicidade é o último grau de sofisticação.\" \n" +
+                "(Leonardo da Vinci)\n" +
+                "\n" +
+                "Inovadores. Somos web designers, designers gráficos, desenhistas, publicitários, músicos, poetas, astronautas... Somos o que nossa imaginação nos permitir.'," +
+                " 0, 1, 0, 1)"); //23
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Soul Systems'," +
+                "'A Soul Systems é uma empresa nova, lançada em 2014, mas alicerçada em mais de dez anos de experiência de seus profissionais...', " +
+                "'A Soul Systems é uma empresa nova, lançada em 2014, mas alicerçada em mais de dez anos de experiência de seus profissionais. \n" +
+                "Com transparência e comprometimento, a proposta é simples: Solucionar questões do dia-a-dia com inteligência e simplicidade. \n" +
+                "Todas as nossas soluções compartilham esse DNA que dá vida e alma aos nossos sistemas.'," +
+                " 0, 1, 0, 1)"); //24
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Central do Shop'," +
+                "'', " +
+                "''," +
+                " 0, 1, 0, 1)"); //25
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Zaal'," +
+                "'Empresa provedora de soluções completas em tecnologia tem como objetivo otimizar os negócios dos seus clientes com uma plataforma integrada', " +
+                "'A ZAAL - empresa provedora de soluções completas em tecnologia tem como objetivo otimizar os negócios dos seus clientes com uma plataforma integrada composta por sistemas de gestão, equipamentos, serviços e treinamentos aplicada às mais diversas necessidades do mercado.\n" +
+                "\n" +
+                "Todas essas soluções estão aliadas a experiência, conhecimento tecnológico, qualidade nos serviços prestados e o mais importante: o compromisso com a sociedade.'," +
+                " 0, 1, 0, 1)"); //26
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Acesso Tecnologico'," +
+                "'', " +
+                "''," +
+                " 0, 1, 0, 1)"); //27
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Revista On'," +
+                "'Romper barreiras, superar-se e oferecer informação de qualidade está entre as prioridades da Revista On. O projeto impresso e ousado teve início no fim de 2010...', " +
+                "'Romper barreiras, superar-se e oferecer informação de qualidade está entre as prioridades da Revista On. O projeto impresso e ousado teve início no fim de 2010 em  Três Rios. Um ano depois foi a vez de buscar novos desafios e lançar o conteúdo inteligente em Petrópolis.\n" +
+                "\n" +
+                "Em 2012 com o objetivo de estar ainda mais próxima do leitor a empresa tem o orgulho de colocar no ar o portal online. Aqui você confere as principais notícias do interior do estado, com a garantia de um produto único feito de forma competente pelos profissionais envolvidos.\n" +
+                "\n" +
+                "Interatividade, informação, notícias inéditas, promoções e muito mais em um só lugar e em apenas um clique. Agora você pode acessar o site todo dia enquanto aguarda as próximas edições impressas das Revistas On Petrópolis e Três Rios.'," +
+                " 0, 1, 0, 1)"); //28
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('API Systems'," +
+                "'A API Systems foi fundada em 1998. Uma empresa dedicada a criar soluções em software para várias áreas de mercado. Hoje estamos focados no Comércio Varejista e Soluções Web.', " +
+                "'A API Systems foi fundada em 1998. Uma empresa dedicada a criar soluções em software para várias áreas de mercado. Hoje estamos focados no Comércio Varejista e Soluções Web.\n" +
+                "\n" +
+                "Com uma equipe dedica e preparada, trabalhamos com o que há de mais atual em linguagem de desenvolvimento e banco de dados, oferecendo aos nossos clientes soluções seguras e eficazes.\n" +
+                "\n" +
+                "Em 2011 lançamos o APIConsult. Uma solução web para gerenciamento de consultórios médicos, que mostra nossa grande aptidão para novidades nesse mercado que está em grande expansão, que é a Computação em Nuvem.'," +
+                " 0, 1, 0, 1)"); //29
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Box Music'," +
+                "'', " +
+                "''," +
+                " 0, 1, 0, 8)"); //30
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('J E New Hair'," +
+                "'', " +
+                "''," +
+                " 0, 1, 0, 8)"); //31
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Marcele Semi Jóias'," +
+                "'', " +
+                "''," +
+                " 0, 1, 0, 8)"); //32
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Salada das Marcas   '," +
+                "'', " +
+                "''," +
+                " 0, 1, 0, 8)"); //33
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('M Fashion'," +
+                "'', " +
+                "''," +
+                " 0, 1, 0, 8)"); //34
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('YAMARIOS'," +
+                "'Concessionária Yamaha Três Rios...', " +
+                "''," +
+                " 0, 1, 0, 9)"); //35
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Prefeitura de Petrópolis'," +
+                "'', " +
+                "''," +
+                " 0, 1, 0, 11)"); //36
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Prefeitura de Três Rios'," +
+                "'', " +
+                "''," +
+                " 0, 1, 0, 11)"); //37
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('UNIMED'," +
+                "'', " +
+                "''," +
+                " 0, 1, 0, 10)"); //38
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('SEMEUR'," +
+                "'', " +
+                "''," +
+                " 0, 1, 0, 10)"); //39
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Uniodonto'," +
+                "'Com mais de 25 anos de atuação, é uma cooperativa de cirurgiões-dentistas que investe na constante atualização de seus profissionais...', " +
+                "'Com mais de 25 anos de atuação, é uma cooperativa de cirurgiões-dentistas que investe na constante atualização de seus profissionais, além de garantir a seus clientes a qualidade total dos serviços prestados.\n" +
+                "\n" +
+                "Encontra-se totalmente de acordo com a nova legislação dos planos de saúde: operadora com registro junto à ANS (Agência Nacional de Saúde Suplementar).'," +
+                " 0, 1, 0, 10)"); //40
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('CTO'," +
+                "'', " +
+                "''," +
+                " 0, 1, 0, 10)"); //41
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('HCNSC'," +
+                "'', " +
+                "''," +
+                " 0, 1, 0, 10)"); //42
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Destaque Design'," +
+                "'', " +
+                "''," +
+                " 0, 1, 0, 10)"); //43
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Just Ladies'," +
+                "'', " +
+                "''," +
+                " 0, 1, 0, 10)"); //44
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Pro Scan'," +
+                "'', " +
+                "''," +
+                " 0, 1, 0, 10)"); //45
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Audioserra'," +
+                "'', " +
+                "''," +
+                " 0, 1, 0, 10)"); //46
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Senac'," +
+                "'O Serviço Nacional de Aprendizagem Comercial (Senac) é, desde sua criação, em 1946, o principal agente da educação profissional...', " +
+                "'O Serviço Nacional de Aprendizagem Comercial (Senac) é, desde sua criação, em 1946, o principal agente da educação profissional voltado para o Setor do Comércio de Bens, Serviços e Turismo.\n" +
+                "\n" +
+                "Mais de 55 milhões de atendimentos já foram prestados pelo Senac. A Instituição oferece toda a sua experiência a trabalhadores e empresários, com programações presenciais e a distância, de norte a sul do Brasil.\n" +
+                "\n" +
+                "São milhares de programações, em centenas de ambientes educacionais de ponta e especializados, como as empresas pedagógicas e as unidades móveis, espalhados em mais de 3 mil municípios, em todos os estados do país e no Distrito Federal.'," +
+                " 0, 1, 1, 4)"); //47
+
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Fecomércio'," +
+                "'A Federação do Comércio do Estado do Rio de Janeiro (Fecomércio RJ) tem como objetivo orientar, resguardar, coordenar e representar os interesses...', " +
+                "'A Federação do Comércio do Estado do Rio de Janeiro (Fecomércio RJ) tem como objetivo orientar, resguardar, coordenar e representar os interesses dos setores e segmentos ligados ao comércio de bens, serviços e turismo perante as autoridades administrativas e judiciárias. Desta forma, busca contribuir para o desenvolvimento econômico, social e político do estado do Rio de Janeiro, sempre em harmonia com o desenvolvimento sustentável da sociedade, assegurando um ambiente de negócios favorável.\n" +
+                " \n" +
+                "Com o objetivo de promover a excelência do segmento que representa, a instituição norteia suas ações de acordo com os princípios de livre iniciativa, justa concorrência, gestão eficaz, empreendedorismo, ética e responsabilidade social. Além disso, pensando na qualificação do empresariado, a Fecomércio RJ realiza e apoia seminários, palestras, eventos e feiras regionais, bem como estimula o acesso a novas técnicas de gestão e tecnologia da informação, e edita cadernos técnicos sobre assuntos de interesse.\n" +
+                " \n" +
+                "O setor reúne mais de 340 mil estabelecimentos no estado do Rio de Janeiro, que respondem por 41,1% do Valor Adicionado Bruto e 62,6% dos estabelecimentos fluminenses, gerando um total de empregos formais superior a 1,8 milhão, que equivalem a 42,1% dos postos de trabalho com carteira assinada no estado. Ao todo, a Fecomércio RJ é formada por 59 sindicatos patronais fluminenses.'," +
+                " 0, 0, 1, 6)"); //48
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('RRDoces'," +
+                "'', " +
+                "''," +
+                " 0, 1, 0, 6)"); //49
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Ótica Pastor'," +
+                "'Há 41 anos no mercado, a Ótica Pastor tornou-se referência em produtos e serviços óticos e fotográficos...', " +
+                "'A Ótica Pastor tem como sua principal missão garantir excelência em qualidade, servindo com honestidade, transparência e conhecimento técnico para identificar necessidades de nossos clientes, oferecendo sempre os melhores produtos, as melhores marcas e os melhores serviços, tornando-se referencia, além de buscar sempre sua plena satisfação e superando suas expectativas.\n" +
+                "Para a Ótica Pastor, mais importante que fidelizar seus clientes, é transformá-los em amigos, e que essa amizade possa ser traduzida em respeito e confiança, servindo sempre de forma exclusiva e personalizada todos os nossos clientes, fornecedores e colaboradores.\n" +
+                "Por isso, a Ótica Pastor está sempre inovando, buscando oferecer novos serviços e novos produtos, sempre com a mesma qualidade que você cliente e amigo já conhece.'," +
+                " 0, 1, 0, 6)"); //50
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Plan Minas'," +
+                "'A Plan Minas nasceu com o intuito de oferecer as classes carentes, auxilio e benefícios voltados à saúde e ao bem estar. Para fazer desse, um sonho possível...', " +
+                "'A Plan Minas nasceu com o intuito de oferecer as classes carentes, auxilio e benefícios voltados à saúde e ao bem estar. Para fazer desse, um sonho possível, criamos parcerias com profissionais altamente qualificados a fim de melhor atendermos nossos associados. Hoje, o número de associados que acreditam na Plan Minas, cresce a cada dia, o que demonstra a linha séria e comprometida que temos trabalhado em atenção ao nosso cliente. Somos uma equipe motivada e orgulhosa por atuar em acordo às necessidades de nossos associados, proporcionando uma vida mais saudável e prolongada, além de garantir conforto, tranquilidade e respeito nos momentos difíceis.'," +
+                " 0, 1, 0, 6)"); //51
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Claro'," +
+                "'', " +
+                "''," +
+                " 0, 1, 0, 6)"); //52
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('MGO'," +
+                "'', " +
+                "''," +
+                " 0, 1, 0, 6)"); //53
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Eudora'," +
+                "'', " +
+                "''," +
+                " 0, 1, 0, 6)"); //54
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Estrela H'," +
+                "'Representando a marca HONDA, a concessionária Estrela H Motos Ltda., é lider no segmento...', " +
+                "'Representando a marca HONDA, a concessionária Estrela H Motos Ltda., é lider no segmento em Cachoeiro de Itapemirim - ES, Venda Nova - ES, Alegre – ES, Campos – RJ, Três Rios – RJ, Valença – RJ e Barra do Piraí – RJ\n" +
+                "\n" +
+                "Participante ativa nas regiões que atua, onde a conquista e o firmamento da liderança de mercado são trabalhados dia-a-dia, a Estrela H tem como princípios: Ética, Responsabilidade Social, Inovação, Diferenciação, Integridade, Empreendedorismo e desenvolvimento pessoal unido ao profissional. \n" +
+                "\n" +
+                "Seu empenho na diferenciação está na capacitação das equipes de trabalho, proporcionando inovação no atendimento personalizado e a maior proximidade no relacionamento com seus clientes e no investimento intensivo no desenvolvimento tecnológico, a fim de proporcionar o aumento na sua excelência em qualidade percebida pelo cliente em cada atendimento realizado. Fonte: http://www.estrelah.com.br/'," +
+                " 0, 1, 0, 6)"); //55
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Open Brasil'," +
+                "'A Open Brasil Promoção e Eventos, com mais de 15 anos de experiência e solidez no mercado é uma das principais empresas promotoras de grandes feiras de negócios e organização de eventos do cenário nacional...', " +
+                "'A Open Brasil Promoção e Eventos, com mais de 15 anos de experiência e solidez no mercado é uma das principais empresas promotoras de grandes feiras de negócios e organização de eventos do cenário nacional. Seu sucesso advém da qualidade que oferece ao mercado em suas duas principais linhas de atuação – Feiras de Negócios e Eventos Corporativos, e por sua capacidade para atender a todas as áreas que envolvem a organização de um evento...'," +
+                " 0, 0, 1, 6)"); //56
+
+        db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
+                + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
+                + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                +") VALUES('Latapack-Ball'," +
+                "'A Latapack-Ball é uma Joint Venture entre o Grupo PIN (Latapack S/A) e a norte-americana Ball Corporation, tradicional fabricante de embalagens desde 1880 e líder do mercado norte-americano...', " +
+                "'A Latapack-Ball é uma Joint Venture entre o Grupo PIN (Latapack S/A) e a norte-americana Ball Corporation, tradicional fabricante de embalagens desde 1880 e líder do mercado norte-americano em latas de alumínio para bebidas. A empresa nasceu com a fábrica de latas de Jacareí (SP), inaugurada em fevereiro de 1997, num terreno de 135 mil m², sendo mais de 40 mil m² de área construída. Atualmente essa planta produz latas 350ml, 473ml e 500ml.\n" +
+                "A planta de tampas entrou em produção meses depois, em agosto de 1997, em Simões Filho (BA). Instalada em um terreno de 62 mil m², tem seis mil m² de área construída e atualmente fornece as tampas LOE (Large Opening End) no diâmetro 202.\n" +
+                "Em novembro de 2009 teve início a produção da terceira unidade, localizada em Três Rios (RJ), planta responsável pela fabricação da lata de 350 ml e das latas sleeks de 269ml, 310ml e 350ml.\n" +
+                "A mais recente unidade fabril da Latapack-Ball, em Alagoinhas tornou-se ativa em março de 2012 com a fabricação das latas 350 ml e 473 ml, e também as sleeks 269 ml e 310 ml. De um total de aproximadamente 122 mil m² são 40 mil m² de área construída. A Latapack-Ball também mantém uma unidade em São Paulo (SP), abrigando a unidade corporativa.\n" +
+                "Todas as unidades estão posicionadas entre as mais eficientes e modernas do mundo, usando equipamentos de alta precisão com tecnologia de ponta e seguindo as diretrizes dos princípios básicos da sustentabilidade. A empresa tem como principais objetivos oferecer:\n" +
+                "• Produtos de alta qualidade\n" +
+                "• O melhor suporte técnico para as operações de seus clientes\n" +
+                "• Inovações tecnológicas para criar vantagens competitivas\n" +
+                "• Serviços que beneficiem e superem as expectativas de seus clientes'," +
+                " 0, 0, 1, 6)"); //57
+
+
 
         try {
             dateEventoGuto = mFormatter.parse(sdateEventoGuto);
