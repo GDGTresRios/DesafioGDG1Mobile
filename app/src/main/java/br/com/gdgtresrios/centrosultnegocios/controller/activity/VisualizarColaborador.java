@@ -3,6 +3,7 @@ package br.com.gdgtresrios.centrosultnegocios.controller.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -31,6 +32,9 @@ public class VisualizarColaborador extends AppCompatActivity {
 
         Colaborador colaborador = getIntent().getParcelableExtra(INTENT_KEY_COLABORADOR);
 
+        CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        collapsingToolbarLayout.setTitle(colaborador.getNome());
+        collapsingToolbarLayout.setExpandedTitleColor(getResources().getColor(android.R.color.transparent));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
         TextView textViewNome = (TextView) findViewById(R.id.textview_nome);
