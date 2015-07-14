@@ -122,7 +122,12 @@ public class BuscaEventoActivity extends AppCompatActivity {
         MenuItem searchMenuItem = menu.findItem(R.id.action_search);
         SearchView searchViewAction = (SearchView) MenuItemCompat.getActionView(searchMenuItem);
         searchViewAction.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-        searchViewAction.setQueryHint(getString(R.string.buscarevento));
+        if (categoriaEvento == null) {
+            searchViewAction.setQueryHint(getString(R.string.buscarevento));
+        } else {
+            searchViewAction.setQueryHint(String.format(getString(R.string.buscaremcategoria), categoriaEvento.getNome()));
+        }
+
         searchViewAction.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
