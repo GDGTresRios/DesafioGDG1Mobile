@@ -79,7 +79,7 @@
             <TextView
                 android:id="@+id/textview_descricaodetalhada"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:paddingBottom="20dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/gray600"/>
