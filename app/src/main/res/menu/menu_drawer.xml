@@ -6,11 +6,11 @@
         <item
             android:id="@+id/drawer_evento"
             android:checked="true"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@drawable/ic_evento"
             android:title="@string/drawer_itemtitle_evento"/>
         <item
             android:id="@+id/drawer_colaborador"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@drawable/ic_colaborador"
             android:title="@string/drawer_itemtitle_colaborador"/>
 
     </group>

@@ -122,6 +122,11 @@ public class BuscaColaboradorActivity extends AppCompatActivity {
         MenuItem searchMenuItem = menu.findItem(R.id.action_search);
         SearchView searchViewAction = (SearchView) MenuItemCompat.getActionView(searchMenuItem);
         searchViewAction.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        if (categoriaColaborador == null) {
+            searchViewAction.setQueryHint(getString(R.string.buscarcolaborador));
+        } else {
+            searchViewAction.setQueryHint(String.format(getString(R.string.buscaremcategoria), categoriaColaborador.getNome()));
+        }
         searchViewAction.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
