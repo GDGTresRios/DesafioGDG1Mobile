@@ -5,7 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -52,6 +55,7 @@ public class ColaboradorAdapter extends BaseAdapter {
 
             holder.textViewNome = (TextView) convertView.findViewById(R.id.textview_nome);
             holder.textViewDescricao = (TextView) convertView.findViewById(R.id.textview_descricao);
+            holder.imageViewLogo = (ImageView) convertView.findViewById(R.id.imageview_logo);
 
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -60,6 +64,7 @@ public class ColaboradorAdapter extends BaseAdapter {
         Colaborador colaborador = colaboradores.get(position);
         holder.textViewNome.setText(colaborador.getNome());
         holder.textViewDescricao.setText(colaborador.getDescricao());
+        Glide.with(context).load(colaborador.getLogo()).placeholder(R.drawable.ic_colaborador).into(holder.imageViewLogo);
 
 
         return convertView;
@@ -68,5 +73,6 @@ public class ColaboradorAdapter extends BaseAdapter {
     static class ViewHolder{
         TextView textViewNome;
         TextView textViewDescricao;
+        ImageView imageViewLogo;
     }
 }

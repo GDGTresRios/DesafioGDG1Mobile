@@ -47,7 +47,7 @@
             android:id="@+id/textview_nome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/indigo700"
+            android:textColor="@color/black"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/nome" />
 
