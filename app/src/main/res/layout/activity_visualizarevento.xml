@@ -23,6 +23,7 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <LinearLayout
+                android:id="@+id/layout_head"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:background="@color/indigo500"
@@ -35,8 +36,9 @@
                     android:id="@+id/textview_nome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
+                    android:paddingRight="10dp"
                     android:gravity="right"
+                    android:background="@color/blackalfa50"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textStyle="bold" />
 
@@ -44,8 +46,9 @@
                     android:id="@+id/textview_colaborador"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
+                    android:paddingRight="10dp"
                     android:gravity="right"
+                    android:background="@color/blackalfa50"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
             </LinearLayout>
@@ -83,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/activityvisualizarevento_textview_categoria"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/indigo700" />
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/textview_categoria"
@@ -98,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/activityvisualizarevento_textview_data"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/indigo700" />
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/textview_date"
@@ -113,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/activityvisualizarevento_textview_local"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/indigo700" />
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/textview_local"
@@ -128,7 +131,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/activityvisualizarevento_textview_descricaodetalhada"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/indigo700" />
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/textview_descricaodetalhada"
@@ -149,7 +152,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/activityvisualizarevento_textview_descricaocolaborador"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/indigo700" />
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/textview_colaboradornome"
@@ -157,7 +160,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/indigo700" />
+                    android:textColor="@color/black" />
 
             </LinearLayout>
 

@@ -23,6 +23,7 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <LinearLayout
+                android:id="@+id/layout_head"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:background="@color/indigo500"
@@ -35,8 +36,9 @@
                     android:id="@+id/textview_nome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
+                    android:paddingRight="10dp"
                     android:gravity="right"
+                    android:background="@color/blackalfa50"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textStyle="bold" />
 
@@ -73,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/activityvisualizarevento_textview_descricaocolaborador"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/indigo700" />
+                android:textColor="@color/black" />
 
 
             <TextView
