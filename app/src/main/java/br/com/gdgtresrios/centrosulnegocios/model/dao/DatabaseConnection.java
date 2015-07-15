@@ -71,6 +71,22 @@ public class DatabaseConnection extends SQLiteOpenHelper {
     private Date dateEventoMostraJogos;
     private String sdateEvento50dicas  = "18/07/2015 17:30";
     private Date dateEvento50dicas;
+    private String sdateEventoTassio = "15/07/2015 19:00";
+    private Date dateEventoTassio;
+    private String sdateEventoWanderlei = "16/07/2015 19:00";
+    private Date dateEventoWanderlei;
+    private String sdateEventoFernando = "16/07/2015 19:30";
+    private Date dateEventoFernando;
+    private String sdateEventoGui = "17/07/2015 19:00";
+    private Date dateEventoGui;
+    private String sdateEventoFernando2 = "17/07/2015 21:00";
+    private Date dateEventoFernando2;
+    private String sdateEventoDavi = "18/07/2015 18:00";
+    private Date dateEventoDavi;
+    private String sdateEventoAnrafel = "18/07/2015 19:00";
+    private Date dateEventoAnrafel;
+    private String sdateEventoEmiliano = "18/07/2015 21:00";
+    private Date dateEventoEmiliano;
 
 
 
@@ -1027,6 +1043,105 @@ public class DatabaseConnection extends SQLiteOpenHelper {
             e.printStackTrace();
         }
 
+
+        try {
+            dateEventoTassio = mFormatter.parse(sdateEventoTassio);
+            db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
+                    + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
+                    + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
+                    + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Mobile - A revolução em suas mãos'," +
+                    "'Com Tássio Auad e Leonardo Procópio', " +
+                    "''," +
+                    dateEventoTassio.getTime() + ", 1, 20, 60, 'Auditório da Ilha de Tecnologia')");
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
+
+        try {
+            dateEventoWanderlei = mFormatter.parse(sdateEventoWanderlei);
+            db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
+                    + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
+                    + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
+                    + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('GitHub - Controle de Versão'," +
+                    "'Com Wanderlei Dos Santos', " +
+                    "'O GitHub é um serviço de Web Hosting Compartilhado para projetos que usam o controle de versionamento Git. Nesta palestra do GDG Três Rios você conhecerá um pouco mais sobre essa tecnologia!'," +
+                    dateEventoWanderlei.getTime() + ", 1, 20, 30, 'Auditório da Ilha de Tecnologia')");
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
+
+
+        try {
+            dateEventoFernando = mFormatter.parse(sdateEventoFernando);
+            db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
+                    + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
+                    + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
+                    + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('PHP - Desvendando os Mitos'," +
+                    "'Com Fernando Souza', " +
+                    "'O PHP é uma linguagem de programação livre, utilizada principalmente para o desenvolvimento de aplicações web. Nesta palestra do GDG Três Rios serão desvendados alguns mitos sobre esta tecnologia.'," +
+                    dateEventoFernando.getTime() + ", 1, 20, 30, 'Auditório da Ilha de Tecnologia')");
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
+
+        try {
+            dateEventoGui = mFormatter.parse(sdateEventoGui);
+            db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
+                    + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
+                    + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
+                    + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('HTML 5 - Um Mundo de Possibilidades'," +
+                    "'Com Gui Prze, Daniel Oliveira e Henrique Tavares', " +
+                    "''," +
+                    dateEventoGui.getTime() + ", 1, 20, 30, 'Auditório da Ilha de Tecnologia')");
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
+
+        try {
+            dateEventoDavi = mFormatter.parse(sdateEventoDavi);
+            db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
+                    + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
+                    + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
+                    + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Por que Realizar Testes em Softwares'," +
+                    "'Com Davi Romeu', " +
+                    "'O teste de software é a investigação do software a fim de fornecer informações sobre a sua qualidade em relação ao contexto em que ele deve operar. Isso inclui encontrar seus defeitos. Conhecer mais sobre essa área da Engenharia de Software pode ser um grande diferencial para você e sua empresa.'," +
+                    dateEventoDavi.getTime() + ", 1, 20, 30, 'Auditório da Ilha de Tecnologia')");
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
+
+        try {
+            dateEventoAnrafel = mFormatter.parse(sdateEventoAnrafel);
+            db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
+                    + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
+                    + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
+                    + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Desenvolvendo Jogos com o Scratch'," +
+                    "'Com Anrã Fernandes e Diogo Padilha', " +
+                    "'A ideia desta palestra é apresentar o Scratch, uma ferramenta desenvolvida pelo MIT, mostrando algumas das diversas possibilidades de utilizá-lo em sla de aula para incentivar e estimular os estudantes no desenvolvimento do raciocínio lógico.'," +
+                    dateEventoAnrafel.getTime() + ", 1, 20, 30, 'Auditório da Ilha de Tecnologia')");
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
+
+        try {
+            dateEventoEmiliano = mFormatter.parse(sdateEventoEmiliano);
+            db.execSQL("INSERT INTO " + EventoDao.TABLE_NAME + "(" + EventoDao.COLUMN_NOME + ","
+                    + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
+                    + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
+                    + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Computação Gráfica - História, Mercado e Referências para aprendizado'," +
+                    "'Com Emiliano Silva', " +
+                    "'O grande interesse em aimação e computação gráfica tem direcionado meus esforços na pesquisa e captação de materiais de referência para o aprendizado das soluções tecnicas e artísticas utilizadas na criação de curtas e longas de animação.'," +
+                    dateEventoEmiliano.getTime() + ", 1, 20, 30, 'Auditório da Ilha de Tecnologia')");
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
 
     }
 
