@@ -2,13 +2,21 @@ package br.com.gdgtresrios.centrosultnegocios.controller.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -45,7 +53,17 @@ public class VisualizarEvento extends AppCompatActivity {
         TextView textViewLocal = (TextView) findViewById(R.id.textview_local);
         TextView textViewColaboradorNome = (TextView) findViewById(R.id.textview_colaboradornome);
         TextView textViewColaboradorDescricao = (TextView) findViewById(R.id.textview_colaboradordescricao);
+        final LinearLayout linearLayoutHead = (LinearLayout) findViewById(R.id.layout_head);
 
+        Glide.with(this)
+        .load(evento.getColaborador().getLogo())
+                .asBitmap()
+                .into(new SimpleTarget<Bitmap>(800, 300) {
+                    @Override
+                    public void onResourceReady(Bitmap bitmap, GlideAnimation anim) {
+                        linearLayoutHead.setBackground(new BitmapDrawable(getResources(), bitmap));
+                    }
+                });
         textViewDescricaoDetalhada.setText(evento.getDescricaoDetalhada());
         textViewCategoria.setText(evento.getCategoriaEvento().getNome());
         textViewColaboradorNome.setText(evento.getColaborador().getNome());

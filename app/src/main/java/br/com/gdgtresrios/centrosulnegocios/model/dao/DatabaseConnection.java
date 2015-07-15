@@ -18,7 +18,7 @@ import br.com.gdgtresrios.centrosulnegocios.model.CategoriaEvento;
 public class DatabaseConnection extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "centrosulnegocios";
-    private static final Integer DATABASE_VERSION = 2;
+    private static final Integer DATABASE_VERSION = 4;
     private DateFormat mFormatter = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 
     private final List<String> createTableList = new ArrayList<>();
@@ -324,14 +324,14 @@ public class DatabaseConnection extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
-                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR + "," + ColaboradorDao.COLUMN_LOGO
                 +") VALUES('GDG Três Rios'," +
                 "'Google Developers Group - Três Rios: Desenvolvendo e integrando!', " +
                 "'O Google Developers Group Três Rios é um grupo criado para aproximar todos os desenvolvedores que desejam compartilhar e aprender ainda mais.\n" +
                 "Venha fazer parte deste time, e nos ajude e apresentar um conteúdo de qualidade!\n" +
                 "\n" +
                 "GDG Três Rios é um grupo independente, nossas atividades e as opiniões aqui expressas não deve, de forma alguma, ser ligado ao Google, a corporação.'," +
-                " 1, 1, 0, 1)"); //20
+                " 1, 1, 0, 1, 'https://lh3.googleusercontent.com/-HaIgNj056lY/VaZsU4tIHNI/AAAAAAAAAFI/twLPEuxlYj4/s512-Ic42/logo.png')"); //20
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
@@ -394,13 +394,13 @@ public class DatabaseConnection extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
-                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR + "," + ColaboradorDao.COLUMN_LOGO
                 +") VALUES('Zaal'," +
                 "'Empresa provedora de soluções completas em tecnologia tem como objetivo otimizar os negócios dos seus clientes com uma plataforma integrada', " +
                 "'A ZAAL - empresa provedora de soluções completas em tecnologia tem como objetivo otimizar os negócios dos seus clientes com uma plataforma integrada composta por sistemas de gestão, equipamentos, serviços e treinamentos aplicada às mais diversas necessidades do mercado.\n" +
                 "\n" +
                 "Todas essas soluções estão aliadas a experiência, conhecimento tecnológico, qualidade nos serviços prestados e o mais importante: o compromisso com a sociedade.'," +
-                " 0, 1, 0, 1)"); //26
+                " 0, 1, 0, 1, 'https://lh3.googleusercontent.com/-0VwvEOiG9qI/VaZsVODy3wI/AAAAAAAAAFE/9UoNNKSrPh0/s912-Ic42/wallpaper_zaal.png')"); //26
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
