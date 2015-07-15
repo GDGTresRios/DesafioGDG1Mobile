@@ -5,7 +5,7 @@
     <string name="email">Email</string>
     <string name="endereco">Endereço</string>
     <string name="telefone">Telefone</string>
-    <string name="fragment_proximoseventos_title">Não Perca!</string>
+    <string name="fragment_proximoseventos_title">Próximos Eventos</string>
     <string name="fragment_categoriaeventos_title">+ Eventos</string>
     <string name="fragment_categoriacolaboradores_title">Colaboradores</string>
     <string name="eventoactivity_title">Eventos</string>
