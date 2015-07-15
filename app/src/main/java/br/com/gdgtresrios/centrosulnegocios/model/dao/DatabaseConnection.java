@@ -123,61 +123,61 @@ public class DatabaseConnection extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
-                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR + "," + ColaboradorDao.COLUMN_LOGO
                 +") VALUES('Guto Abranches'," +
                 "'Âncora do programa Conta Corrente 2ª edição, apresentado pela GloboNews...', " +
                 "'Âncora do programa Conta Corrente 2ª edição, apresentado pela GloboNews, passou pelas emissoras CNT e Cultura, além do jornal Folha de São Paulo e a revista Veja.'," +
-                " 1, 0, 0, 12)"); // 1
+                " 1, 0, 0, 12, 'https://lh3.googleusercontent.com/-5R-LWi3_xvw/VaXg4fo8emI/AAAAAAAAACs/pL9X-YyIUXg/s640-Ic42/GUTO%252520ABRANCHES.png')"); // 1
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
-                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR + "," + ColaboradorDao.COLUMN_LOGO
                 +") VALUES('Rodrigo Pimentel'," +
                 "'Ex-Capitão do BOPE que serviu de inspiração para o Capitão Nascimento...', " +
                 "'Ex-Capitão do BOPE, Rodrigo Pimentel, é um dos oficiais que serviu de inspiração para o Capitão Nascimento, interpretado pelo ator Wagner Moura.'," +
-                " 1, 0, 0, 12)"); //2
+                " 1, 0, 0, 12, 'https://lh3.googleusercontent.com/-T9zOly8OMY4/VaXg-o9FMnI/AAAAAAAAADE/GJZ6gnF5PW4/s640-Ic42/RODRIGO%252520PIMENTEL.png')"); //2
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
-                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR + "," + ColaboradorDao.COLUMN_LOGO
                 +") VALUES('Bel Pesce'," +
                 "'Empreendedora, fundadora da FazINOVA  e autora de três livros...', " +
                 "'Empreendedora, fundadora da FazINOVA  e autora de três livros: A Menina do Vale, Procuram-se Super Herois e A Menina do Vale 2. Foi considerada uma das “100 pessoas mais influentes do Brasil”, pela Revista Época.'," +
-                " 1, 0, 0, 12)"); // 3
+                " 1, 0, 0, 12, 'https://lh3.googleusercontent.com/-2RKxOYq6dYA/VaXg9VHQ6FI/AAAAAAAAAC8/ylMfSr-dxPM/s640-Ic42/BEL%252520PESCE.png')"); // 3
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
-                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR + "," + ColaboradorDao.COLUMN_LOGO
                 +") VALUES('Dr. Robert Rey'," +
                 "'Conhecido como Dr. Rey é um cirurgião plástico e apresentador brasileiro...', " +
                 "'Conhecido como Dr. Rey é um cirurgião plástico e apresentador brasileiro e um dos protagonistas do Dr. 90210 (um reality show exibido nos Estados Unidos pelos canais E! Entertainment e People and Arts.'," +
-                " 1, 0, 0, 10)"); // 4
+                " 1, 0, 0, 10, 'https://lh3.googleusercontent.com/-ufQTNSJLweI/VaXg61ulaZI/AAAAAAAAAC0/1Dyh5If3IPw/s640-Ic42/DR%252520REY.png')"); // 4
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
-                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR + "," + ColaboradorDao.COLUMN_LOGO
                 +") VALUES('Mistura Fina'," +
                 "'MPB...', " +
                 "'A história da banda começa com os integrantes se conhecendo na banda Primeiro de Maio e decidindo formar um trio para tocar músicas de cantores famosos que não são executadas há muito tempo. A banda, mais tarde nomeada de Mistura Fina, é composta por Alex Souza (voz e cajón), Pablo Martins (violão e voz) e Wander Leal (Sopros) e tem tocado músicas que geralmente não são ouvidas com frequência, com novos arranjos e colocando sua personalidade. O seu repertório tem tudo a ver com os seus integrantes já que, foram criados ouvindo essas músicas, o que inclui Djavan, Ivan Lins, Luis Melodia, Tom Jobim, Zeca Pagodinho, entre outros. '," +
-                " 0, 0, 0, 2)"); // 5
+                " 0, 0, 0, 2, 'https://lh3.googleusercontent.com/-d7sKFmn_-Bc/VaXeTzQNtuI/AAAAAAAAACE/AnAKKXjVw_w/s640-Ic42/MISTURA%252520FINA.png')"); // 5
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
-                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR + "," +ColaboradorDao.COLUMN_LOGO
                 +") VALUES('Thiago Alves & Pierre'," +
                 "'MPB...', " +
                 "'A dupla se conhecia de eventos regionais, exposições, feiras e festivais, porém estavam sempre em lados um pouco distantes musicalmente. Thiago Alves é músico de formação católica e desde sempre muito eclético, tocou em banda de baile, serestas e passou por várias bandas, com pequena preferência para o Rock Nacional, Mpb e Regional, por influências destes projetos, mas desde sempre muito aberto a novos sons e experiências, com grande capacidade de absorver conteúdo e repertório. Pierre Pureza não nega a origem sambista, tanto que até hoje, nas horas vagas, cada vez menores, participa de projetos ligados a samba e pagode. Com o surgimento das oportunidades em casas de shows adaptadas ao publico da região, barzinhos e festas, a dupla viu oportunidade de criar o projeto para atender esta demanda e apesar de terem trabalhado juntos em outros projetos, Thiago Alves e Pierre, desde Fevereiro de 2015, assumiram essa marca que vem crescendo graças à humildade musical, respeito aos contratantes e publico e capacidade de adaptar o repertório para cada tipo de evento e espectadores. Th&P tem repertório diverso focado na musica Regional, Mpb, Rock Nacional e anos 80, mas também com passagens criativas pelo Reggae, Xote e Samba. Mesmo com o Setlist em mãos cada apresentação é uma viagem diferente, pois a dupla sempre deseja corresponder aos olhares e ao cantar do público e por isso com Thiago Alves, vocalista sempre atento a isso e com vasto recurso de repertório e Pierre, percussionista sempre inquieto e atento, tudo pode acontecer.'," +
-                " 0, 0, 0, 2)"); // 6
+                " 0, 0, 0, 2, 'https://lh3.googleusercontent.com/-txPR_Ju9iJ0/VaXeWVf0M1I/AAAAAAAAACM/kI9A4pju2l8/s640-Ic42/THIAGO%252520ALVES%252520E%252520PIERRE.png')"); // 6
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
-                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR + "," +ColaboradorDao.COLUMN_LOGO
                 +") VALUES('Leonardo de Freitas e Fabiano'," +
                 "'Sertanejo Universitário...', " +
                 "'A dupla Leonardo de Freitas e Fabiano, iniciou sua trajetória em meados de 2005 na cidade de Juiz de Fora (MG). Em pouco tempo cativaram um publico em seus shows, tornando-se referencia na região. Rapidamente foram convidados para dividir o palco com grandes nomes da musica sertaneja, como Daniel, Jorge e Matheus, João Bosco e Vinicius, Bruno e Marrone, Michel Teló, Guilherme e Santiago e outros. Com isso ganharam notoriedade no cenário musical.\n" +
@@ -189,30 +189,30 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 "Leonardo de Freitas: cantor, compositor, arranjador e musico multi-instrumentista (teclado, baixo, guitarra, violão, bateria, viola e acordeon). Dono de um talento admirável.\n" +
                 " \n" +
                 "Fabiano: cantor, musico (Violão e Guitarra). Extremamente focado na carreira, o sucesso é seu objetivo. '," +
-                " 0, 0, 0, 2)"); // 7
+                " 0, 0, 0, 2, 'https://lh3.googleusercontent.com/-oGpmtZn4Now/VaXeTTwrf3I/AAAAAAAAAB4/9TSfYMwroIs/s640-Ic42/LEONARDO%252520DE%252520FREITAS%252520E%252520FABIANO.png')"); // 7
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
-                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR + "," +ColaboradorDao.COLUMN_LOGO
                 +") VALUES('Larissa Viana e Julien'," +
                 "'Bossa Nova e MPB...', " +
                 "' '," +
-                " 0, 0, 0, 2)"); // 8
+                " 0, 0, 0, 2, 'https://lh3.googleusercontent.com/-Tal5cE0qScc/VaXeDIJQr0I/AAAAAAAAABc/mSlIj1TAN-Q/s640-Ic42/LARISSA%252520VIANA%252520E%252520JULIEN.png')"); // 8
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
-                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR + "," +ColaboradorDao.COLUMN_LOGO
                 +") VALUES('Rafael Santos'," +
                 "'Sertanejo Universitário...', " +
                 "' '," +
-                " 0, 0, 0, 2)"); // 9
+                " 0, 0, 0, 2, 'https://lh3.googleusercontent.com/-ybZ-61X0zOc/VaXeUFuuJfI/AAAAAAAAACA/IvaSJXPojLI/s640-Ic42/RAFAEL%252520SANTOS.png')"); // 9
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
-                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR + "," +ColaboradorDao.COLUMN_LOGO
                 +") VALUES('Acústico A3'," +
                 "'MPB, Reggae, Pop Rock...', " +
                 "'A Banda AC 3 surgiu no fim de 2008, na cidade de Três Rios /RJ, com os músicos Gustavo Cunha, (Voz e Violão), Tiago Cunha (Bateria) e Juninho Hiote (Baixo). Desde então, a banda mescla estilos como MPB, pop/rock, reggae nacional, sertanejo universitário, entre outros; contudo, busca sempre inovações musicais a fim de atender a todos os gostos e a todos que acompanham suas apresentações em sua curta carreira musical. \n" +
@@ -222,12 +222,12 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 "Apesar de jovens, os integrantes são músicos experientes e já participaram de diversos grupos musicais de estilos bem variados, e usam em seus shows o conhecimento adquirido em suas carreiras para divertir e conquistar o público de diferentes idades e gosto musical. \n" +
                 "\n" +
                 "A banda já abriu shows de artistas como Michel Teló, Os Travessos, Gustavo Lins, entre outros. E se apresentou em diversas festas e exposições das cidades da região, como Três Rios, Paraíba do Sul, Sapucaia, Areal, Levy Gasparian, Juiz de Fora e Cabo Frio, sempre com o lema: ”Se divertir para divertir”.'," +
-                " 0, 0, 0, 2)"); // 10
+                " 0, 0, 0, 2, 'https://lh3.googleusercontent.com/-cNqZrnPnie4/VaXeILXAc9I/AAAAAAAAABk/oRgISGc-K7Q/s640-Ic42/ACUSTICO%252520A3.png')"); // 10
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
-                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR + "," +ColaboradorDao.COLUMN_LOGO
                 +") VALUES('Banda Replay'," +
                 "'Flashback...', " +
                 "'Criada em março de 2008, a Banda Replay trouxe   um toque diferente que tem encantado e esquentado as noites do Rio. Com shows e repertório que fogem dos tradicionais apresentados por outras bandas de flashback, a banda toca músicas dos anos 70, 80 e 90 que você adorava e há muito tempo não ouvia, além daquelas que você escuta sempre e quer ouvir de novo.\n" +
@@ -235,12 +235,12 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 "Misturando artistas como Erasure e Michael Jackson, Pet Shop Boys e Leo Jaime, Gloria Estefan e Lulu Santos, Metro e Legião Urbana a Replay faz performances com muita energia e carisma, fazendo ferver qualquer pista de dança. Esta diversidade, associada à parceria com a empresa GIG Audio, responsável pela infraestrutura técnica impecável de som e iluminação que acompanha a banda, cria um espetáculo que vai tornar sua festa inesquecível. \n" +
                 "  \n" +
                 "A Replay é tudo que você espera para seu evento e muito mais, confira!'," +
-                " 0, 0, 0, 2)"); // 11
+                " 0, 0, 0, 2, 'https://lh3.googleusercontent.com/-Snf7j2X3wn8/VaXeLBySeJI/AAAAAAAAABs/tVbpfFN3lxE/s640-Ic42/BANDA%252520REPLAY.png')"); // 11
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
-                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR + "," + ColaboradorDao.COLUMN_LOGO
                 +") VALUES('Sebrae'," +
                 "'O Serviço Brasileiro de Apoio às Micro e Pequenas Empresas (Sebrae) é uma entidade privada que promove a competitividade.....', " +
                 "'O Serviço Brasileiro de Apoio às Micro e Pequenas Empresas (Sebrae) é uma entidade privada que promove a competitividade e o desenvolvimento sustentável dos empreendimentos de micro e pequeno porte – aqueles com faturamento bruto anual de até R$ 3,6 milhões.\n" +
@@ -250,18 +250,18 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 "As soluções desenvolvidas pelo Sebrae atendem desde o empreendedor que pretende abrir seu primeiro negócio até pequenas empresas que já estão consolidadas e buscam um novo posicionamento no mercado.\n" +
                 "\n" +
                 "Para garantir o atendimento aos pequenos negócios, o Sebrae atua em todo o território nacional. Onde tem Brasil, tem Sebrae. Além da sede nacional, em Brasília, a instituição conta com pontos de atendimento nas 27 Unidades da Federação, onde são oferecidos cursos, seminários, consultorias e assistência técnica para pequenos negócios de todos os setores.'," +
-                " 1, 0, 1, 6)"); // 12
+                " 1, 0, 1, 6, 'https://lh3.googleusercontent.com/-6rlp9fqe4SI/VaXh1FCdsSI/AAAAAAAAAEE/o8m0rFiriNc/s640-Ic42/SEBRAE.png')"); // 12
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
-                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR + "," + ColaboradorDao.COLUMN_LOGO
                 +") VALUES('Sicomércio'," +
                 "'O Sicomércio Três Rios - Sindicato do Comércio Varejista de Três Rios, Paraíba do Sul, Areal, Comendador Levy Gasparian é uma entidade patronal nascida...', " +
                 "'O Sicomércio Três Rios - Sindicato do Comércio Varejista de Três Rios, Paraíba do Sul, Areal, Comendador Levy Gasparian é uma entidade patronal nascida em 14/03/1985, do desejo de um grupo de empresários, que via na UNIÃO, uma forma de organizar seus negócios e poder ter voz ativa, perante os diversos órgãos. \n" +
                 "\n" +
                 "Ao longo desses anos o Sicomércio Três Rios, cresceu e para atender aos anseios e necessidades do segmento que representa, o Sicomércio atua de forma impactante no aprimoramento dos negócios, pois acredita na atitude positiva que irá transformar a relação de produção e consumo na região. A proposta é dar voz aos associados frente à sociedade, construindo um setor respeitado e influente nas decisões políticas e econômicas ao gerar bons serviços, equilíbrio nas vendas e interação com a comunidade e o poder público.'," +
-                " 1, 1, 1, 3)"); // 13
+                " 1, 1, 1, 3, 'https://lh3.googleusercontent.com/-81u0kRXI1KI/VaXh2FCJisI/AAAAAAAAAEQ/NsNKK_ZbQII/s640-Ic42/SICOMERCIO%252520TRES%252520RIOS.png')"); // 13
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
@@ -503,11 +503,11 @@ public class DatabaseConnection extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
-                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR + "," + ColaboradorDao.COLUMN_LOGO
                 +") VALUES('Prefeitura de Três Rios'," +
                 "'', " +
                 "''," +
-                " 0, 1, 0, 11)"); //37
+                " 0, 1, 0, 11, 'https://lh3.googleusercontent.com/-ijyDVsINN3s/VaXh1JvjYaI/AAAAAAAAAD8/ufsogv-MXqA/s640-Ic42/PREFEITURA%252520DE%252520TRES%252520RIOS.png')"); //37
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
@@ -595,7 +595,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
-                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR + "," + ColaboradorDao.COLUMN_LOGO
                 +") VALUES('Senac'," +
                 "'O Serviço Nacional de Aprendizagem Comercial (Senac) é, desde sua criação, em 1946, o principal agente da educação profissional...', " +
                 "'O Serviço Nacional de Aprendizagem Comercial (Senac) é, desde sua criação, em 1946, o principal agente da educação profissional voltado para o Setor do Comércio de Bens, Serviços e Turismo.\n" +
@@ -603,13 +603,13 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 "Mais de 55 milhões de atendimentos já foram prestados pelo Senac. A Instituição oferece toda a sua experiência a trabalhadores e empresários, com programações presenciais e a distância, de norte a sul do Brasil.\n" +
                 "\n" +
                 "São milhares de programações, em centenas de ambientes educacionais de ponta e especializados, como as empresas pedagógicas e as unidades móveis, espalhados em mais de 3 mil municípios, em todos os estados do país e no Distrito Federal.'," +
-                " 0, 1, 1, 4)"); //47
+                " 0, 1, 1, 4, 'https://lh3.googleusercontent.com/-l0ZUk_pCjoY/VaXh1VgdExI/AAAAAAAAAEM/COfo8qMD9bo/s640-Ic42/SENAC.png')"); //47
 
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
-                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR + "," + ColaboradorDao.COLUMN_LOGO
                 +") VALUES('Fecomércio'," +
                 "'A Federação do Comércio do Estado do Rio de Janeiro (Fecomércio RJ) tem como objetivo orientar, resguardar, coordenar e representar os interesses...', " +
                 "'A Federação do Comércio do Estado do Rio de Janeiro (Fecomércio RJ) tem como objetivo orientar, resguardar, coordenar e representar os interesses dos setores e segmentos ligados ao comércio de bens, serviços e turismo perante as autoridades administrativas e judiciárias. Desta forma, busca contribuir para o desenvolvimento econômico, social e político do estado do Rio de Janeiro, sempre em harmonia com o desenvolvimento sustentável da sociedade, assegurando um ambiente de negócios favorável.\n" +
@@ -617,7 +617,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 "Com o objetivo de promover a excelência do segmento que representa, a instituição norteia suas ações de acordo com os princípios de livre iniciativa, justa concorrência, gestão eficaz, empreendedorismo, ética e responsabilidade social. Além disso, pensando na qualificação do empresariado, a Fecomércio RJ realiza e apoia seminários, palestras, eventos e feiras regionais, bem como estimula o acesso a novas técnicas de gestão e tecnologia da informação, e edita cadernos técnicos sobre assuntos de interesse.\n" +
                 " \n" +
                 "O setor reúne mais de 340 mil estabelecimentos no estado do Rio de Janeiro, que respondem por 41,1% do Valor Adicionado Bruto e 62,6% dos estabelecimentos fluminenses, gerando um total de empregos formais superior a 1,8 milhão, que equivalem a 42,1% dos postos de trabalho com carteira assinada no estado. Ao todo, a Fecomércio RJ é formada por 59 sindicatos patronais fluminenses.'," +
-                " 0, 0, 1, 6)"); //48
+                " 0, 0, 1, 6, 'https://lh3.googleusercontent.com/-yKqAGma96kg/VaXhzyJZxwI/AAAAAAAAADk/lZFv4JVKtQg/s640-Ic42/FECOMERCIO.png')"); //48
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
@@ -691,16 +691,16 @@ public class DatabaseConnection extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
-                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR + "," + ColaboradorDao.COLUMN_LOGO
                 +") VALUES('Open Brasil'," +
                 "'A Open Brasil Promoção e Eventos, com mais de 15 anos de experiência e solidez no mercado é uma das principais empresas promotoras de grandes feiras de negócios e organização de eventos do cenário nacional...', " +
                 "'A Open Brasil Promoção e Eventos, com mais de 15 anos de experiência e solidez no mercado é uma das principais empresas promotoras de grandes feiras de negócios e organização de eventos do cenário nacional. Seu sucesso advém da qualidade que oferece ao mercado em suas duas principais linhas de atuação – Feiras de Negócios e Eventos Corporativos, e por sua capacidade para atender a todas as áreas que envolvem a organização de um evento...'," +
-                " 0, 0, 1, 6)"); //56
+                " 0, 0, 1, 6, 'https://lh3.googleusercontent.com/-TE2XBwwgP_Q/VaXh0now2wI/AAAAAAAAAD4/Ap1zn0U5ujo/s640-Ic42/OPEN%252520BRASIL.png')"); //56
 
         db.execSQL("INSERT INTO " + ColaboradorDao.TABLE_NAME + "(" + ColaboradorDao.COLUMN_NOME + ","
                 + ColaboradorDao.COLUMN_DESCRICAO + "," + ColaboradorDao.COLUMN_DESCRICAO_DETALHADA
                 + "," + ColaboradorDao.COLUMN_PALESTRANTE + "," + ColaboradorDao.COLUMN_EXPOSITOR
-                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR
+                + "," + ColaboradorDao.COLUMN_PATROCINADOR + "," + ColaboradorDao.COLUMN_FK_CATEGORIA_COLABORADOR + "," + ColaboradorDao.COLUMN_LOGO
                 +") VALUES('Latapack-Ball'," +
                 "'A Latapack-Ball é uma Joint Venture entre o Grupo PIN (Latapack S/A) e a norte-americana Ball Corporation, tradicional fabricante de embalagens desde 1880 e líder do mercado norte-americano...', " +
                 "'A Latapack-Ball é uma Joint Venture entre o Grupo PIN (Latapack S/A) e a norte-americana Ball Corporation, tradicional fabricante de embalagens desde 1880 e líder do mercado norte-americano em latas de alumínio para bebidas. A empresa nasceu com a fábrica de latas de Jacareí (SP), inaugurada em fevereiro de 1997, num terreno de 135 mil m², sendo mais de 40 mil m² de área construída. Atualmente essa planta produz latas 350ml, 473ml e 500ml.\n" +
@@ -712,7 +712,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                 "• O melhor suporte técnico para as operações de seus clientes\n" +
                 "• Inovações tecnológicas para criar vantagens competitivas\n" +
                 "• Serviços que beneficiem e superem as expectativas de seus clientes'," +
-                " 0, 0, 1, 6)"); //57
+                " 0, 0, 1, 6, 'https://lh3.googleusercontent.com/-hfHboLgc0ew/VaXhzjR8dKI/AAAAAAAAADo/VdZjTT5lBGU/s640-Ic42/LATAPACK%252520BALL.png')"); //57
 
 
 
