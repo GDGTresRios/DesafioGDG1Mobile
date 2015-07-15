@@ -18,7 +18,7 @@ import br.com.gdgtresrios.centrosulnegocios.model.CategoriaEvento;
 public class DatabaseConnection extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "centrosulnegocios";
-    private static final Integer DATABASE_VERSION = 2;
+    private static final Integer DATABASE_VERSION = 4;
     private DateFormat mFormatter = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 
     private final List<String> createTableList = new ArrayList<>();

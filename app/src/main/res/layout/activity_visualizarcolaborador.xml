@@ -27,18 +27,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:background="@color/indigo500"
+                android:fitsSystemWindows="true"
                 android:gravity="center_vertical"
                 android:orientation="vertical"
-                android:fitsSystemWindows="true"
                 app:layout_collapseMode="parallax">
 
                 <TextView
                     android:id="@+id/textview_nome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingRight="10dp"
-                    android:gravity="right"
                     android:background="@color/blackalfa50"
+                    android:gravity="right"
+                    android:paddingBottom="20dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="20dp"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textStyle="bold" />
 
@@ -59,16 +61,16 @@
         android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_gravity="fill_vertical"
         android:clipToPadding="false"
         app:layout_anchorGravity="top|start"
-        android:layout_gravity="fill_vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="10dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -84,7 +86,7 @@
                 android:layout_height="match_parent"
                 android:paddingBottom="20dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/gray600"/>
+                android:textColor="@color/gray600" />
 
         </LinearLayout>
 
