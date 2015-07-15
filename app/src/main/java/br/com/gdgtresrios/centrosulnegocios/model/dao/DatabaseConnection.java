@@ -104,7 +104,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
 
         db.execSQL("INSERT INTO " + CategoriaEventoDao.TABLE_NAME + "(" + CategoriaEventoDao.COLUMN_NOME + ") VALUES('Palestras')");  //1
         db.execSQL("INSERT INTO " + CategoriaEventoDao.TABLE_NAME + "(" + CategoriaEventoDao.COLUMN_NOME + ") VALUES('Shows')");      //2
-        db.execSQL("INSERT INTO " + CategoriaEventoDao.TABLE_NAME + "(" + CategoriaEventoDao.COLUMN_NOME + ") VALUES('Workshops')");  //3
+        db.execSQL("INSERT INTO " + CategoriaEventoDao.TABLE_NAME + "(" + CategoriaEventoDao.COLUMN_NOME + ") VALUES('Oficinas')");  //3
        // db.execSQL("INSERT INTO " + CategoriaEventoDao.TABLE_NAME + "(" + CategoriaEventoDao.COLUMN_NOME + ") VALUES('Estandes')");   //4
 
         db.execSQL("INSERT INTO " + CategoriaColaboradorDao.TABLE_NAME + "(" + CategoriaColaboradorDao.COLUMN_NOME + ") VALUES('Tecnologia')");   //1
@@ -882,7 +882,9 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
                     + EventoDao.COLUMN_LOCAL + ") VALUES('Sessão de Negócios e Rodada de Crédito'," +
                     "'Sebrae', " +
-                    "'    '," +
+                    "'A SESSÃO DE NEGÓCIOS E RODADA DE CRÉDITO é um evento idealizado para criar a maior interatividade possível entre os participantes, micro e pequenas empresas e empresas âncoras,  de forma rápida e objetiva.  Com um modo de participação ágil e dinâmico você se apresentará a todas as empresas âncoras bem como a todas as MPEs participantes da Sessão. A relação com os fornecedores é um elemento crítico para alcance dos resultados empresariais. Este evento será uma grande oportunidade para conhecer novos fornecedores com capacidade de produção e logística para vendas no Rio de Janeiro.\n" +
+                    "Rodada de Crédito\n" +
+                    "Nesta edição, algumas instituições financeiras estarão presentes no evento (Banco do Brasil, AgeRio, BNDES, Itaú, CEF, Bradesco) com o objetivo de esclarecer dúvidas das  MPEs  em relação a: tomada de crédito/cartões de crédito/investimentos a longo prazo, entre outros.'," +
                     dateEventoSebraeRodadaCredito.getTime() + ", 1, 12, 60, 'Salão Principal')");
         } catch (ParseException e){
             e.printStackTrace();
@@ -896,7 +898,9 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
                     + EventoDao.COLUMN_LOCAL + ") VALUES('Finanças Pessoais MEI, Empreendedores e Empresários'," +
                     "'Sebrae', " +
-                    "'    '," +
+                    "'A Oficina de Educação Financeira (Finanças Pessoais) tem o objetivo de ampliar o conhecimento dos pequenos negócios quanto à gestão financeira para atingir o equilíbrio e cuidar da sua saúde financeira\n" +
+                    " \n" +
+                    "Palestrante: Alberto Stassen'," +
                     dateEventoSebraeMei.getTime() + ", 1, 12, 60, 'Salão Principal')");
         } catch (ParseException e){
             e.printStackTrace();
@@ -908,9 +912,11 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + EventoDao.COLUMN_DESCRICAO + "," + EventoDao.COLUMN_DESCRICAO_DETALHADA
                     + "," + EventoDao.COLUMN_DATA_HORA + "," + EventoDao.COLUMN_FK_CATEGORIA_EVENTO
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
-                    + EventoDao.COLUMN_LOCAL + ") VALUES('Finanças Pessoais MEI, Empreendedores e Empresários'," +
+                    + EventoDao.COLUMN_LOCAL + ") VALUES('Oficina Tecnológica - Como fazer dinheiro com a inovação'," +
                     "'Sebrae/Sicomércio', " +
-                    "'    '," +
+                    "'Em tempos de competição acirrada e de restrição do consumo, a inovação pode ser o ponto chave para aumento da lucratividade de uma empresa. Nesta oficina, será discutido de que forma a inovação pode contribuir para melhorar os resultados do negócio.\n" +
+                    " \n" +
+                    "Palestrante: Ana Paula de Oliveira'," +
                     dateEventoSebraeDinheiroInovacao.getTime() + ", 3, 12, 60, 'Auditório do Salão Nobre')");
         } catch (ParseException e){
             e.printStackTrace();
@@ -924,7 +930,9 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
                     + EventoDao.COLUMN_LOCAL + ") VALUES('Empreendedorismo e as oportunidades do mercado'," +
                     "'Sebrae', " +
-                    "'    '," +
+                    "'Ser empreendedor pode ser peça chave para oportunidades do mercado. Nesta oficina, discutiremos como o empreendedorismo pode contribuir para que uma pessoa atenda as necessidades do mercado e obtenha sucesso em sua carreira.\n" +
+                    " \n" +
+                    "Palestrante: Lucia Navarro'," +
                     dateEventoSebraeEmpreendedorismo.getTime() + ", 1, 12, 60, 'Salão Principal')");
         } catch (ParseException e){
             e.printStackTrace();
@@ -938,7 +946,13 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
                     + EventoDao.COLUMN_LOCAL + ") VALUES('Negociação Empresarial - formando alianças e parcerias'," +
                     "'Sebrae/Sicomércio', " +
-                    "'    '," +
+                    "'Nesta oficina, abordaremos os seguintes temas:\n" +
+                    "   •  O processo de negociação;\n" +
+                    "   •  Os modelos de negociação;\n" +
+                    "   •  O êxito nas negociações;\n" +
+                    "   •  As habilidades do negociador;\n" +
+                    "   •  As características do negociador.\n" +
+                    "Palestrante: Márcia Rosa'," +
                     dateEventoSebraeNegociacaoEmpresarial.getTime() + ", 3, 12, 60, 'Auditório do Salão Nobre')");
         } catch (ParseException e){
             e.printStackTrace();
@@ -952,7 +966,9 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
                     + EventoDao.COLUMN_LOCAL + ") VALUES('Construindo a identidade da sua empresa'," +
                     "'Sebrae/Sicomércio', " +
-                    "'    '," +
+                    "'Ter uma marca forte não é exclusividade das grandes empresas. Nesta oficina você aprenderá a entender o novo consumidor e cuidar da imagem da sua empresa.\n" +
+                    " \n" +
+                    "Palestrante: Larissa Vizeu '," +
                     dateEventoSebraeConstruindoIdentidade.getTime() + ", 3, 12, 60, 'Auditório do Salão Nobre')");
         } catch (ParseException e){
             e.printStackTrace();
@@ -966,7 +982,9 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
                     + EventoDao.COLUMN_LOCAL + ") VALUES('Utilizando as Redes Sociais para aumentar seus clientes'," +
                     "'Sebrae/Sicomércio', " +
-                    "'    '," +
+                    "'Por meio das mídias sociais sua empresa pode divulgar novos produtos, disseminar promoções, acompanhar sua imagem na internet, ficar atento às tendências de mercado, identificar o que seus clientes procuram, fidelizar seus consumidores, atingir e envolver diretamente seu público-alvo. Nessa oficina, você terá acesso ao que universo das redes sociais, descobrindo como elas podem alavancar novos clientes para sua empresa.\n" +
+                    " \n" +
+                    "Palestrantes: Ivan Vianna e Victor Sauerbronn'," +
                     dateEventoSebraeRedesSociais.getTime() + ", 3, 12, 60, 'Auditório do Salão Nobre')");
         } catch (ParseException e){
             e.printStackTrace();
@@ -980,7 +998,9 @@ public class DatabaseConnection extends SQLiteOpenHelper {
                     + "," + EventoDao.COLUMN_FK_COLABORADOR + "," + EventoDao.COLUMN_DURACAO + ","
                     + EventoDao.COLUMN_LOCAL + ") VALUES('Programa Sebrae StartupRJ - Conhecendo as oportunidades'," +
                     "'Sebrae', " +
-                    "'    '," +
+                    "'Conheça o programa SEBRAE StartupRJ que tem como objetivo formar a nova geração de empreendedores digitais do Estado do Rio de Janeiro, por meio de capacitações e acesso a mercados. O Programa SEBRAE Startup RJ visa preparar estas startups e empreendedores para alçar voos mais altos com seus negócios, através metodologias específicas para estes perfis de negócios.\n" +
+                    " \n" +
+                    "Palestrante: à confirmar'," +
                     dateEventoSebraeStarupRJ.getTime() + ", 1, 12, 60, 'Salão Principal')");
         } catch (ParseException e){
             e.printStackTrace();
