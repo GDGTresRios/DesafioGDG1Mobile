@@ -1,4 +1,4 @@
-package br.com.gdgtresrios.centrosultnegocios.controller.fragment;
+package br.com.gdgtresrios.centrosulnegocios.controller.fragment;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -16,10 +16,10 @@ import br.com.gdgtresrios.centrosulnegocios.R;
 import br.com.gdgtresrios.centrosulnegocios.model.Colaborador;
 import br.com.gdgtresrios.centrosulnegocios.model.dao.ColaboradorDao;
 import br.com.gdgtresrios.centrosulnegocios.model.dao.DatabaseConnection;
-import br.com.gdgtresrios.centrosultnegocios.controller.activity.VisualizarColaborador;
-import br.com.gdgtresrios.centrosultnegocios.controller.listviewadapter.ColaboradorAdapter;
+import br.com.gdgtresrios.centrosulnegocios.controller.activity.VisualizarColaborador;
+import br.com.gdgtresrios.centrosulnegocios.controller.listviewadapter.ColaboradorAdapter;
 
-public class ExpositoresFragment extends Fragment {
+public class PatrocinadoresFragment extends Fragment {
 
     private ListView listViewColaborador;
     private List<Colaborador> colaboradorList;
@@ -29,7 +29,7 @@ public class ExpositoresFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view  = inflater.inflate(R.layout.fragment_expositores, container, false);
+        View view  = inflater.inflate(R.layout.fragment_patrocinadores, container, false);
 
         if (savedInstanceState != null) {
             Colaborador[] categoriaColaboradorArray = (Colaborador[]) savedInstanceState.getParcelableArray(COLABORADORLIST_KEY);
@@ -58,7 +58,7 @@ public class ExpositoresFragment extends Fragment {
     private List<Colaborador> getAllCategoriaColaboradorFromDatabase() {
         SQLiteDatabase databaseConnection = new DatabaseConnection(getActivity()).getWritableDatabase();
         ColaboradorDao colaboradorDao = new ColaboradorDao(databaseConnection);
-        List<Colaborador> categoriaColaboradorList = colaboradorDao.listAllExpositor();
+        List<Colaborador> categoriaColaboradorList = colaboradorDao.listAllPatrocinador();
         databaseConnection.close();
 
         return categoriaColaboradorList;

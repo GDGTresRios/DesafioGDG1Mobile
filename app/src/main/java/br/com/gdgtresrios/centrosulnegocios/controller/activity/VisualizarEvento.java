@@ -1,4 +1,4 @@
-package br.com.gdgtresrios.centrosultnegocios.controller.activity;
+package br.com.gdgtresrios.centrosulnegocios.controller.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,7 +14,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 

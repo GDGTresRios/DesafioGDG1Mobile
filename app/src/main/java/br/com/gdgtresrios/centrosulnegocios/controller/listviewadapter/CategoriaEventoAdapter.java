@@ -1,4 +1,4 @@
-package br.com.gdgtresrios.centrosultnegocios.controller.listviewadapter;
+package br.com.gdgtresrios.centrosulnegocios.controller.listviewadapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

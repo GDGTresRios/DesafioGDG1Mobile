@@ -1,4 +1,4 @@
-package br.com.gdgtresrios.centrosultnegocios.controller.fragment;
+package br.com.gdgtresrios.centrosulnegocios.controller.fragment;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -16,8 +16,8 @@ import br.com.gdgtresrios.centrosulnegocios.R;
 import br.com.gdgtresrios.centrosulnegocios.model.CategoriaColaborador;
 import br.com.gdgtresrios.centrosulnegocios.model.dao.CategoriaColaboradorDao;
 import br.com.gdgtresrios.centrosulnegocios.model.dao.DatabaseConnection;
-import br.com.gdgtresrios.centrosultnegocios.controller.activity.BuscaColaboradorActivity;
-import br.com.gdgtresrios.centrosultnegocios.controller.listviewadapter.CategoriaColaboradorAdapter;
+import br.com.gdgtresrios.centrosulnegocios.controller.activity.BuscaColaboradorActivity;
+import br.com.gdgtresrios.centrosulnegocios.controller.listviewadapter.CategoriaColaboradorAdapter;
 
 public class CategoriaColaboradorFragment extends Fragment {
 

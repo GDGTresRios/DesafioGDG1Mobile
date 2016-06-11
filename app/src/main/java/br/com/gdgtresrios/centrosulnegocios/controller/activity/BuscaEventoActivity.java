@@ -1,4 +1,4 @@
-package br.com.gdgtresrios.centrosultnegocios.controller.activity;
+package br.com.gdgtresrios.centrosulnegocios.controller.activity;
 
 import android.app.SearchManager;
 import android.content.Context;
@@ -25,7 +25,7 @@ import br.com.gdgtresrios.centrosulnegocios.model.CategoriaEvento;
 import br.com.gdgtresrios.centrosulnegocios.model.Evento;
 import br.com.gdgtresrios.centrosulnegocios.model.dao.DatabaseConnection;
 import br.com.gdgtresrios.centrosulnegocios.model.dao.EventoDao;
-import br.com.gdgtresrios.centrosultnegocios.controller.listviewadapter.EventoAdapter;
+import br.com.gdgtresrios.centrosulnegocios.controller.listviewadapter.EventoAdapter;
 
 public class BuscaEventoActivity extends AppCompatActivity {
 

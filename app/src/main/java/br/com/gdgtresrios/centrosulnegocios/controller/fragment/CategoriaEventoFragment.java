@@ -1,4 +1,4 @@
-package br.com.gdgtresrios.centrosultnegocios.controller.fragment;
+package br.com.gdgtresrios.centrosulnegocios.controller.fragment;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -16,8 +16,8 @@ import br.com.gdgtresrios.centrosulnegocios.R;
 import br.com.gdgtresrios.centrosulnegocios.model.CategoriaEvento;
 import br.com.gdgtresrios.centrosulnegocios.model.dao.CategoriaEventoDao;
 import br.com.gdgtresrios.centrosulnegocios.model.dao.DatabaseConnection;
-import br.com.gdgtresrios.centrosultnegocios.controller.activity.BuscaEventoActivity;
-import br.com.gdgtresrios.centrosultnegocios.controller.listviewadapter.CategoriaEventoAdapter;
+import br.com.gdgtresrios.centrosulnegocios.controller.activity.BuscaEventoActivity;
+import br.com.gdgtresrios.centrosulnegocios.controller.listviewadapter.CategoriaEventoAdapter;
 
 public class CategoriaEventoFragment extends Fragment {
 

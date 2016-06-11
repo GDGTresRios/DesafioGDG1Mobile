@@ -1,4 +1,4 @@
-package br.com.gdgtresrios.centrosultnegocios.controller.fragment;
+package br.com.gdgtresrios.centrosulnegocios.controller.fragment;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.GridView;
 import android.widget.ListView;
 
 import java.util.Arrays;
@@ -17,11 +16,10 @@ import br.com.gdgtresrios.centrosulnegocios.R;
 import br.com.gdgtresrios.centrosulnegocios.model.Colaborador;
 import br.com.gdgtresrios.centrosulnegocios.model.dao.ColaboradorDao;
 import br.com.gdgtresrios.centrosulnegocios.model.dao.DatabaseConnection;
-import br.com.gdgtresrios.centrosultnegocios.controller.activity.VisualizarColaborador;
-import br.com.gdgtresrios.centrosultnegocios.controller.listviewadapter.CategoriaColaboradorAdapter;
-import br.com.gdgtresrios.centrosultnegocios.controller.listviewadapter.ColaboradorAdapter;
+import br.com.gdgtresrios.centrosulnegocios.controller.activity.VisualizarColaborador;
+import br.com.gdgtresrios.centrosulnegocios.controller.listviewadapter.ColaboradorAdapter;
 
-public class PatrocinadoresFragment extends Fragment {
+public class PalestrantesFragment extends Fragment {
 
     private ListView listViewColaborador;
     private List<Colaborador> colaboradorList;
@@ -31,7 +29,7 @@ public class PatrocinadoresFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view  = inflater.inflate(R.layout.fragment_patrocinadores, container, false);
+        View view  = inflater.inflate(R.layout.fragment_palestrantes, container, false);
 
         if (savedInstanceState != null) {
             Colaborador[] categoriaColaboradorArray = (Colaborador[]) savedInstanceState.getParcelableArray(COLABORADORLIST_KEY);
@@ -60,7 +58,7 @@ public class PatrocinadoresFragment extends Fragment {
     private List<Colaborador> getAllCategoriaColaboradorFromDatabase() {
         SQLiteDatabase databaseConnection = new DatabaseConnection(getActivity()).getWritableDatabase();
         ColaboradorDao colaboradorDao = new ColaboradorDao(databaseConnection);
-        List<Colaborador> categoriaColaboradorList = colaboradorDao.listAllPatrocinador();
+        List<Colaborador> categoriaColaboradorList = colaboradorDao.listAllPalestrante();
         databaseConnection.close();
 
         return categoriaColaboradorList;

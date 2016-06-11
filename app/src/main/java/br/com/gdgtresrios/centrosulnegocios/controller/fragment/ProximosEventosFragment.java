@@ -1,4 +1,4 @@
-package br.com.gdgtresrios.centrosultnegocios.controller.fragment;
+package br.com.gdgtresrios.centrosulnegocios.controller.fragment;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -16,8 +16,8 @@ import br.com.gdgtresrios.centrosulnegocios.R;
 import br.com.gdgtresrios.centrosulnegocios.model.Evento;
 import br.com.gdgtresrios.centrosulnegocios.model.dao.DatabaseConnection;
 import br.com.gdgtresrios.centrosulnegocios.model.dao.EventoDao;
-import br.com.gdgtresrios.centrosultnegocios.controller.activity.VisualizarEvento;
-import br.com.gdgtresrios.centrosultnegocios.controller.listviewadapter.EventoAdapter;
+import br.com.gdgtresrios.centrosulnegocios.controller.activity.VisualizarEvento;
+import br.com.gdgtresrios.centrosulnegocios.controller.listviewadapter.EventoAdapter;
 
 public class ProximosEventosFragment extends Fragment {
 

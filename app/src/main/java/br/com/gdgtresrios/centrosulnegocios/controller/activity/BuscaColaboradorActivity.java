@@ -1,4 +1,4 @@
-package br.com.gdgtresrios.centrosultnegocios.controller.activity;
+package br.com.gdgtresrios.centrosulnegocios.controller.activity;
 
 import android.app.SearchManager;
 import android.content.Context;
@@ -25,7 +25,7 @@ import br.com.gdgtresrios.centrosulnegocios.model.CategoriaColaborador;
 import br.com.gdgtresrios.centrosulnegocios.model.Colaborador;
 import br.com.gdgtresrios.centrosulnegocios.model.dao.ColaboradorDao;
 import br.com.gdgtresrios.centrosulnegocios.model.dao.DatabaseConnection;
-import br.com.gdgtresrios.centrosultnegocios.controller.listviewadapter.ColaboradorAdapter;
+import br.com.gdgtresrios.centrosulnegocios.controller.listviewadapter.ColaboradorAdapter;
 
 public class BuscaColaboradorActivity extends AppCompatActivity {
 

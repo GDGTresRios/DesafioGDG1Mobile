@@ -1,4 +1,4 @@
-package br.com.gdgtresrios.centrosultnegocios.controller.activity;
+package br.com.gdgtresrios.centrosulnegocios.controller.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,13 +17,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import br.com.gdgtresrios.centrosulnegocios.R;
 import br.com.gdgtresrios.centrosulnegocios.model.Colaborador;
-import br.com.gdgtresrios.centrosulnegocios.model.Evento;
 
 public class VisualizarColaborador extends AppCompatActivity {
 

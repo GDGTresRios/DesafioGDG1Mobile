@@ -1,4 +1,4 @@
-package br.com.gdgtresrios.centrosultnegocios.controller.activity;
+package br.com.gdgtresrios.centrosulnegocios.controller.activity;
 
 import android.app.SearchManager;
 import android.content.Context;
@@ -18,22 +18,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import br.com.gdgtresrios.centrosulnegocios.R;
-import br.com.gdgtresrios.centrosulnegocios.model.Colaborador;
-import br.com.gdgtresrios.centrosultnegocios.controller.fragment.CategoriaColaboradorFragment;
-import br.com.gdgtresrios.centrosultnegocios.controller.fragment.CategoriaEventoFragment;
-import br.com.gdgtresrios.centrosultnegocios.controller.fragment.ExpositoresFragment;
-import br.com.gdgtresrios.centrosultnegocios.controller.fragment.PalestrantesFragment;
-import br.com.gdgtresrios.centrosultnegocios.controller.fragment.PatrocinadoresFragment;
-import br.com.gdgtresrios.centrosultnegocios.controller.fragment.ProximosEventosFragment;
+import br.com.gdgtresrios.centrosulnegocios.controller.fragment.CategoriaEventoFragment;
+import br.com.gdgtresrios.centrosulnegocios.controller.fragment.ProximosEventosFragment;
 
-public class ColaboradorActivity extends AppCompatActivity {
+public class EventoActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_colaborador);
+        setContentView(R.layout.activity_evento);
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setAdapter(new PagerAdapter());
@@ -44,13 +39,13 @@ public class ColaboradorActivity extends AppCompatActivity {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
-        navigationView.getMenu().getItem(1).setChecked(true);
+        navigationView.getMenu().getItem(0).setChecked(true);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
-                if (menuItem.getItemId() == R.id.drawer_evento) {
+                if (menuItem.getItemId() == R.id.drawer_colaborador) {
                     drawerLayout.closeDrawers();
-                    startActivity(EventoActivity.newIntent(ColaboradorActivity.this));
+                    startActivity(ColaboradorActivity.newIntent(EventoActivity.this));
                 }
                 return true;
             }
@@ -60,22 +55,22 @@ public class ColaboradorActivity extends AppCompatActivity {
     }
 
     public static Intent newIntent(Context context) {
-        return new Intent(context, ColaboradorActivity.class);
+        return new Intent(context, EventoActivity.class);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_colaborador, menu);
+        getMenuInflater().inflate(R.menu.menu_evento, menu);
 
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         MenuItem searchMenuItem = menu.findItem(R.id.action_search);
         SearchView searchViewAction = (SearchView) MenuItemCompat.getActionView(searchMenuItem);
         searchViewAction.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-        searchViewAction.setQueryHint(getString(R.string.buscarcolaborador));
+        searchViewAction.setQueryHint(getString(R.string.buscarevento));
         searchViewAction.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                startActivity(BuscaColaboradorActivity.newIntent(ColaboradorActivity.this, null, query));
+                startActivity(BuscaEventoActivity.newIntent(EventoActivity.this, null, query));
                 return false;
             }
 
@@ -110,19 +105,15 @@ public class ColaboradorActivity extends AppCompatActivity {
             switch (position) {
                 default:
                 case 0:
-                    return new PatrocinadoresFragment();
+                    return new ProximosEventosFragment();
                 case 1:
-                    return new ExpositoresFragment();
-                case 2:
-                    return new PalestrantesFragment();
-                case 3:
-                    return new CategoriaColaboradorFragment();
+                    return new CategoriaEventoFragment();
             }
         }
 
         @Override
         public int getCount() {
-            return 4;
+            return 2;
         }
 
         @Override
@@ -130,13 +121,9 @@ public class ColaboradorActivity extends AppCompatActivity {
             switch (position) {
                 default:
                 case 0:
-                    return getString(R.string.fragment_patrocinadores_title);
+                    return getString(R.string.fragment_proximoseventos_title);
                 case 1:
-                    return getString(R.string.fragment_expositores_title);
-                case 2:
-                    return getString(R.string.fragment_palestrantes_title);
-                case 3:
-                    return getString(R.string.fragment_categoriacolaborador_title);
+                    return getString(R.string.fragment_categoriaeventos_title);
             }
         }
     }

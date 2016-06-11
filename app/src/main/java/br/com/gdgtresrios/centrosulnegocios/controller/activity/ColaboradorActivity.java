@@ -1,4 +1,4 @@
-package br.com.gdgtresrios.centrosultnegocios.controller.activity;
+package br.com.gdgtresrios.centrosulnegocios.controller.activity;
 
 import android.app.SearchManager;
 import android.content.Context;
@@ -18,17 +18,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import br.com.gdgtresrios.centrosulnegocios.R;
-import br.com.gdgtresrios.centrosultnegocios.controller.fragment.CategoriaEventoFragment;
-import br.com.gdgtresrios.centrosultnegocios.controller.fragment.ProximosEventosFragment;
+import br.com.gdgtresrios.centrosulnegocios.controller.fragment.CategoriaColaboradorFragment;
+import br.com.gdgtresrios.centrosulnegocios.controller.fragment.ExpositoresFragment;
+import br.com.gdgtresrios.centrosulnegocios.controller.fragment.PalestrantesFragment;
+import br.com.gdgtresrios.centrosulnegocios.controller.fragment.PatrocinadoresFragment;
 
-public class EventoActivity extends AppCompatActivity {
+public class ColaboradorActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_evento);
+        setContentView(R.layout.activity_colaborador);
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setAdapter(new PagerAdapter());
@@ -39,13 +41,13 @@ public class EventoActivity extends AppCompatActivity {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
-        navigationView.getMenu().getItem(0).setChecked(true);
+        navigationView.getMenu().getItem(1).setChecked(true);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
-                if (menuItem.getItemId() == R.id.drawer_colaborador) {
+                if (menuItem.getItemId() == R.id.drawer_evento) {
                     drawerLayout.closeDrawers();
-                    startActivity(ColaboradorActivity.newIntent(EventoActivity.this));
+                    startActivity(EventoActivity.newIntent(ColaboradorActivity.this));
                 }
                 return true;
             }
@@ -55,22 +57,22 @@ public class EventoActivity extends AppCompatActivity {
     }
 
     public static Intent newIntent(Context context) {
-        return new Intent(context, EventoActivity.class);
+        return new Intent(context, ColaboradorActivity.class);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_evento, menu);
+        getMenuInflater().inflate(R.menu.menu_colaborador, menu);
 
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         MenuItem searchMenuItem = menu.findItem(R.id.action_search);
         SearchView searchViewAction = (SearchView) MenuItemCompat.getActionView(searchMenuItem);
         searchViewAction.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-        searchViewAction.setQueryHint(getString(R.string.buscarevento));
+        searchViewAction.setQueryHint(getString(R.string.buscarcolaborador));
         searchViewAction.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                startActivity(BuscaEventoActivity.newIntent(EventoActivity.this, null, query));
+                startActivity(BuscaColaboradorActivity.newIntent(ColaboradorActivity.this, null, query));
                 return false;
             }
 
@@ -105,15 +107,19 @@ public class EventoActivity extends AppCompatActivity {
             switch (position) {
                 default:
                 case 0:
-                    return new ProximosEventosFragment();
+                    return new PatrocinadoresFragment();
                 case 1:
-                    return new CategoriaEventoFragment();
+                    return new ExpositoresFragment();
+                case 2:
+                    return new PalestrantesFragment();
+                case 3:
+                    return new CategoriaColaboradorFragment();
             }
         }
 
         @Override
         public int getCount() {
-            return 2;
+            return 4;
         }
 
         @Override
@@ -121,9 +127,13 @@ public class EventoActivity extends AppCompatActivity {
             switch (position) {
                 default:
                 case 0:
-                    return getString(R.string.fragment_proximoseventos_title);
+                    return getString(R.string.fragment_patrocinadores_title);
                 case 1:
-                    return getString(R.string.fragment_categoriaeventos_title);
+                    return getString(R.string.fragment_expositores_title);
+                case 2:
+                    return getString(R.string.fragment_palestrantes_title);
+                case 3:
+                    return getString(R.string.fragment_categoriacolaborador_title);
             }
         }
     }
