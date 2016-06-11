@@ -7,7 +7,7 @@
     <application android:allowBackup="true" android:label="@string/app_name"
         android:icon="@mipmap/ic_launcher" android:theme="@style/AppTheme">
 
-        <activity android:name="br.com.gdgtresrios.centrosultnegocios.controller.activity.EventoActivity">
+        <activity android:name=".controller.activity.EventoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -16,38 +16,38 @@
                 android:resource="@xml/searchable"/>
         </activity>
 
-        <activity android:name="br.com.gdgtresrios.centrosultnegocios.controller.activity.BuscaEventoActivity"
+        <activity android:name=".controller.activity.BuscaEventoActivity"
             android:label="@string/eventoactivity_title">
             <meta-data android:name="android.app.searchable"
                 android:resource="@xml/searchable"/>
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="br.com.gdgtresrios.centrosultnegocios.controller.activity.EventoActivity" />
+                android:value=".controller.activity.EventoActivity" />
         </activity>
 
-        <activity android:name="br.com.gdgtresrios.centrosultnegocios.controller.activity.ColaboradorActivity">
+        <activity android:name=".controller.activity.ColaboradorActivity">
             <meta-data android:name="android.app.searchable"
                 android:resource="@xml/searchable"/>
         </activity>
 
-        <activity android:name="br.com.gdgtresrios.centrosultnegocios.controller.activity.BuscaColaboradorActivity"
+        <activity android:name=".controller.activity.BuscaColaboradorActivity"
             android:label="@string/colaboradoractivity_title">
             <meta-data android:name="android.app.searchable"
                 android:resource="@xml/searchable"/>
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="br.com.gdgtresrios.centrosultnegocios.controller.activity.ColaboradorActivity" />
+                android:value=".controller.activity.ColaboradorActivity" />
         </activity>
-        <activity android:name="br.com.gdgtresrios.centrosultnegocios.controller.activity.VisualizarEvento">
+        <activity android:name=".controller.activity.VisualizarEvento">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="br.com.gdgtresrios.centrosultnegocios.controller.activity.EventoActivity" />
+                android:value=".controller.activity.EventoActivity" />
         </activity>
 
-        <activity android:name="br.com.gdgtresrios.centrosultnegocios.controller.activity.VisualizarColaborador">
+        <activity android:name=".controller.activity.VisualizarColaborador">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="br.com.gdgtresrios.centrosultnegocios.controller.activity.ColaboradorActivity" />
+                android:value=".controller.activity.ColaboradorActivity" />
         </activity>
 
     </application>
