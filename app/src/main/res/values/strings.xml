@@ -26,5 +26,8 @@
     <string name="activityvisualizarevento_textview_local">Onde</string>
     <string name="activityvisualizaevento_indefinido">Indefinido</string>
     <string name="activityvisualizarevento_textview_categoria">Tipo</string>
-    <string name="activityvisualizarevento_textview_descricaocolaborador">Sobre</string>
+    <string name="activityvisualizarcolaborador_textview_descricaocolaborador">Sobre</string>
+    <string name="activityvisualizarevento_textview_descricaocolaborador">Sobre %1$s</string>
+    <string name="visualizareventoactivity_vermaisdacategoria">Veja mais %1$s !</string>
+    <string name="visualizareventoactivity_maissobre">mais</string>
 </resources>

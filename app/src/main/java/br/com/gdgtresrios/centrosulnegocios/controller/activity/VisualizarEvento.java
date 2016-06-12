@@ -10,6 +10,9 @@ import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -36,39 +39,40 @@ public class VisualizarEvento extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Evento evento = getIntent().getParcelableExtra(INTENT_KEY_EVENTO);
-        CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
-        collapsingToolbarLayout.setTitle(evento.getNome());
-        collapsingToolbarLayout.setExpandedTitleColor(getResources().getColor(android.R.color.transparent));
+        final Evento evento = getIntent().getParcelableExtra(INTENT_KEY_EVENTO);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        TextView textViewNome = (TextView) findViewById(R.id.textview_nome);
-        textViewNome.setText(evento.getNome());
+        TextView textViewNomeEvento = (TextView) findViewById(R.id.textview_nomeevento);
+        textViewNomeEvento.setText(evento.getNome());
         TextView textViewColaborador = (TextView) findViewById(R.id.textview_colaborador);
         textViewColaborador.setText(evento.getColaborador().getNome());
 
         TextView textViewDescricaoDetalhada = (TextView) findViewById(R.id.textview_descricaodetalhada);
-        TextView textViewCategoria = (TextView) findViewById(R.id.textview_categoria);
+        Button buttonMaisSobreColaborador = (Button) findViewById(R.id.button_maissobrecolaborador);
+        buttonMaisSobreColaborador.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(VisualizarColaborador.newIntent(VisualizarEvento.this, evento.getColaborador()));
+            }
+        });
+        Button buttonCategoria = (Button) findViewById(R.id.button_categoria);
         TextView textViewData = (TextView) findViewById(R.id.textview_date);
         TextView textViewLocal = (TextView) findViewById(R.id.textview_local);
         TextView textViewColaboradorNome = (TextView) findViewById(R.id.textview_colaboradornome);
         TextView textViewColaboradorDescricao = (TextView) findViewById(R.id.textview_colaboradordescricao);
-        final LinearLayout linearLayoutHead = (LinearLayout) findViewById(R.id.layout_head);
+        ImageView imageView = (ImageView) findViewById(R.id.imageview_logo);
 
-        Glide.with(this)
-        .load(evento.getColaborador().getLogo())
-                .asBitmap()
-                .into(new SimpleTarget<Bitmap>(800, 300) {
-                    @Override
-                    public void onResourceReady(Bitmap bitmap, GlideAnimation anim) {
-                        linearLayoutHead.setBackground(new BitmapDrawable(getResources(), bitmap));
-                    }
-                });
+        Glide.with(this).load(evento.getColaborador().getLogo()).into(imageView);
         textViewDescricaoDetalhada.setText(evento.getDescricaoDetalhada());
-        textViewCategoria.setText(evento.getCategoriaEvento().getNome());
-        textViewColaboradorNome.setText(evento.getColaborador().getNome());
+        buttonCategoria.setText(String.format(getString(R.string.visualizareventoactivity_vermaisdacategoria),evento.getCategoriaEvento().getNome()));
+        buttonCategoria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(BuscaEventoActivity.newIntent(VisualizarEvento.this, evento.getCategoriaEvento(), null));
+            }
+        });
+        textViewColaboradorNome.setText(String.format(getString(R.string.activityvisualizarevento_textview_descricaocolaborador), evento.getColaborador().getNome()));
         textViewColaboradorDescricao.setText(evento.getColaborador().getDescricaoDetalhada());
-        textViewLocal.setText(evento.getLocal().equals("") ? getString(R.string.activityvisualizaevento_indefinido)
-                : evento.getLocal() );
+        textViewLocal.setText(evento.getLocal().equals("") ? getString(R.string.activityvisualizaevento_indefinido) : evento.getLocal() );
 
         Date data = evento.getDataHora();
         DateFormat simpleDateFormat = new SimpleDateFormat("'Dia' dd/MM ' às ' kk:mm");
