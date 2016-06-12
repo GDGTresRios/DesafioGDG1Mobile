@@ -1,180 +1,191 @@
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:fitsSystemWindows="true">
+    android:orientation="vertical">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/app_bar_layout"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fitsSystemWindows="true"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        android:background="?attr/colorPrimary">
 
-        <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/collapsing_toolbar"
+        <TextView
+            android:id="@+id/textview_nomeevento"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-            app:expandedTitleMarginEnd="64dp"
-            app:expandedTitleMarginStart="48dp"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
 
-            <LinearLayout
-                android:id="@+id/layout_head"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:background="@color/indigo500"
-                android:gravity="center_vertical"
-                android:orientation="vertical"
-                android:fitsSystemWindows="true"
-                app:layout_collapseMode="parallax">
+    </android.support.v7.widget.Toolbar>
 
-                <TextView
-                    android:id="@+id/textview_nome"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="200dp">
+
+                <ImageView
+                    android:id="@+id/imageview_logo"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingRight="10dp"
-                    android:gravity="right"
-                    android:background="@color/blackalfa50"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textStyle="bold" />
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop" />
 
                 <TextView
                     android:id="@+id/textview_colaborador"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingRight="10dp"
-                    android:gravity="right"
+                    android:layout_alignParentBottom="true"
                     android:background="@color/blackalfa50"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="aaaa aaa aaa "
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
-            </LinearLayout>
-
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-
-        </android.support.design.widget.CollapsingToolbarLayout>
-
-    </android.support.design.widget.AppBarLayout>
-
-    <android.support.v4.widget.NestedScrollView
-        android:id="@+id/scroll"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false"
-        app:layout_anchorGravity="top|start"
-        android:layout_gravity="fill_vertical"
-        android:layout_marginBottom="?attr/actionBarSize"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            android:orientation="vertical"
-            android:padding="10dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/activityvisualizarevento_textview_categoria"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:id="@+id/textview_categoria"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="20dp"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/gray600" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/activityvisualizarevento_textview_data"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:id="@+id/textview_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="20dp"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/gray600" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/activityvisualizarevento_textview_local"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:id="@+id/textview_local"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="20dp"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/gray600" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/activityvisualizarevento_textview_descricaodetalhada"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:id="@+id/textview_descricaodetalhada"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="20dp"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-
-                android:textColor="@color/gray600" />
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/activityvisualizarevento_textview_descricaocolaborador"
+                    android:background="@color/indigo50"
+                    android:drawableEnd="@drawable/ic_calendar"
+                    android:drawableRight="@drawable/ic_calendar"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="@string/activityvisualizarevento_textview_data"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/black" />
 
                 <TextView
-                    android:id="@+id/textview_colaboradornome"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/textview_date"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:paddingBottom="20dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/gray800" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/indigo50"
+                    android:drawableEnd="@drawable/ic_map"
+                    android:drawableRight="@drawable/ic_map"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="@string/activityvisualizarevento_textview_local"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/textview_local"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:paddingBottom="20dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/gray800" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/indigo50"
+                    android:drawableEnd="@drawable/ic_info"
+                    android:drawableRight="@drawable/ic_info"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="@string/activityvisualizarevento_textview_descricaodetalhada"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/textview_descricaodetalhada"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:paddingBottom="20dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/gray800" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/indigo50"
+                    android:orientation="horizontal"
+                    android:padding="5dp"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/textview_colaboradornome"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.8"
+                        android:text="@string/activityvisualizarevento_textview_descricaocolaborador"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/black" />
+
+                    <Button
+                        android:id="@+id/button_maissobrecolaborador"
+                        android:layout_width="0dp"
+                        android:layout_height="26dp"
+                        android:layout_gravity="end|center_vertical"
+                        android:layout_weight="0.2"
+                        android:background="@drawable/transparent_button_background"
+                        android:drawableEnd="@drawable/next"
+                        android:drawablePadding="5dp"
+                        android:drawableRight="@drawable/next"
+                        android:gravity="end|center_vertical"
+                        android:padding="5dp"
+                        android:text="@string/visualizareventoactivity_maissobre"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textview_colaboradordescricao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:paddingBottom="20dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/gray800" />
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/textview_colaboradordescricao"
+            <Button
+                android:id="@+id/button_categoria"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingBottom="20dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/visualizareventoactivity_vermaisdacategoria"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/gray600" />
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
+    </ScrollView>
 
-    </android.support.v4.widget.NestedScrollView>
 
-</android.support.design.widget.CoordinatorLayout>
+</LinearLayout>
