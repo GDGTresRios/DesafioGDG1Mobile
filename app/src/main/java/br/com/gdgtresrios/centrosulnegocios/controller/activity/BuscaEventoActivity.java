@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.List;
@@ -94,6 +95,10 @@ public class BuscaEventoActivity extends AppCompatActivity {
             }
         }
         databaseConnection.close();
+
+        if (eventoList.size() == 0) {
+            Toast.makeText(this, R.string.evento_not_found, Toast.LENGTH_SHORT).show();
+        }
 
         return eventoList;
     }
